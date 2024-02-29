@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+e<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -86,14 +86,18 @@
 
         }
 
-        #Welcome {
+        .container {
+            text-align: center;
+        }
+
+        .Welcome {
             font-size: 12px;
             margin-left: 30%;
             margin-top: 100px;
             position: absolute;
 
             opacity: 0;
-            animation: fadeInWelcome 6s ease-out forwards 3s;
+            animation: fadeInWelcome 6s ease-out forwards 0s;
 
         }
 
@@ -173,7 +177,9 @@
 
 
     <div id="date">February 2024</div>
-    <div id="Welcome">Welcome, Kathleen.</div>
+    <div class="container">
+        <p class="Welcome">Welcome, Kathleen.</p>
+    </div>
     <div id="remaining-allowance">Remaining Love Credits</div>
     <div id="balance">$100.00</div>
 
