@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kora</title>
+
+    <style>
+        @keyframes fadeInHeader {
+            from {
+                opacity: 0;
+            
+            }
+            to {
+                opacity: 1;
+
+            }
+        }
+
+        @keyframes fadeInDate {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInWelcome {
+            from {
+                opacity: 0;
+                font-size: 28px;
+                transform: translateX(10px);
+            }
+            to {
+                opacity: 1;
+                font-size: 33px;
+                transform: translateX(0px);
+            }
+        }
+
+        @keyframes fadeInRemainingBalanceSubheader {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+
+        #header {
+            font-size: 50px;
+            padding: 10px;
+            position: fixed;
+
+            opacity: 0;
+            animation: fadeInHeader 5s ease-out forwards 2s;
+
+
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: "savoye let", sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            padding-top: 1px;
+        }
+    
+        #date {
+            font-size: 22px;
+            text-align: right;
+            margin-left: 85%;
+            margin-top: 30px;
+            line-height: 1;
+            position: absolute;
+
+            /* Applies animation to "Month Year" when page loads */
+            opacity: 0;
+            animation: fadeInDate 5s ease-out forwards 0s;
+
+        }
+
+        #Welcome {
+            text-align: center;
+            margin-left: 34%;
+            margin-top: 120px;
+            position: absolute;
+
+            opacity: 0;
+            animation: fadeInWelcome 6s ease-out forwards 3s;
+
+        }
+
+        #remaining-allowance {
+            font-size: 20px;
+            text-align: left;
+            margin-left: 23%;
+            margin-top: 369px;
+            line-height: 1;
+            position: absolute;
+
+            opacity: 0;
+            animation: fadeInRemainingBalanceSubheader 5s ease-out forwards 2s;
+
+        }
+
+        #balance {
+            font-size: 200px;
+            margin-top: 250px;
+            line-height: 1;
+            text-decoration: underline;
+            text-decoration-thickness: 0.1px;
+            text-underline-offset: 20px;
+
+            opacity: 0;
+            animation: fadeInHeader 6s ease-out forwards 0.5s;
+
+        }
+
+        #recent-transactions {
+            font-size: 20px;
+            margin-top: 250px;
+            text-align: left;
+            margin-left: 22%;
+            text-decoration: underline;
+            text-decoration-thickness: 0.1px;
+            text-underline-offset: 4px;
+        }
+
+        #year {
+            font-size: 24px;
+            margin-top: 10px;
+            text-align: left;
+            margin-left: 28%;
+        }
+
+        .month-dropdown {
+            /* Add styling for dropdown menus */
+        }
+
+        #coming-soon {
+            font-size: 50px;
+            margin-top: 150px;
+        }
+
+        #photo {
+            /* Add styling for the photo */
+        }
+
+        #lines-of-text {
+            font-size: 30px;
+            margin-top: 50px;
+        }
+
+        #bottom-text {
+            font-size: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header">Kora</div>
+
+
+    <div id="date">February 2024</div>
+    <div id="Welcome">Welcome, Kathleen.</div>
+    <div id="remaining-allowance">Remaining Love Credits</div>
+    <div id="balance">$100.00</div>
+
+
+    <div id="recent-transactions">Recent Transactions</div>
+    <div id="year">2024</div>
+    <!-- Add dropdown menus for months here -->
+
+    <div id="coming-soon">Coming soon...</div>
+
+    <div id="photo">
+        <!-- Add your photo here -->
+    </div>
+
+    <div id="lines-of-text">
+       The Kora App: Manage all your love funds in one place! 🤑
+    </div>
+
+    <div id="bottom-text">
+        <p><span>&#10084;</span> Your Sugar Daddy <span>&#10084;</span></p>
+    </div>
+
+</body>
+</html>
