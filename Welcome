@@ -336,7 +336,7 @@
     <div id="coming-soon">Coming soon...</div>
 
     <div id="photo">
-        <img src="Kora_logo.JPG">
+        /* <img src="Kora_logo.JPG"> */
     </div>
 
     <div id="app-name">
