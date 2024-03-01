@@ -50,21 +50,23 @@
             from {
                 opacity: 0;
                 transform: scaleX(0%);
+                transform: scaleY(0%);
             }
             to {
-                opacity: 1;
+                opacity: 0.5;
                 transform: scaleX(90%);
+                transform: scaleY(100%);
             }
         }
 
         /*Refer to this "LineExpansion" to extend the line further ending with 100%->80% opacity.*/
         @keyframes LineExpansion {
             from {
-                opacity: 1;
+                opacity: 0.5;
                 transform: scaleX(90%);
             }
             to {
-                opacity: 0.8l;
+                opacity: 0.4l;
                 transform: scaleX(110%);
             }
         }
@@ -111,7 +113,7 @@
         .container {
             width: 100%;
             text-align: center;
-            margin-top: 110px;
+            margin-top: 120px;
             position: relative;
             
         }
@@ -131,7 +133,7 @@
         .custom-line {
             border-top: 0.1px solid white;
             width: 50%; /* Adjust the width as needed */
-            margin: -15px auto;
+            margin: -11px auto;
             
             opacity: 0;
             animation: fadeInLine 3s ease-out forwards 4s, LineExpansion 10s ease-out forwards 7s; /* Keyframe animation */
@@ -140,13 +142,13 @@
 
         /*Styling for the subtitle for the remaining balance with text saying "Remaining Love Credits"*/
         #remaining-allowance {
-            font-size: 11.5px;
+            font-size: 11.1px;
             text-align: left;
-            margin-left: 50px;
+            margin-left: 52px;
             margin-top: 69px;
             line-height: 1;
             position: absolute;
-            padding: 3px;
+            padding: 4px;
 
             opacity: 0;
             animation: fadeInRemainingBalanceSubheader 7s ease-out forwards 2s;
@@ -383,9 +385,9 @@
 
         #app-name {
             font-size: 22.5px;
-            margin-top: 110px;
+            margin-top: 120px;
             text-align: left;
-            margin-left: 16.3%;
+            margin-left: 60px;
 
         }
 
@@ -402,7 +404,7 @@
             margin-top: 5px;
             margin-bottom: 100px;
             text-align: left;
-            margin-left: 44.7%;
+            margin-left: 150px;
             padding: 4px;
             
         }
