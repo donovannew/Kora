@@ -45,6 +45,30 @@
             }
         }
 
+        /*Refer to this "FadeInLine" to add a FadeIn on an expanding horizontal line.*/
+        @keyframes fadeInLine {
+            from {
+                opacity: 0;
+                transform: scaleX(0%);
+            }
+            to {
+                opacity: 1;
+                transform: scaleX(60%);
+            }
+        }
+
+        /*Refer to this "LineExpansion" to extend the line further ending with 100%->80% opacity.*/
+        @keyframes LineExpansion {
+            from {
+                opacity: 1;
+                transform: scaleX(60%);
+            }
+            to {
+                opacity: 0.8l;
+                transform: scaleX(69%);
+            }
+        }
+
         /*Header element "Kora" */
         #header {
             font-size: 24px;
@@ -100,6 +124,17 @@
             /* Applies animation to "Welcome [User's name]" text when page loads. Starts @ 4 seconds, ends @ 7 seconds */
             opacity: 0;
             animation: fadeIn 7s ease-out forwards 4s;
+
+        }
+
+        /* Custom line styling (FadeIn) */
+        .custom-line {
+            border-top: 0.1px solid white;
+            width: 50%; /* Adjust the width as needed */
+            margin: -10px auto;
+            
+            opacity: 0;
+            animation: fadeInLine 4s ease-out forwards 4s, LineExpansion 6s ease-out forwards 8s; /* Keyframe animation */
 
         }
 
@@ -389,8 +424,10 @@
     <div id="header">Kora</div>
 
     <div id="date">March 2024</div>
+    
     <div class="container">
         <p id="Welcome">Welcome, Kathleen</p>
+        <div class="custom-line"></div>
     </div>
 
     <div class="balance">
