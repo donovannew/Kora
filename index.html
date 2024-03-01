@@ -10,7 +10,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="kora_logo.png">
 
     <style>
-        @keyframes fadeInHeader {
+        /* Applies keyframes to elements*/
+        /*Simple fade in. Refer to this CSS element "fadeIn"*/
+        @keyframes fadeIn {
             from {
                 opacity: 0;
             }
@@ -30,15 +32,6 @@
             }
         }
 
-        @keyframes fadeInWelcome {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
         @keyframes fadeInRemainingBalanceSubheader {
             from {
                 opacity: 0;
@@ -50,53 +43,65 @@
             }
         }
 
-
+        /*Header element "Kora" */
         #header {
             font-size: 24px;
             padding: 4px;
             position: fixed;
+            
+            /* Applies animation to "Kora" header when page loads */
             opacity: 0;
             animation: fadeInHeader 5s ease-out forwards 2s;
 
-
         }
 
+         /*Header element "[Month Year]" */
         #date {
             font-size: 10px;
             text-align: left;
-            margin-left: 73%;
+            margin-left: 72%;
             margin-top: 29px;
             padding: 4px;
             position: fixed;
 
-            /* Applies animation to "Month Year" when page loads */
+            /* Applies animation to the Month Year on the right side of the top header when the page loads */
             opacity: 0;
             animation: fadeInDate 6s ease-out forwards 2s;
+            
         }
 
+        /*Body styling*/
         body {
             background-color: black;
             color: white;
             font-family: "Zapfino", cursive, sans-serif;
             padding: 10px;
             padding-top: 4px;
+            
         }
 
+        /*Container for the "Welcome [User's name]" text that appears on page reload. */
+        /*I had problems with the text alignment & this container did not help but it's there now so I will use it to learn how to use a container.*/
         .container {
             width: 100%;
             text-align: center;
             margin-top: 110px;
             position: relative;
+            
         }
 
+        /*"Welcome [User's name]" text*/
         #Welcome {
-            opacity: 0;
             margin-left: -5px;
             font-size: 14px;
+
+            /* Applies animation to "Welcome [User's name]" text when page loads. Starts @ 4 seconds, ends @ 7 seconds */
+            opacity: 0;
             animation: fadeInWelcome 7s ease-out forwards 4s;
 
         }
 
+        /*Styling for the subtitle for the remaining balance with text saying "Remaining Love Credits"*/
         #remaining-allowance {
             font-size: 12px;
             text-align: left;
@@ -111,6 +116,7 @@
 
         }
 
+        /*Styling for the numerical value of the user's remaining balance*/
         #balance {
             font-size: 69px;
             margin-top: 150px;
@@ -125,6 +131,7 @@
 
         }
 
+        /*Syling for the text "Recent Transactions" located at the bottom left of the load screen*/
         #recent-transactions {
             font-size: 16px;
             margin-top: 250px;
@@ -132,6 +139,10 @@
             text-decoration: underline;
             text-decoration-thickness: 0.1px;
             text-underline-offset: 10px;
+
+            /*Animation for the text "Recent Transactions" which appears simultaneously*/
+            opacity: 0;
+            animation: fadeIn 6s ease-out forwards 0.5s;
         }
 
         #year {
