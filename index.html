@@ -216,8 +216,7 @@
             left: 0;
         
         }
-
-        /* Style the right-arrow icon */
+        
         .dropdown2 button::after {
             content: "⌄"; /* Unicode for downward arrow */
             position: absolute;
@@ -226,7 +225,6 @@
             transform: translateY(-50%);
         }
 
-        /* Style the dropdown content (hidden by default) */
         .dropdown-content2 {
             display: none;
             position: relative;
@@ -235,7 +233,6 @@
             z-index: 1;
         }
 
-        /* Style the dropdown links (transactions) */
         .dropdown-content2 p {
             color: white;
             padding: 12px;
@@ -246,6 +243,50 @@
             margin: 0;
         }
 
+        /* BUTTON #3 */
+        .dropdown3 button {
+            background-color: transparent;
+            color: white;
+            padding:0px 148px;
+            scale: 100% 80%;
+            font-size: 16px;
+            font-family: "Zapfino", cursive, sans-serif;
+            border: 1px solid white;
+            border-radius: 20px;
+            margin-top: -5px;
+            padding-top: 5px;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
+            left: 0;
+        
+        }
+        
+        .dropdown3 button::after {
+            content: "⌄"; /* Unicode for downward arrow */
+            position: absolute;
+            right: 10px;
+            top: 48%;
+            transform: translateY(-50%);
+        }
+
+        .dropdown-content3 {
+            display: none;
+            position: relative;
+            background-color: black;
+            font-size: 12px;
+            z-index: 1;
+        }
+
+        .dropdown-content3 p {
+            color: white;
+            padding: 12px;
+            position: relative;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            margin: 0;
+        }
 
         #coming-soon {
             font-size: 26px;
@@ -263,7 +304,7 @@
             position: absolute;
             scale: 22%;
             margin-top: -40px;
-            margin-left: 0px;
+            margin-left: 10px;
             border-radius: 5px;
             box-shadow: 0 0 10 rgba(0,0,0,0.1);
 
@@ -273,7 +314,7 @@
             font-size: 22px;
             margin-top: 125px;
             text-align: left;
-            margin-left: 15%;
+            margin-left: 16%;
 
         }
 
@@ -281,7 +322,7 @@
             font-size: 12px;
             margin-top: 100px;
             text-align: left;
-            padding: 20px; 
+            padding: 30px; 
         }
 
         #emoji {
@@ -289,7 +330,7 @@
             margin-top: 100px;
             margin-bottom: 40px;
             text-align: left;
-            padding: 2px;
+            padding: 8px;
             
         }
 
@@ -319,6 +360,7 @@
     <div id="recent-transactions">Recent Transactions</div>
     <div id="year">2024</div>
 
+    <!--DROPDOWN MENU #1 -->
     <div class="dropdown1">
         <!-- Button that triggers the dropdown -->
         <button onclick="toggleDropdown1()">January</button>
@@ -333,7 +375,8 @@
             <hr>
             <p>Total: 100% 🤑</p>
         </div>
-    
+
+    <!--DROPDOWN MENU #2 -->
     <div class="dropdown2">
         <!-- Button that triggers the dropdown -->
         <button onclick="toggleDropdown2()">February</button>
@@ -345,6 +388,19 @@
             <p>Feb. 6th • Uber Eats . . . . . . . . ($31.17)</p>
             <hr>
             <p>Total: 100% 🤑</p>
+        </div>
+
+    <!--DROPDOWN MENU #3 -->
+    <div class="dropdown3">
+        <!-- Button that triggers the dropdown -->
+        <button onclick="toggleDropdown3()">January</button>
+
+        <!-- Dropdown content -->
+        <div class="dropdown-content3" id="dropdown-content3">
+            <!-- Dropdown links (transactions) -->
+            <p>N/A • Pasta? 🤔 . . . . . . ($--.--)</p>
+            <hr>
+            <p>Total: 0% 🤨</p>
         </div>
 
     <script>
