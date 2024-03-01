@@ -69,6 +69,15 @@
             }
         }
 
+        @keyframes fadeInTransactions {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 0.7;
+            }
+        }
+
         /*Header element "Kora" */
         #header {
             font-size: 24px;
@@ -196,9 +205,9 @@
             text-decoration-thickness: 0.1px;
             text-underline-offset: 10px;
 
-            /*Animation for the text "Recent Transactions" which appears simultaneously*/
+            /*Animation for the text "Recent Transactions" which appears simultaneously along with "Welcome" (4 second delay)*/
             opacity: 0;
-            animation: fadeIn 7s ease-out forwards 3s;
+            animation: fadeInTransactions 7s ease-out forwards 3s;
         }
 
         #year {
@@ -207,6 +216,10 @@
             text-align: left;
             margin-top: 20px;
             line-height: 0px;
+
+            /*Animation for the current year label "2024" which appears 1 sec after "Welcome" (5 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 1s ease-out forwards 5s;
 
         }
 
@@ -234,6 +247,10 @@
             margin-top: -8px;
             text-align: left;
             left: 0;
+
+            /*1 second FadeIn animation for the button labeled "January" which appears 0.2 sec after the column title "2024" (5.2 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 1s ease-out forwards 5.2s;
         
         }
 
@@ -244,6 +261,11 @@
             right: 10px;
             top: 48%;
             transform: translateY(-50%);
+
+            /*1 second FadeIn animation for the button labeled "January" which appears 0.2 sec after the column title "2024" (5.2 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 1s ease-out forwards 5.2s;
+            
         }
 
         /* Style the dropdown content (hidden by default) */
@@ -282,6 +304,10 @@
             position: relative;
             text-align: left;
             left: 0;
+
+            /*1 second FadeIn animation for the button labeled "February" which appears 0.2 sec previous button (5.4 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 1s ease-out forwards 5.4s;
         
         }
         
@@ -291,6 +317,11 @@
             right: 10px;
             top: 48%;
             transform: translateY(-50%);
+
+            /*1 second FadeIn animation for the button labeled "February" which appears 0.2 sec previous button (5.4 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 1s ease-out forwards 5.4s;
+        
         }
 
         .dropdown-content2 {
@@ -327,6 +358,10 @@
             position: relative;
             text-align: left;
             left: 0;
+
+            /*1 second FadeIn animation for the button labeled "March" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 1s ease-out forwards 5.6s;
         
         }
         
@@ -336,6 +371,11 @@
             right: 10px;
             top: 48%;
             transform: translateY(-50%);
+
+            /*1 second FadeIn animation for the button labeled "March" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 1s ease-out forwards 5.6s;
+            
         }
 
         .dropdown-content3 {
@@ -367,6 +407,10 @@
             text-decoration-thickness: 0.1px;
             text-underline-offset: 8px;
 
+            /*FadeIn animation for the "Coming Soon" text*/
+            opacity: 0;
+            animation: fadeIn 3s ease-out forwards 5s;
+
         }
 
         #photo {
@@ -380,6 +424,10 @@
             border-radius: 5px;
             box-shadow: 0 0 10 rgba(0,0,0,0.1);
 
+            /*FadeIn animation for the Kora app photo*/
+            opacity: 0;
+            animation: fadeIn 3s ease-out forwards 5s;
+
         }
 
         #app-name {
@@ -387,6 +435,10 @@
             margin-top: 120px;
             text-align: left;
             margin-left: 58px;
+
+            /*FadeIn animation for the text "The 'Kora' App"*/
+            opacity: 0;
+            animation: fadeIn 3s ease-out forwards 5s;
 
         }
 
@@ -396,6 +448,11 @@
             text-align: left;
             margin-left: 6.3%;
             padding: 4px; 
+
+            /*FadeIn animation for the app description text*/
+            opacity: 0;
+            animation: fadeIn 3s ease-out forwards 5s;
+            
         }
 
         #emoji {
@@ -414,7 +471,7 @@
             bottom: 0;
             width: 100%;
             text-align: left;
-            margin-left: 147px;
+            margin-left: 140px;
             padding: 0px;
         }
         
