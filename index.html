@@ -69,6 +69,17 @@
             }
         }
 
+        @keyframes fadeInTransactionsHeader {
+            from {
+                opacity: 0;
+                transform: translateX(-10px);
+            }
+            to {
+                opacity: 0.7;
+                transform: translateX(0px);
+            }
+        }
+
         @keyframes fadeInTransactions {
             from {
                 opacity: 0;
@@ -213,7 +224,7 @@
 
             /*Animation for the text "Recent Transactions" which appears simultaneously along with "Welcome" (4 second delay)*/
             opacity: 0;
-            animation: fadeInTransactions 7s ease-out forwards 2s;
+            animation: fadeInTransactionsHeader 7s ease-out forwards 2s;
         }
 
         #year {
