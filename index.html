@@ -8,7 +8,41 @@
     <link rel="icon" href="kora_logo.ico" type="image/x-icon">
     <!-- Apple touch icon for iPhone home screen -->
     <link rel="apple-touch-icon" sizes="180x180" href="kora_logo.png">
+   
+    <script>
+        const Names = ["Kathleen"];
+        const user = Names[0];
+        
+        window.onload = function() {
+            var date = new Date();
+            var minute = date.getMinute();
+            var hour = date.getHours();
+            var month = date.getMonth();
+            
+            const AllMonths = [
+                "January", "February", "March",
+                "April", "May", "June",
+                "July", "August", "September",
+                "October", "November", "December"];
 
+            const currentmonth = AllMonths[month];
+            
+            var year = date.getYear();
+
+            var greeting;
+
+            if (hour >= 0 && hour < 12) {
+                greeting = "Good Morning, ${user}!";
+            } else if (hour >= 12 && hour < 18) {
+                greeting = "Good Afternoon, ${user}!";
+            } else {
+                greeting = "Good Evening, ${user}!";
+            }
+
+            document.getElementById("greeting").innerHTML = greeting;
+        };
+    </script>
+    
     <style>
         /* Applies keyframes to elements*/
         /*Simple fade in. Refer to this CSS element "fadeIn" when you want 0 to 80% opacity. No translation. */
@@ -72,11 +106,11 @@
         @keyframes fadeInTransactionsHeader {
             from {
                 opacity: 0;
-                transform: translateX(-10px);
+                transform: translateY(-20px);
             }
             to {
                 opacity: 0.7;
-                transform: translateX(0px);
+                transform: translateY(0px);
             }
         }
 
@@ -138,8 +172,8 @@
             
         }
 
-        /*"Welcome [User's name]" text*/
-        #Welcome {
+        /*"Welcome, [User's name]" appearing header & many other greetings*/
+        #greeting {
             margin-left: -5px;
             font-size: 14px;
 
@@ -220,7 +254,7 @@
         /*Syling for the text "Recent Transactions" located at the bottom left of the load screen*/
         #recent-transactions {
             font-size: 14px;
-            margin-top: 280px;
+            margin-top: 285px;
             text-align: left;
             margin-left: 95px;
             padding: 7px;
@@ -515,13 +549,12 @@
     </style>
 </head>
 <body>
-
     <div id="header">Kora</div>
 
-    <div id="date">March 2024</div>
+    <div id="date"></div>
     
     <div class="container">
-        <p id="Welcome">Good Evening, Kathleen</p>
+        <p id="greeting"></p>
         <div class="custom-line"></div>
     </div>
 
@@ -603,6 +636,12 @@
         </div>
 
     <script>
+        document.getElementById("greeting").innerHTML = greeting;
+        
+        const morningGreeting = document.getElementById("greeting");
+        morningGreeting.innerHTML = `Good Morning, ${user}!`;
+        
+        
         // JavaScript to toggle dropdown visibility
         function toggleDropdown1() {
             var dropdownContent = document.getElementById("dropdown-content1");
