@@ -18,6 +18,7 @@
             var minute = date.getMinute();
             var hour = date.getHours();
             var month = date.getMonth();
+            var year = date.getYear();
             
             const AllMonths = [
                 "January", "February", "March",
@@ -25,18 +26,16 @@
                 "July", "August", "September",
                 "October", "November", "December"];
 
-            const currentmonth = AllMonths[month];
+            const monthheader = ["AllMonths[month] ${year}"];
             
-            var year = date.getYear();
-
             var greeting;
 
             if (hour >= 0 && hour < 12) {
-                greeting = "Good Morning, ${user}!";
+                greeting = "Good Morning, ${user}";
             } else if (hour >= 12 && hour < 18) {
-                greeting = "Good Afternoon, ${user}!";
+                greeting = "Good Afternoon, ${user}";
             } else {
-                greeting = "Good Evening, ${user}!";
+                greeting = "Good Evening, ${user}";
             }
 
             document.getElementById("greeting").innerHTML = greeting;
@@ -106,7 +105,7 @@
         @keyframes fadeInTransactionsHeader {
             from {
                 opacity: 0;
-                transform: translateY(-20px);
+                transform: translateY(20px);
             }
             to {
                 opacity: 0.7;
@@ -264,7 +263,7 @@
 
             /*Animation for the text "Recent Transactions" which appears simultaneously along with "Welcome" (4 second delay)*/
             opacity: 0;
-            animation: fadeInTransactionsHeader 7s ease-out forwards 2s;
+            animation: fadeInTransactionsHeader 3s ease-out forwards 2s;
         }
 
         #year {
@@ -636,12 +635,8 @@
         </div>
 
     <script>
-        document.getElementById("greeting").innerHTML = greeting;
-        
-        const morningGreeting = document.getElementById("greeting");
-        morningGreeting.innerHTML = `Good Morning, ${user}!`;
-        
-        
+        document.getElementById("date").innerHTML = monthheader;
+    
         // JavaScript to toggle dropdown visibility
         function toggleDropdown1() {
             var dropdownContent = document.getElementById("dropdown-content1");
