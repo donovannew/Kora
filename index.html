@@ -26,19 +26,20 @@
                 "July", "August", "September",
                 "October", "November", "December"];
 
-            const monthheader = ["AllMonths[month] ${year}"];
+            const monthheader = `${AllMonths[month]} ${year}`;
             
             var greeting;
 
             if (hour >= 0 && hour < 12) {
-                greeting = "Good Morning, ${user}";
+                greeting = 'Good Morning, ${user}';
             } else if (hour >= 12 && hour < 18) {
-                greeting = "Good Afternoon, ${user}";
+                greeting = 'Good Afternoon, ${user}';
             } else {
-                greeting = "Good Evening, ${user}";
+                greeting = 'Good Evening, ${user}';
             }
 
             document.getElementById("greeting").innerHTML = greeting;
+            document.getElementById("date").innerHTML = monthheader;
         };
     </script>
     
@@ -635,8 +636,7 @@
         </div>
 
     <script>
-        document.getElementById("date").innerHTML = monthheader;
-    
+        
         // JavaScript to toggle dropdown visibility
         function toggleDropdown1() {
             var dropdownContent = document.getElementById("dropdown-content1");
