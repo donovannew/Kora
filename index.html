@@ -10,15 +10,17 @@
     <link rel="apple-touch-icon" sizes="180x180" href="kora_logo.png">
    
     <script>
-        const Names = ["Kathleen"];
-        const user = Names[0];
-        
-        window.onload = function() {
+         window.onload = function() {
+            const usernumber = 0;
+            const Names = ['Kathleen'];
+            var user = Names[usernumber];
+
             var date = new Date();
-            var minute = date.getMinute();
+            var minute = date.getMinutes();
             var hour = date.getHours();
+            var day = date.getDate();
             var month = date.getMonth();
-            var year = date.getYear();
+            var year = date.getFullYear();
             
             const AllMonths = [
                 "January", "February", "March",
@@ -26,16 +28,16 @@
                 "July", "August", "September",
                 "October", "November", "December"];
 
-            const monthheader = `${AllMonths[month]} ${year}`;
+            const monthheader = `${AllMonths[month]} ${day}, ${year}`;
             
             var greeting;
 
             if (hour >= 0 && hour < 12) {
-                greeting = 'Good Morning, ${user}';
+                greeting = `Good Morning, ${user}`;
             } else if (hour >= 12 && hour < 18) {
-                greeting = 'Good Afternoon, ${user}';
+                greeting = `Good Afternoon, ${user}`;
             } else {
-                greeting = 'Good Evening, ${user}';
+                greeting = `Good Evening, ${user}`;
             }
 
             document.getElementById("greeting").innerHTML = greeting;
@@ -264,7 +266,7 @@
 
             /*Animation for the text "Recent Transactions" which appears simultaneously along with "Welcome" (4 second delay)*/
             opacity: 0;
-            animation: fadeInTransactionsHeader 3s ease-out forwards 2s;
+            animation: fadeInTransactionsHeader 7s ease-out forwards 4s;
         }
 
         #year {
@@ -636,7 +638,6 @@
         </div>
 
     <script>
-        
         // JavaScript to toggle dropdown visibility
         function toggleDropdown1() {
             var dropdownContent = document.getElementById("dropdown-content1");
