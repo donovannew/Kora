@@ -95,6 +95,18 @@
             }
         }
 
+        /*Refer to this "FadeInLine" to add a FadeIn on an expanding horizontal line.*/
+        @keyframes fadeInLine2 {
+            from {
+                opacity: 0;
+                transform: scaleX(80%);
+            }
+            to {
+                opacity: 0.5;
+                transform: scaleX(90%);
+            }
+        }
+
         /*Refer to this "LineExpansion" to extend the line further ending with 100%->80% opacity.*/
         @keyframes LineExpansion {
             from {
@@ -102,7 +114,7 @@
                 transform: scaleX(90%);
             }
             to {
-                opacity: 0.9;
+                opacity: 0.4;
                 transform: scaleX(100%);
             }
         }
@@ -266,7 +278,7 @@
 
         /* Custom line styling (FadeIn) */
         #balance-line {
-            border-top: 1.6px solid white;
+            border-top: 0.9px solid white;
             width: 222px; /* Adjust the width as needed */
             position: absolute;
             margin: -11px auto;
