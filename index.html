@@ -217,8 +217,8 @@
             /*Adjusts distance from left margin to remaining balance*/
             /*previously 55px @ $100 balance*/
             /*previously 74px @ [2-digit] balance*/
-            margin-left: 69px;
-            margin-top: 94px;
+            margin-left: 63px;
+            margin-top: 93px;
             line-height: 1;
             position: absolute;
             padding: 7px;
@@ -266,10 +266,10 @@
         /*Cent amount of remaining balance, just for fun*/
         #cents {
             font-size: 9px;
-            margin-top: -122px;
+            margin-top: -123px;
             /*Adjusts distance from left margin to cents amount*/
             /*100-200px for .00 cents*/
-            margin-left: 188px; 
+            margin-left: 187px; 
 
             opacity: 0;
             animation: fadeIn 6s ease-out forwards 0.5s;
@@ -520,6 +520,63 @@
             line-height: 18px;
         }
 
+         /* BUTTON #4 */
+        .dropdown4 button {
+            background-color: transparent;
+            color: dark gray;
+            padding:0px 151px;
+            scale: 100% 75%;
+            font-size: 16px;
+            font-family: "Zapfino", cursive, sans-serif;
+            border: 1px solid white;
+            border-radius: 20px;
+            margin-top: -8px;
+            padding-top: 10px;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
+            left: 0;
+
+            /*1 second FadeIn animation for the button labeled "March" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 1s ease-out forwards 3.6s;
+        
+        }
+        
+        .dropdown4 button::after {
+            content: "⌄"; /* Unicode for downward arrow */
+            position: absolute;
+            right: 10px;
+            top: 48%;
+            transform: translateY(-50%);
+
+            /*1 second FadeIn animation for the button labeled "March" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 1s ease-out forwards 3.6s;
+            
+        }
+
+        .dropdown-content4 {
+            display: none;
+            position: relative;
+            background-color: black;
+            font-size: 12px;
+            margin-top: 1px;
+        }
+
+        .dropdown-content4 p {
+            color: dark gray;
+            padding: 12px;
+            position: relative;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            margin: 0;
+            text-underline-offset: 5px;
+            line-height: 18px;
+        }
+
+        /*KORA APP COMING SOON!!*/
         #coming-soon {
             font-size: 20px;
             opacity: 80%;
@@ -707,6 +764,18 @@
             <p>Total: $138.98 / $150.00 (92%) 🤤🫰🏽🧧</p>
         </div>
 
+    <!--DROPDOWN MENU #4 -->
+    <div class="dropdown4">
+    
+        <button onclick="toggleDropdown4()">April</button>
+
+        <div class="dropdown-content4" id="dropdown-content2">
+            <p><u>Monday, Apr. 1st</u></p>
+            <p>Monthly Allowance . . . . . . . . +$100.00</p>
+            <hr>
+            <p>Total: $0 / $100 (0%) 💰</p>
+        </div>
+        
     <script>
         // JavaScript to toggle dropdown visibility
         function toggleDropdown1() {
