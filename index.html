@@ -212,13 +212,13 @@
 
         /*Styling for the subtitle for the remaining balance with text saying "Remaining Love Credits"*/
         #remaining-allowance {
-            font-size: 10.5px;
+            font-size: 9px;
             text-align: left;
             /*Adjusts distance from left margin to remaining balance*/
             /*previously 55px @ $100 balance*/
             /*previously 74px @ [2-digit] balance*/
-            margin-left: 63px;
-            margin-top: 93px;
+            margin-left: 69px;
+            margin-top: 92px;
             line-height: 1;
             position: absolute;
             padding: 7px;
@@ -283,7 +283,7 @@
             position: absolute;
             margin: -11px auto;
             margin-top: 88px;
-            margin-left: 69px;
+            margin-left: 77px;
             opacity: 0;
             animation: fadeInLine2 6s ease-out forwards 0.5s;
         }
@@ -364,7 +364,7 @@
             position: relative;
             margin-top: -8px;
             text-align: left;
-            left: 0;
+            left: 0px;
 
             /*1 second FadeIn animation for the button labeled "January" which appears 0.2 sec after the column title "2024" (5.2 second delay)*/
             opacity: 0;
@@ -422,7 +422,7 @@
             cursor: pointer;
             position: relative;
             text-align: left;
-            left: 0;
+            left: 0px;
 
             /*1 second FadeIn animation for the button labeled "February" which appears 0.2 sec previous button (5.4 second delay)*/
             opacity: 0;
@@ -479,7 +479,7 @@
             cursor: pointer;
             position: relative;
             text-align: left;
-            left: 0;
+            left: 0px;
 
             /*1 second FadeIn animation for the button labeled "March" which appears 0.2 sec previous button (5.6 second delay)*/
             opacity: 0;
@@ -524,22 +524,22 @@
         .dropdown4 button {
             background-color: transparent;
             color: white;
-            padding:0px 151px;
-            scale: 100% 80%;
+            padding:0px 157px;
+            scale: 100% 75%;
             font-size: 16px;
             font-family: "Zapfino", cursive, sans-serif;
             border: 1px solid white;
             border-radius: 20px;
-            margin-top: -8px;
+            margin-top: -16px;
             padding-top: 10px;
             cursor: pointer;
             position: relative;
             text-align: left;
-            left: 0;
+            left: 0px;
 
             /*1 second FadeIn animation for the button labeled "March" which appears 0.2 sec previous button (5.6 second delay)*/
             opacity: 0;
-            animation: fadeInTransactions 1s ease-out forwards 3.6s;
+            animation: fadeInTransactions 1s ease-out forwards 3.8s;
         
         }
         
@@ -552,7 +552,7 @@
 
             /*1 second FadeIn animation for the button labeled "March" which appears 0.2 sec previous button (5.6 second delay)*/
             opacity: 0;
-            animation: fadeInTransactions 1s ease-out forwards 3.6s;
+            animation: fadeInTransactions 1s ease-out forwards 3.8s;
             
         }
 
@@ -565,7 +565,7 @@
         }
 
         .dropdown-content4 p {
-            color: grey;
+            color: white;
             padding: 12px;
             position: relative;
             text-decoration: none;
@@ -773,7 +773,7 @@
             <p><u>Monday, Apr. 1st</u></p>
             <p>Monthly Allowance . . . . . . . . +$100.00</p>
             <hr>
-            <p>Total: $0 / $100 (0%) 💰</p>
+            <p>Total: $0 / $100 (0%) 💰🤑</p>
         </div>
         
     <script>
@@ -788,6 +788,10 @@
         }
         function toggleDropdown3() {
             var dropdownContent = document.getElementById("dropdown-content3");
+            dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+        }
+        function toggleDropdown4() {
+            var dropdownContent = document.getElementById("dropdown-content4");
             dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
         }
     </script>
