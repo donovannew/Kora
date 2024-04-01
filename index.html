@@ -104,7 +104,7 @@
             }
             to {
                 opacity: 0.5;
-                transform: scaleX(90%);
+                transform: scaleX(95%);
             }
         }
 
@@ -124,11 +124,11 @@
         @keyframes LineExpansion {
             from {
                 opacity: 0.5;
-                transform: scaleX(90%);
+                transform: scaleX(95%);
             }
             to {
                 opacity: 0.4;
-                transform: scaleX(108%);
+                transform: scaleX(111%);
             }
         }
 
@@ -170,7 +170,7 @@
             font-size: 9.7px;
             text-align: left;
             /* Previously 66.5% (end of March) */
-            margin-left: 69%;
+            margin-left: 72%;
             margin-top: 24.7px;
             padding: 2px;
             position: fixed;
@@ -197,14 +197,14 @@
         .container {
             width: 100%;
             text-align: center;
-            margin-top: 130px;
+            margin-top: 133px;
             position: relative;
             
         }
 
         /*"Welcome, [User's name]" appearing header & many other greetings*/
         #greeting {
-            margin-left: 0px;
+            margin-left: -20px;
             font-size: 14px;
 
             /* Applies animation to "Welcome [User's name]" text when page loads. Starts @ 4 seconds, ends @ 7 seconds */
@@ -217,7 +217,8 @@
         .custom-line {
             border-top: 0.1px solid white;
             width: 212px; /* Adjust the width as needed */
-            margin: -11px auto;
+            margin-top: -9.6px;
+            margin-left: 116px;
             
             opacity: 0;
             animation: fadeInLine 5s ease-out forwards 3s, LineExpansion 5s ease-out forwards 8s; /* Keyframe animation */
