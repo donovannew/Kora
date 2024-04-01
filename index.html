@@ -4,34 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
     <title>Kora</title>
-    <!-- Favicon link -->
+    
+    <!-- Favicon link (photo on the browser tab) -->
     <link rel="icon" href="kora_logo.ico" type="image/x-icon">
     <!-- Apple touch icon for iPhone home screen -->
     <link rel="apple-touch-icon" sizes="180x180" href="kora_logo.png">
-   
+    
+    <!-- JavaScript in the header section-->
     <script>
         window.onload = function() {
             // *Add browser alert message here*
             // window.alert("Weeeee! $18.89 has been added to your Kora account balance! 🤑 Happy Friday -D♡");
+
+            // Set user number to the corresponding number in the following array named "Names". The 1st user is #0.
             const usernumber = 0;
+
+            // Array containing all of the users' names.
             const Names = ['Kathleen'];
+
+            // Variable set to define a string of text, that being the user's name contained in the array above.
             var user = Names[usernumber];
 
+            // Variables set to define the user's current date/time upon loading the webpage
             var date = new Date();
             var minute = date.getMinutes();
             var hour = date.getHours();
             var day = date.getDate();
             var month = date.getMonth();
             var year = date.getFullYear();
-            
+
+            // Array defining every month of the year. Used for the date in the header.
             const AllMonths = [
                 "January", "February", "March",
                 "April", "May", "June",
                 "July", "August", "September",
                 "October", "November", "December"];
 
+            // Defines the date format for the webpage's header
             const monthheader = `${AllMonths[month]} ${day}, ${year}`;
-            
+
+            // Defines a greeting message that changes based on the time of day
             var greeting;
 
             if (hour >= 0 && hour < 12) {
@@ -42,6 +54,7 @@
                 greeting = `Good Evening, ${user}`;
             }
 
+            // Redirects the div ID contained in getElementById to another ID defined in the javascript
             document.getElementById("greeting").innerHTML = greeting;
             document.getElementById("date").innerHTML = monthheader;
         };
@@ -103,7 +116,7 @@
             }
             to {
                 opacity: 0.5;
-                transform: scaleX(88%);
+                transform: scaleX(100%);
             }
         }
 
@@ -212,12 +225,12 @@
 
         /*Styling for the subtitle for the remaining balance with text saying "Remaining Love Credits"*/
         #remaining-allowance {
-            font-size: 9px;
+            font-size: 8.8px;
             text-align: left;
             /*Adjusts distance from left margin to remaining balance*/
             /*previously 55px @ $100 balance*/
             /*previously 74px @ [2-digit] balance*/
-            margin-left: 62px;
+            margin-left: 69px;
             margin-top: 92px;
             line-height: 1;
             position: absolute;
@@ -265,11 +278,11 @@
 
         /*Cent amount of remaining balance, just for fun*/
         #cents {
-            font-size: 9px;
-            margin-top: -123px;
+            font-size: 8.8px;
+            margin-top: -124px;
             /*Adjusts distance from left margin to cents amount*/
             /*100-200px for .00 cents*/
-            margin-left: 187px; 
+            margin-left: 245px; 
 
             opacity: 0;
             animation: fadeIn 6s ease-out forwards 0.5s;
@@ -283,7 +296,8 @@
             position: absolute;
             margin: -11px auto;
             margin-top: 88px;
-            margin-left: 69px;
+            /* previously 69px*/
+            margin-left: 77px;
             opacity: 0;
             animation: fadeInLine2 7s ease-out forwards 0.5s;
         }
@@ -678,7 +692,7 @@
 
     <div class="balance">
         <p id="dollar-sign">$</p>
-        <p id="dollars">11</p>
+        <p id="dollars">111</p>
         <p id="cents">.02</p>
     </div>
     
