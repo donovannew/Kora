@@ -251,7 +251,7 @@
             /*47px for $100*/
             /*60-69px for 2 digits*/
             /*96-101px for 1 digit*/
-            margin-left: 100px; 
+            margin-left: 47px; 
             line-height: 1;
 
         }
@@ -284,7 +284,7 @@
             margin-top: -127px;
             /*Adjusts distance from left margin to cents amount*/
             /*100-200px for .00 cents*/
-            margin-left: 154px; 
+            margin-left: 313px; 
 
             opacity: 0;
             animation: fadeIn 6s ease-out forwards 0.5s;
@@ -294,7 +294,7 @@
         /* Custom line styling (FadeIn) */
         #balance-line {
             border-top: 0.4px solid white;
-            width: 212px; /* Adjust the width as needed. 222 for 2-3 digits. */
+            width: 232px; /* Adjust the width as needed. 222 for 2-3 digits. */
             position: absolute;
             margin: -11px auto;
             margin-top: 94px;
@@ -308,7 +308,7 @@
          /*Syling for the text "Transaction History" located at the bottom-center of the home screen*/
         #recent-transactions {
             font-size: 14px;
-            margin-top: 280px;
+            margin-top: 282px;
             text-align: left;
             margin-left: 94px;
             padding: 7px;
@@ -427,7 +427,7 @@
         .dropdown2 button {
             background-color: transparent;
             color: white;
-            padding:0px 146px;
+            padding:0px 146.2px;
             scale: 100% 82%;
             font-size: 16px;
             font-family: "Zapfino", cursive, sans-serif;
@@ -484,7 +484,7 @@
         .dropdown3 button {
             background-color: transparent;
             color: white;
-            padding:0px 151px;
+            padding:0px 151.5px;
             scale: 100% 75%;
             font-size: 16px;
             font-family: "Zapfino", cursive, sans-serif;
@@ -540,7 +540,7 @@
         .dropdown4 button {
             background-color: transparent;
             color: white;
-            padding:0px 157px;
+            padding:0px 158px;
             scale: 100% 75%;
             font-size: 16px;
             font-family: "Zapfino", cursive, sans-serif;
@@ -591,6 +591,63 @@
             text-underline-offset: 5px;
             line-height: 18px;
         }
+
+        /* BUTTON #5 */
+        .dropdown5 button {
+            background-color: transparent;
+            color: white;
+            padding:0px 160px;
+            scale: 100% 75%;
+            font-size: 16px;
+            font-family: "Zapfino", cursive, sans-serif;
+            border: 1px solid white;
+            border-radius: 20px;
+            margin-top: -16px;
+            padding-top: 10px;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
+            left: 0px;
+
+            /*1 second FadeIn animation for the button labeled "March" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 1s ease-out forwards 4.0s;
+        
+        }
+        
+        .dropdown5 button::after {
+            content: "⌄"; /* Unicode for downward arrow */
+            position: absolute;
+            right: 10px;
+            top: 48%;
+            transform: translateY(-50%);
+
+            /*1 second FadeIn animation for the button labeled "March" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 1s ease-out forwards 4.0s;
+            
+        }
+
+        .dropdown-content5 {
+            display: none;
+            position: relative;
+            background-color: black;
+            font-size: 12px;
+            margin-top: 1px;
+        }
+
+        .dropdown-content5 p {
+            color: white;
+            padding: 12px;
+            position: relative;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            margin: 0;
+            text-underline-offset: 5px;
+            line-height: 18px;
+        }
+
 
         /*KORA APP COMING SOON!!*/
         #coming-soon {
@@ -694,7 +751,7 @@
 
     <div class="balance">
         <p id="dollar-sign">$</p>
-        <p id="dollars">6</p>
+        <p id="dollars">106</p>
         <p id="cents">.70</p>
     </div>
     
@@ -787,26 +844,39 @@
 
         <div class="dropdown-content4" id="dropdown-content4">
             <p><u>Monday, Apr. 1st</u></p>
-            <p>Unused Credits [Transfer] . . . . . +$11.02</p>
-            <p>Monthly Allowance . . . . . . . . +$100.00</p>
+            <p>Unused Credits [Transfer] . . . . . . +$11.02</p>
+            <p>Monthly Allowance . . . . . . . . . +$100.00</p>
             <p><u>Thursday, Apr. 4th</u></p>
-            <p>Uber/Postmates . . . . . . . . . . . . $33.10</p>
+            <p>Uber/Postmates . . . . . . . . . . . . . $33.10</p>
             <p><u>Saturday, Apr. 6th</u></p>
-            <p>Uber/Postmates . . . . . . . . . . . . $27.30</p>
-            <p>Uber/Postmates . . . . . . . . . . . . $21.37</p>
+            <p>Uber/Postmates . . . . . . . . . . . . . $27.30</p>
+            <p>Uber/Postmates . . . . . . . . . . . . . $21.37</p>
             <p><u>Saturday, Apr. 13th</u></p>
-            <p>You're Extraordinary . . . . . . . . . +$20.75</p>
-            <p>Uber/Postmates . . . . . . . . . . . . $27.30</p>
+            <p>You're Extraordinary . . . . . . . . . . +$20.75</p>
+            <p>Uber/Postmates . . . . . . . . . . . . . $27.30</p>
             <p><u>Sunday, Apr. 14th</u></p>
-            <p>Uber/Postmates . . . . . . . . . . . . $37.16</p>
+            <p>Uber/Postmates . . . . . . . . . . . . . $37.16</p>
             <p>Negative Balance Reset  . . . . . . . +$14.46</p>
             <p><u>Friday, Apr. 26th</u></p>
-            <p>I Require Nothing Of You . . . . . +$20.00</p>
+            <p>I Require Nothing Of You . . . . . . +$20.00</p>
             <p>I Only Want The Best For You . . +$30.00</p>
             <p><u>Sunday, Apr. 28th</u></p>
             <p>Organico 🌱 . . . . . . . . . . . . . . $43.30</p>
             <hr>
-            <p>Total: $189.53 / $196.23 (97%) 😛</p>
+            <p>Total: $189.53 / $196.23 (97%) 🤑</p>
+        </div>
+
+    <!--DROPDOWN MENU #5 -->
+    <div class="dropdown5">
+    
+        <button onclick="toggleDropdown5()">May</button>
+
+        <div class="dropdown-content5" id="dropdown-content5">
+            <p><u>Wednesday, May 1st</u></p>
+            <p>Unused Credits [Transfer] . . . . . . . +$6.70</p>
+            <p>Monthly Allowance . . . . . . . . . +$100.00</p>
+            <hr>
+            <p>Total: $0 / $106.70 (0%) 🦧</p>
         </div>
         
     <script>
@@ -825,6 +895,10 @@
         }
         function toggleDropdown4() {
             var dropdownContent = document.getElementById("dropdown-content4");
+            dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+        }
+        function toggleDropdown5() {
+            var dropdownContent = document.getElementById("dropdown-content5");
             dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
         }
     </script>
