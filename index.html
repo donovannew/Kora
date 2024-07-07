@@ -252,7 +252,7 @@
             /*27-47px for $100*/
             /*60-69px for 2 digits*/
             /*96-101px for 1 digit*/
-            margin-left: 99px; 
+            margin-left: 60px; 
             line-height: 1;
 
         }
@@ -283,10 +283,10 @@
         /*2nd ADJUSTMENT FOR NEW BALANCES*/
         #cents {
             font-size: 8.8px;
-            margin-top: -123px;
+            margin-top: -118px;
             /*Adjusts distance from left margin to cents amount*/
             /*100-200px for .00 cents*/
-            margin-left: 135px;
+            margin-left: 275px;
 
             opacity: 0;
             animation: fadeIn 6s ease-out forwards 0.5s;
@@ -706,6 +706,62 @@
             line-height: 18px;
         }
 
+          /* BUTTON #7 */
+          .dropdown7 button {
+            background-color: transparent;
+            color: white;
+            padding:0px 164px;
+            scale: 100% 75%;
+            font-size: 16px;
+            font-family: "Zapfino", cursive, sans-serif;
+            border: 1px solid white;
+            border-radius: 20px;
+            margin-top: -16px;
+            padding-top: 10px;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
+            left: 0px;
+
+            /*1 second FadeIn animation for the button labeled "March" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 1s ease-out forwards 4.0s;
+        
+        }
+        
+        .dropdown7 button::after {
+            content: "⌄"; /* Unicode for downward arrow */
+            position: absolute;
+            right: 10px;
+            top: 48%;
+            transform: translateY(-50%);
+
+            /*1 second FadeIn animation for the button labeled "March" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 1s ease-out forwards 4.0s;
+            
+        }
+
+        .dropdown-content7 {
+            display: none;
+            position: relative;
+            background-color: black;
+            font-size: 12px;
+            margin-top: 1px;
+        }
+
+        .dropdown-content7 p {
+            color: white;
+            padding: 12px;
+            position: relative;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            margin: 0;
+            text-underline-offset: 5px;
+            line-height: 18px;
+        }
+
         /*KORA APP COMING SOON!!*/
         #coming-soon {
             font-size: 20px;
@@ -808,7 +864,7 @@
 
     <div class="balance">
         <p id="dollar-sign">$</p>
-        <p id="dollars">0</p>
+        <p id="dollars">100</p>
         <p id="cents">.00</p>
     </div>
     
@@ -967,6 +1023,18 @@
             <hr>
             <p>Total: $234.39 / $200.00 (100%) 🤤💸</p>
         </div>
+
+        <!--DROPDOWN MENU #7 -->
+    <div class="dropdown7">
+    
+        <button onclick="toggleDropdown7()">July</button>
+
+        <div class="dropdown-content7" id="dropdown-content7">
+            <p><u>Sunday, July 7th</u></p>
+            <p>Monthly Allowance . . . . . . (+)$100.00</p>
+            <hr>
+            <p>Total: $0 / $100.00 (0%) 🔫</p>
+        </div>
         
     <script>
         // JavaScript to toggle dropdown visibility
@@ -994,7 +1062,12 @@
             var dropdownContent = document.getElementById("dropdown-content6");
             dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
         }
+        function toggleDropdown7() {
+            var dropdownContent = document.getElementById("dropdown-content7");
+            dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+        }
     </script>
+
 
     <div id="coming-soon">Coming Soon...</div>
 
