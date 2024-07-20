@@ -116,7 +116,7 @@
             }
             to {
                 opacity: 0.4;
-                transform: scaleX(108%);
+                transform: scaleX(100%);
             }
         }
 
@@ -227,13 +227,13 @@
 
         /*Styling for the subtitle for the remaining balance with text saying "Remaining Love Credits"*/
         #remaining-allowance {
-            font-size: 8.8px;
+            font-size: 8.6px;
             text-align: left;
             /*Adjusts distance from left margin to remaining balance*/
-            /*previously 55px @ $100 balance*/
+            /*previously 47px @ $100 balance*/
             /*previously 74px @ [2-digit] balance*/
-            margin-left: 47px;
-            margin-top: 97px;
+            margin-left: 54px;
+            margin-top: 96px;
             line-height: 1;
             position: absolute;
             padding: 7px;
@@ -252,7 +252,7 @@
             /*27-47px for $100*/
             /*60-69px for 2 digits*/
             /*96-101px for 1 digit*/
-            margin-left: 27px; 
+            margin-left: 77px; 
             line-height: 1;
 
         }
@@ -283,11 +283,14 @@
         /*2nd ADJUSTMENT FOR NEW BALANCES*/
         #cents {
             font-size: 8.8px;
-            margin-top: -114px;
+            /*-114px for $100.00*/
+            /*-123px for $91.XX*/
+            margin-top: -123px;
             /*Adjusts distance from left margin to cents amount*/
+            /*282px for $100.00*/
+             /*-193px for $91*/
             /*100-200px for .00 cents*/
-            margin-left: 282px;
-
+            margin-left: 193px;
             opacity: 0;
             animation: fadeIn 6s ease-out forwards 0.5s;
 
@@ -864,8 +867,8 @@
 
     <div class="balance">
         <p id="dollar-sign">$</p>
-        <p id="dollars">100</p>
-        <p id="cents">.00</p>
+        <p id="dollars">91</p>
+        <p id="cents">.16</p>
     </div>
     
     <div id="balance-line"></div>
@@ -1021,7 +1024,7 @@
             <p>Uber/Postmates . . . . . . . . . . . . $21.00</p>
             <p>Uber/Postmates . . . . . . . . . . . . $32.22</p>
             <hr>
-            <p>Total: $234.39 / $200.00 (100%) 🤤💸</p>
+            <p>Total: $234.39 / $200.00 (100%) 🤑</p>
         </div>
 
         <!--DROPDOWN MENU #7 -->
@@ -1032,8 +1035,10 @@
         <div class="dropdown-content7" id="dropdown-content7">
             <p><u>Sunday, July 7th</u></p>
             <p>Monthly Allowance . . . . . . (+)$100.00</p>
+            <p><u>Wednesday, July 17th</u></p>
+            <p>In-N-Out . . . . . . . . . . . . . . . . $8.84</p>
             <hr>
-            <p>Total: $0 / $100.00 (0%) 🔫</p>
+            <p>Total: $8.84 / $100.00 (8.8%) 💋</p>
         </div>
         
     <script>
