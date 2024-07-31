@@ -765,6 +765,62 @@
             line-height: 18px;
         }
 
+        /* BUTTON #8 */
+          .dropdown8 button {
+            background-color: transparent;
+            color: white;
+            padding:0px 164px;
+            scale: 100% 75%;
+            font-size: 16px;
+            font-family: "Zapfino", cursive, sans-serif;
+            border: 1px solid white;
+            border-radius: 20px;
+            margin-top: -16px;
+            padding-top: 10px;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
+            left: 0px;
+
+            /*1 second FadeIn animation for the button labeled "March" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 1s ease-out forwards 4.4s;
+        
+        }
+        
+        .dropdown8 button::after {
+            content: "⌄"; /* Unicode for downward arrow */
+            position: absolute;
+            right: 10px;
+            top: 48%;
+            transform: translateY(-50%);
+
+            /*1 second FadeIn animation for the button labeled "March" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 1s ease-out forwards 4.4s;
+            
+        }
+
+        .dropdown-content8 {
+            display: none;
+            position: relative;
+            background-color: black;
+            font-size: 12px;
+            margin-top: 1px;
+        }
+
+        .dropdown-content8 p {
+            color: white;
+            padding: 12px;
+            position: relative;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            margin: 0;
+            text-underline-offset: 5px;
+            line-height: 18px;
+        }
+
         /*KORA APP COMING SOON!!*/
         #coming-soon {
             font-size: 20px;
