@@ -152,6 +152,19 @@
             }
         }
 
+        /*Emoji Pop-up Animation*/
+        .emoji {
+            position: absolute;
+            font-size: 2rem;
+            pointer-events: none;
+            animation: pop 5s infinite;
+        }
+        @keyframes pop {
+            0% { opacity: 0; transform: translateY(100vh); }
+            25% { opacity: 1; }
+            75% { opacity: 1; }
+            100% { opacity: 0; transform: translateY(-100vh); }
+
         /*Header element "Kora" */
         #header {
             font-size: 23px;
@@ -912,6 +925,7 @@
     </style>
 </head>
 <body>
+    <div id="emoji-container"></div>
     <div id="header">Kora</div>
 
     <div id="date"></div>
@@ -1117,6 +1131,32 @@
         </div>
         
     <script>
+        // JavaScript to add randomly generated emojis around the screen
+        const emojis = ["😊", "😂", "❤️", "🌟", "👍"];
+        const fontSize = "2rem";  // Change font size here
+        const timeInterval = 1000;  // Change interval here in milliseconds
+        const density = 10;  // Number of emojis appearing each time
+
+        function createEmoji() {
+            const emoji = document.createElement("div");
+            emoji.className = "emoji";
+            emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+            emoji.style.fontSize = fontSize;
+            emoji.style.left = Math.random() * 100 + "vw";
+            emoji.style.top = Math.random() * 100 + "vh";
+            document.getElementById("emoji-container").appendChild(emoji);
+
+            setTimeout(() => {
+                emoji.remove();
+            }, 5000);
+        }
+
+        setInterval(() => {
+            for (let i = 0; i < density; i++) {
+                createEmoji();
+            }
+        }, timeInterval);
+        
         // JavaScript to toggle dropdown visibility
         function toggleDropdown1() {
             var dropdownContent = document.getElementById("dropdown-content1");
