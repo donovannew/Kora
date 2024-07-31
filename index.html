@@ -64,14 +64,14 @@
         /* Applies emoji animations*/
         body {
             margin: 0;
-            overflow: hidden;
+            overflow: auto; /* Enable scrolling */
         }
         .emoji {
             position: absolute;
-            font-size: 2rem;
+            font-size: 1rem;
             pointer-events: none;
             opacity: 0;
-            animation: pop 2s forwards;
+            animation: pop 3s forwards;
         }
         @keyframes pop {
             0% { opacity: 0; }
@@ -1139,23 +1139,21 @@
     <script>
         // JavaScript to add randomly generated emojis around the screen
         const emoji = "💋";  // Change this to the emoji you want
-        const fontSize = "2rem";  // Change font size here
-        const timeInterval = 2000;  // Interval for emoji appearance
-        const density = 10;  // Number of emojis to appear at once
-
+        const fontSize = "1rem";  // Change font size here
+        const timeInterval = 1000;  // Interval for emoji appearance
+    
         function createEmoji() {
-            for (let i = 0; i < density; i++) {
-                const emojiElement = document.createElement("div");
-                emojiElement.className = "emoji";
-                emojiElement.textContent = emoji;
-                emojiElement.style.fontSize = fontSize;
-                emojiElement.style.left = Math.random() * 100 + "vw";
-                emojiElement.style.top = Math.random() * 100 + "vh";
-                document.getElementById("emoji-container").appendChild(emojiElement);
+            const emojiElement = document.createElement("div");
+            emojiElement.className = "emoji";
+            emojiElement.textContent = emoji;
+            emojiElement.style.fontSize = fontSize;
+            emojiElement.style.left = Math.random() * 100 + "vw";
+            emojiElement.style.top = Math.random() * 100 + "vh";
+            document.getElementById("emoji-container").appendChild(emojiElement);
 
-                setTimeout(() => {
-                    emojiElement.remove();
-                }, 2000);  // Remove emoji after 2 seconds
+            setTimeout(() => {
+                emojiElement.remove();
+                }, 3000);  // Remove emoji after 3 seconds
             }
         }
 
