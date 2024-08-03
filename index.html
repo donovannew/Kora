@@ -68,14 +68,15 @@
         }
         .emoji {
             position: absolute;
-            font-size: 3rem;
+            font-size: 2.5rem;
             pointer-events: none;
             opacity: 0;
-            animation: pop 3s forwards;
+            animation: pop 4.7s forwards;
         }
         @keyframes pop {
             0% { opacity: 0; }
-            50% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+            75% { opacity: 0.25; }
             100% { opacity: 0; }
         }
 
@@ -342,7 +343,7 @@
         }
 
         #two-lines-left {
-            border-top: 1px solid white;
+            border-top: 0.7px solid white;
             width: 85px; /* Adjust the width as needed */
             margin: -11px auto;
             text-align: left;
@@ -355,7 +356,7 @@
         }
 
         #two-lines-right {
-            border-top: 1px solid white;
+            border-top: 0.7px solid white;
             width: 85px; /* Adjust the width as needed */
             margin: -11px auto;
             text-align: left;
@@ -1139,8 +1140,8 @@
     <script>
         // JavaScript to add randomly generated emojis around the screen
         const emoji = "✨";  // Change this to the emoji you want
-        const fontSize = "3rem";  // Change font size here
-        const timeInterval = 1000;  // Interval for emoji appearance
+        const fontSize = "2.5rem";  // Change font size here
+        const timeInterval = 777;  // Interval for emoji appearance
     
         function createEmoji() {
             const emojiElement = document.createElement("div");
@@ -1153,7 +1154,7 @@
 
             setTimeout(() => {
                 emojiElement.remove();
-                }, 3000);  // Remove emoji after 3 seconds
+                }, 4700);  // Remove emoji after 3 seconds
             }
 
         setInterval(() => {
