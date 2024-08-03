@@ -68,15 +68,14 @@
         }
         .emoji {
             position: absolute;
-            font-size: 2.5rem;
+            font-size: 1.2rem;
             pointer-events: none;
             opacity: 0;
             animation: pop 3s forwards;
         }
         @keyframes pop {
             0% { opacity: 0; }
-            25% { opacity: 0.5; }
-            50% { opacity: 0.25; }
+            50% { opacity: 0.5; }
             100% { opacity: 0; }
         }
 
@@ -1140,8 +1139,8 @@
     <script>
         // JavaScript to add randomly generated emojis around the screen
         const emoji = "✨";  // Change this to the emoji you want
-        const fontSize = "2.5rem";  // Change font size here
-        const timeInterval = 833;  // Interval for emoji appearance
+        const fontSize = "1.2rem";  // Change font size here
+        const timeInterval = 1200;  // Interval for emoji appearance
     
         function createEmoji() {
             const emojiElement = document.createElement("div");
