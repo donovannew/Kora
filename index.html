@@ -1188,7 +1188,6 @@
                 }, 3600);  // Remove emoji after 3.6 seconds
             }
 
-        window.onload = function() {
             emojis.forEach(emoji => {
                 setTimeout(() => {
                     createEmoji(emoji);
@@ -1197,7 +1196,6 @@
                     }, emoji.interval);
                 }, emoji.interval);
             });
-        };
         
         // JavaScript to toggle dropdown visibility
         function toggleDropdown1() {
