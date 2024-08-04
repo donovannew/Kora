@@ -71,10 +71,10 @@
         .emoji {
             position: absolute;
             z-index: 2; 
-            font-size: 4rem;
+            font-size: 2.2rem;
             pointer-events: none;
             opacity: 0;
-            animation: pop 5s forwards;
+            animation: pop 3.6s forwards;
         }
         @keyframes pop {
             0% { opacity: 0; }
@@ -1150,8 +1150,8 @@
         
     <script>
         // JavaScript to add randomly generated emojis around the screen
-        const emoji = "✨";  // Change this to the emoji you want
-        const fontSize = "4.2rem";  // Change font size here
+        const emoji = "🌹";  // Change this to the emoji you want
+        const fontSize = "2.2rem";  // Change font size here
         const timeInterval = 1024;  // Interval for emoji appearance
     
         function createEmoji() {
@@ -1165,7 +1165,7 @@
 
             setTimeout(() => {
                 emojiElement.remove();
-                }, 4200);  // Remove emoji after 3 seconds
+                }, 3600);  // Remove emoji after 3 seconds
             }
 
         setInterval(() => {
