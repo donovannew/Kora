@@ -69,14 +69,14 @@
             position: absolute;
             z-index: 0;
             /*Maximum 3rem, minimum 1rem*/
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             pointer-events: none;
             opacity: 0;
             animation: pop 3.6s forwards;
         }
         @keyframes pop {
             0% { opacity: 0; }
-            50% { opacity: 0.69; }
+            50% { opacity: 0.77; }
             100% { opacity: 0; }
         }
 
@@ -1153,12 +1153,12 @@
     <script>
         // JavaScript to add randomly generated emojis around the screen
         const emoji = "💋";  // Change this to the emoji you want
-        const fontSize = "2.4rem";  // Change font size here
+        const fontSize = "2.2rem";  // Change font size here
 
         const emojis = [
             { emoji: "💋", interval: 1000 },
-            { emoji: "✨", interval: 2000 },
-            { emoji: "🍑", interval: 3000 }
+            { emoji: "✨", interval: 444 },
+            { emoji: "🍑", interval: 4444 }
         ];
     
         function createEmoji(emoji) {
@@ -1177,7 +1177,7 @@
 
             // Set a random rotation only for the "🎉" emoji
             if (emoji.emoji === "💋") {
-                const randomRotation = Math.random() * 90; // Random number between -30 and 30
+                const randomRotation = Math.random() * 88; // Random number between 0 and 88
                 emojiElement.style.transform = `rotate(${randomRotation}deg)`;
             }
 
