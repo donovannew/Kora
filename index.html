@@ -67,15 +67,15 @@
         
         .emoji {
             position: absolute;
-            z-index: 0; 
-            font-size: 2.2rem;
+            z-index: 1;
+            font-size: 3rem;
             pointer-events: none;
             opacity: 0;
-            animation: pop 3.3s forwards;
+            animation: pop 3.6s forwards;
         }
         @keyframes pop {
             0% { opacity: 0; }
-            50% { opacity: 1; }
+            50% { opacity: 0.69; }
             100% { opacity: 0; }
         }
 
@@ -179,7 +179,7 @@
             /* Applies animation to "Kora" header when page loads */
             opacity: 0;
             animation: fadeIn 9s ease-out forwards 2s;
-            z-index: 1;
+            z-index: 2;
 
         }
 
@@ -192,7 +192,7 @@
             margin-top: 24.7px;
             padding: 1px;
             position: fixed;
-            z-index: 1;
+            z-index: 2;
 
             /* Applies animation to the Month Year on the right side of the top header when the page loads */
             opacity: 0;
@@ -217,7 +217,7 @@
             text-align: center;
             margin-top: 100px;
             position: relative;
-            z-index: 1;
+            z-index: 2;
             
         }
 
@@ -225,7 +225,7 @@
         #greeting {
             margin-left: 0px;
             font-size: 14px;
-            z-index: 1;
+            z-index: 2;
 
             /* Applies animation to "Welcome [User's name]" text when page loads. Starts @ 4 seconds, ends @ 7 seconds */
             opacity: 0;
@@ -239,7 +239,7 @@
             width: 212px; /* Adjust the width as needed */
             margin-top: -12px;
             margin-left: 80px;
-            z-index: 1;
+            z-index: 2;
             
             opacity: 0;
             animation: fadeInLine 5s ease-out forwards 2s, LineExpansion 3s ease-out forwards 7s; /* Keyframe animation */
@@ -258,7 +258,7 @@
             line-height: 1;
             position: absolute;
             padding: 7px;
-            z-index: 1;
+            z-index: 2;
 
             opacity: 0;
             animation: fadeInRemainingBalanceSubheader 7s ease-out forwards 5s;
@@ -276,14 +276,14 @@
             /*96-101px for 1 digit*/
             margin-left: 27px;
             line-height: 1;
-            z-index: 1;
+            z-index: 2;
 
         }
 
         /*Dollar sign of remaining balance*/
         #dollar-sign {
             font-size: 47px;
-            z-index: 1;
+            z-index: 2;
 
             opacity: 0;
             animation: fadeIn 6s ease-out forwards 0.5s;
@@ -297,7 +297,7 @@
             /*Adjusts distance of dollar amount*/
             /*100-200px for .00 cents*/
             margin-left: 30px; 
-            z-index: 1;
+            z-index: 2;
 
             opacity: 0;
             animation: fadeIn 6s ease-out forwards 0.5s;
@@ -308,7 +308,7 @@
         /*2nd ADJUSTMENT FOR NEW BALANCES*/
         #cents {
             font-size: 8.8px;
-            z-index: 1;
+            z-index: 2;
             /*-114px for $100.00*/
             /*-123px for $91.XX*/
             margin-top: -121px;
@@ -332,7 +332,7 @@
             /* previously 69px*/
             margin-left: 67px;
             opacity: 0;
-            z-index: 1;
+            z-index: 2;
             animation: fadeInLine2 8s ease-out forwards 0.5s;
         }
 
@@ -344,6 +344,7 @@
             text-align: left;
             margin-left: 94px;
             padding: 7px;
+            z-index: 2;
 
             /*Animation for the text "Recent Transactions" which appears simultaneously along with "Welcome" (4 second delay)*/
             opacity: 0;
@@ -358,6 +359,7 @@
             margin-left: -97px;
             margin-top: -28px;
             position: absolute;
+            z-index: 2;
             
             opacity: 1;
 
@@ -371,6 +373,7 @@
             margin-left: 177px;
             margin-top: -28px;
             position: absolute;
+            z-index: 2;
             
             opacity: 1;
 
@@ -382,6 +385,7 @@
             text-align: left;
             margin-top: 20px;
             line-height: 2px;
+            z-index: 2;
 
             /*Animation for the current year label "2024" which appears 1 sec after "Welcome" (5 second delay)*/
             opacity: 0;
@@ -1148,7 +1152,7 @@
     <script>
         // JavaScript to add randomly generated emojis around the screen
         const emoji = "🍑";  // Change this to the emoji you want
-        const fontSize = "2.2rem";  // Change font size here
+        const fontSize = "3rem";  // Change font size here
         const timeInterval = 1500;  // Interval for emoji appearance
     
         function createEmoji() {
@@ -1162,7 +1166,7 @@
 
             setTimeout(() => {
                 emojiElement.remove();
-                }, 3300);  // Remove emoji after 3 seconds
+                }, 3600);  // Remove emoji after 3 seconds
             }
 
         setInterval(() => {
