@@ -1189,13 +1189,10 @@
             }
 
             emojis.forEach(emoji => {
-                setTimeout(() => {
-                    createEmoji(emoji);
-                    setInterval(() => {
-                        createEmoji(emoji);
-                    }, emoji.interval);
-                }, emoji.interval);
-            });
+            setInterval(() => {
+                createEmoji(emoji);
+            }, emoji.interval);
+        });
         
         // JavaScript to toggle dropdown visibility
         function toggleDropdown1() {
