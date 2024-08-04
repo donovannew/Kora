@@ -53,7 +53,7 @@
             } else if (hour >= 17 && hour < 22) {
                 greeting = `Good Evening, ${user}`; 
             } else {
-                greeting = `Good Night, ${user}`;
+                greeting = `Good Night, ${user}!`;
             }
 
             // Redirects the div ID contained in getElementById to another ID defined in the javascript
@@ -71,14 +71,14 @@
         .emoji {
             position: absolute;
             z-index: 2; 
-            font-size: 4.2rem;
+            font-size: 4rem;
             pointer-events: none;
             opacity: 0;
             animation: pop 5s forwards;
         }
         @keyframes pop {
             0% { opacity: 0; }
-            50% { opacity: 0.69; }
+            50% { opacity: 0.5; }
             100% { opacity: 0; }
         }
 
@@ -156,7 +156,7 @@
         @keyframes fadeInTransactionsHeader {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(25px);
             }
             to {
                 opacity: 0.7;
@@ -220,6 +220,7 @@
             text-align: center;
             margin-top: 100px;
             position: relative;
+            z-index: 1;
             
         }
 
@@ -227,6 +228,7 @@
         #greeting {
             margin-left: 0px;
             font-size: 14px;
+            z-index: 1;
 
             /* Applies animation to "Welcome [User's name]" text when page loads. Starts @ 4 seconds, ends @ 7 seconds */
             opacity: 0;
@@ -240,6 +242,7 @@
             width: 212px; /* Adjust the width as needed */
             margin-top: -11px;
             margin-left: 80px;
+            z-index: 1;
             
             opacity: 0;
             animation: fadeInLine 5s ease-out forwards 4s, LineExpansion 3s ease-out forwards 10s; /* Keyframe animation */
@@ -258,6 +261,7 @@
             line-height: 1;
             position: absolute;
             padding: 7px;
+            z-index: 1;
 
             opacity: 0;
             animation: fadeInRemainingBalanceSubheader 7s ease-out forwards 5s;
@@ -275,12 +279,14 @@
             /*96-101px for 1 digit*/
             margin-left: 27px;
             line-height: 1;
+            z-index: 1;
 
         }
 
         /*Dollar sign of remaining balance*/
         #dollar-sign {
             font-size: 47px;
+            z-index: 1;
 
             opacity: 0;
             animation: fadeIn 6s ease-out forwards 0.5s;
@@ -294,6 +300,7 @@
             /*Adjusts distance of dollar amount*/
             /*100-200px for .00 cents*/
             margin-left: 32px; 
+            z-index: 1;
 
             opacity: 0;
             animation: fadeIn 6s ease-out forwards 0.5s;
@@ -304,6 +311,7 @@
         /*2nd ADJUSTMENT FOR NEW BALANCES*/
         #cents {
             font-size: 8.8px;
+            z-index: 1;
             /*-114px for $100.00*/
             /*-123px for $91.XX*/
             margin-top: -121px;
@@ -327,6 +335,7 @@
             /* previously 69px*/
             margin-left: 67px;
             opacity: 0;
+            z-index: 1;
             animation: fadeInLine2 8s ease-out forwards 0.5s;
         }
 
@@ -341,11 +350,11 @@
 
             /*Animation for the text "Recent Transactions" which appears simultaneously along with "Welcome" (4 second delay)*/
             opacity: 0;
-            animation: fadeInTransactionsHeader 6s ease-out forwards 5s;
+            animation: fadeInTransactionsHeader 6s ease-out forwards 4s;
         }
 
         #two-lines-left {
-            border-top: 0.7px solid white;
+            border-top: 0.2px solid white;
             width: 85px; /* Adjust the width as needed */
             margin: -11px auto;
             text-align: left;
@@ -358,7 +367,7 @@
         }
 
         #two-lines-right {
-            border-top: 0.7px solid white;
+            border-top: 0.2px solid white;
             width: 85px; /* Adjust the width as needed */
             margin: -11px auto;
             text-align: left;
