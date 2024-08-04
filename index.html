@@ -50,8 +50,10 @@
                 greeting = `Good Morning, ${user}`;
             } else if (hour >= 12 && hour < 17) {
                 greeting = `Good Afternoon, ${user}`;
+            } else if (hour >= 17 && hour < 22) {
+                greeting = `Good Evening, ${user}`; 
             } else {
-                greeting = `Good Evening, ${user}`;
+                greeting = `Good Night, ${user}`;
             }
 
             // Redirects the div ID contained in getElementById to another ID defined in the javascript
@@ -69,7 +71,7 @@
         .emoji {
             position: absolute;
             z-index: 2; 
-            font-size: 2.4rem;
+            font-size: 4.2rem;
             pointer-events: none;
             opacity: 0;
             animation: pop 5s forwards;
@@ -1139,9 +1141,9 @@
         
     <script>
         // JavaScript to add randomly generated emojis around the screen
-        const emoji = "💋";  // Change this to the emoji you want
-        const fontSize = "2.4rem";  // Change font size here
-        const timeInterval = 970;  // Interval for emoji appearance
+        const emoji = "✨";  // Change this to the emoji you want
+        const fontSize = "4.2rem";  // Change font size here
+        const timeInterval = 1024;  // Interval for emoji appearance
     
         function createEmoji() {
             const emojiElement = document.createElement("div");
@@ -1154,7 +1156,7 @@
 
             setTimeout(() => {
                 emojiElement.remove();
-                }, 5000);  // Remove emoji after 3 seconds
+                }, 4200);  // Remove emoji after 3 seconds
             }
 
         setInterval(() => {
