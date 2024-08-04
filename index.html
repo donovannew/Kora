@@ -1156,15 +1156,15 @@
         const fontSize = "2.4rem";  // Change font size here
 
         const emojis = [
-            { emoji: "💋", interval: 150 },
-            { emoji: "✨", interval: 300 },
-            { emoji: "🍑", interval: 1000 }
+            { emoji: "💋", interval: 1000 },
+            { emoji: "✨", interval: 2000 },
+            { emoji: "🍑", interval: 3000 }
         ];
     
         function createEmoji() {
             const emojiElement = document.createElement("div");
             emojiElement.className = "emoji";
-            emojiElement.textContent = emoji;
+            emojiElement.textContent = emoji.emoji;
             emojiElement.style.fontSize = fontSize;
             
             // Get the full document height and width
@@ -1188,14 +1188,16 @@
                 }, 3600);  // Remove emoji after 3.6 seconds
             }
 
-        emojis.forEach(emoji => {
-            setTimeout(() => {
-                createEmoji(emoji);
-                setInterval(() => {
+        window.onload = function() {
+            emojis.forEach(emoji => {
+                setTimeout(() => {
                     createEmoji(emoji);
+                    setInterval(() => {
+                        createEmoji(emoji);
+                    }, emoji.interval);
                 }, emoji.interval);
-            }, emoji.interval);
-        });
+            });
+        };
         
         // JavaScript to toggle dropdown visibility
         function toggleDropdown1() {
