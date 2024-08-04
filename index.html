@@ -1154,16 +1154,33 @@
         // JavaScript to add randomly generated emojis around the screen
         const emoji = "💋";  // Change this to the emoji you want
         const fontSize = "2.2rem";  // Change font size here
-        const timeInterval = 1500;  // Interval for emoji appearance
+
+        const emojis = [
+            { emoji: "💋", interval: 1500 },
+            { emoji: "✨", interval: 3000 },
+            { emoji: "🍑", interval: 10000 }
+        ];
     
         function createEmoji() {
             const emojiElement = document.createElement("div");
             emojiElement.className = "emoji";
             emojiElement.textContent = emoji;
             emojiElement.style.fontSize = fontSize;
-            emojiElement.style.left = Math.random() * 100 + "vw";
-            emojiElement.style.top = Math.random() * 100 + "vh";
-            emojiElement.style.rotate = Math.random();
+            
+            // Get the full document height and width
+            const documentWidth = document.documentElement.scrollWidth;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            // Set random positions within the document dimensions
+            emojiElement.style.left = Math.random() * documentWidth + "px";
+            emojiElement.style.top = Math.random() * documentHeight + "px";
+
+            // Set a random rotation only for the "🎉" emoji
+            if (emoji.emoji === "💋") {
+                const randomRotation = (Math.random() * 60) - 30; // Random number between -30 and 30
+                emojiElement.style.transform = `rotate(${randomRotation}deg)`;
+            }
+
             document.getElementById("emoji-container").appendChild(emojiElement);
 
             setTimeout(() => {
@@ -1171,9 +1188,14 @@
                 }, 3600);  // Remove emoji after 3 seconds
             }
 
-        setInterval(() => {
-            createEmoji();
-        }, timeInterval);
+        emojis.forEach(emoji => {
+            setTimeout(() => {
+                createEmoji(emoji);
+                setInterval(() => {
+                    createEmoji(emoji);
+                }, emoji.interval);
+            }, emoji.interval);
+        });
         
         // JavaScript to toggle dropdown visibility
         function toggleDropdown1() {
