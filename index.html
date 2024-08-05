@@ -1156,9 +1156,9 @@
         const fontSize = "2.2rem";  // Change font size here
 
         const emojis = [
-            { emoji: "💋", interval: 2222 },
-            { emoji: "✨", interval: 555 },
-            { emoji: "🍑", interval: 5555 }
+            { emoji: "💋", interval: 2500 },
+            { emoji: "✨", interval: 1000 },
+            { emoji: "", interval: 5555 }
         ];
     
         function createEmoji(emoji) {
@@ -1177,7 +1177,7 @@
 
             // Set a random rotation only for the "🎉" emoji
             if (emoji.emoji === "💋") {
-                const randomRotation = Math.random() * 77; // Random number between 0 and 88
+                const randomRotation = Math.random() * 80; // Random number between 0 and 88
                 emojiElement.style.transform = `rotate(${randomRotation}deg)`;
             }
 
