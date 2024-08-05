@@ -53,7 +53,7 @@
             } else if (hour >= 17 && hour < 22) {
                 greeting = `Good Evening, ${user}`; 
             } else {
-                greeting = `Good Night, ${user}!`;
+                greeting = `Sweet Dreams, ${user} 💤`;
             }
 
             // Redirects the div ID contained in getElementById to another ID defined in the javascript
@@ -216,7 +216,7 @@
         .container {
             width: 100%;
             text-align: center;
-            margin-top: 100px;
+            margin-top: 96px;
             position: relative;
             z-index: 2;
             
@@ -317,7 +317,7 @@
             /*282px for $100.00*/
              /*-193px for $91*/
             /*100-200px for .00 cents*/
-            margin-left: 288px;
+            margin-left: 286px;
             opacity: 0;
             animation: fadeIn 6s ease-out forwards 0.5s;
 
@@ -341,7 +341,7 @@
          /*Syling for the text "Transaction History" located at the bottom-center of the home screen*/
         #recent-transactions {
             font-size: 14px;
-            margin-top: 303px;
+            margin-top: 306px;
             text-align: left;
             margin-left: 94px;
             padding: 7px;
@@ -1156,9 +1156,9 @@
         const fontSize = "2.2rem";  // Change font size here
 
         const emojis = [
-            { emoji: "💋", interval: 1000 },
-            { emoji: "✨", interval: 444 },
-            { emoji: "🍑", interval: 4444 }
+            { emoji: "💋", interval: 2222 },
+            { emoji: "✨", interval: 555 },
+            { emoji: "🍑", interval: 5555 }
         ];
     
         function createEmoji(emoji) {
@@ -1177,7 +1177,7 @@
 
             // Set a random rotation only for the "🎉" emoji
             if (emoji.emoji === "💋") {
-                const randomRotation = Math.random() * 88; // Random number between 0 and 88
+                const randomRotation = Math.random() * 77; // Random number between 0 and 88
                 emojiElement.style.transform = `rotate(${randomRotation}deg)`;
             }
 
