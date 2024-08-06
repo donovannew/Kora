@@ -69,7 +69,7 @@
             position: absolute;
             z-index: 0;
             /*Maximum 3rem, minimum 1rem*/
-            font-size: 2.2rem;
+            font-size: 1.9rem;
             pointer-events: none;
             opacity: 0;
             animation: pop 3.6s forwards;
@@ -135,7 +135,7 @@
             }
             to {
                 opacity: 1;
-                transform: scaleX(108%);
+                transform: scaleX(105%);
             }
         }
 
@@ -254,8 +254,8 @@
             /*Adjusts distance from left margin to remaining balance*/
             /*previously 47px @ $100 balance*/
             /*previously 74px @ [2-digit] balance*/
-            margin-left: 49px;
-            margin-top: 96px;
+            margin-left: 52px;
+            margin-top: 100px;
             line-height: 1;
             position: absolute;
             padding: 7px;
@@ -275,7 +275,7 @@
             /*27-47px for $100*/
             /*74px for 2 digits*/
             /*96-101px for 1 digit*/
-            margin-left: 28px;
+            margin-left: 74px;
             line-height: 1;
             z-index: 2;
 
@@ -297,7 +297,7 @@
             margin-top: -32px;
             /*Adjusts distance of dollar amount*/
             /*100-200px for .00 cents*/
-            margin-left: 30px; 
+            margin-left: 29px; 
             z-index: 2;
 
             opacity: 0;
@@ -312,12 +312,12 @@
             z-index: 2;
             /*-114px for $100.00*/
             /*-123px for $91.XX*/
-            margin-top: -121px;
+            margin-top: -128px;
             /*Adjusts distance from left margin to cents amount*/
             /*282px for $100.00*/
              /*-193px for $91*/
             /*100-200px for .00 cents*/
-            margin-left: 286px;
+            margin-left: 222px;
             opacity: 0;
             animation: fadeIn 6s ease-out forwards 0.5s;
 
@@ -329,9 +329,9 @@
             width: 222px; /* Adjust the width as needed. 222 for 2-3 digits. */
             position: absolute;
             margin: -11px auto;
-            margin-top: 93px;
+            margin-top: 97px;
             /* previously 69px*/
-            margin-left: 69px;
+            margin-left: 70px;
             opacity: 0;
             z-index: 2;
             animation: fadeInLine2 8s ease-out forwards 0.5s;
@@ -957,8 +957,8 @@
 
     <div class="balance">
         <p id="dollar-sign">$</p>
-        <p id="dollars">128</p>
-        <p id="cents">.20</p>
+        <p id="dollars">56</p>
+        <p id="cents">.92</p>
     </div>
     
     <div id="balance-line"></div>
@@ -1146,19 +1146,24 @@
             <p><u>Thursday, August 1st</u></p>
             <p>Monthly Allowance . . . . . . (+)$100.00</p>
             <p>X-tra Love ✨ . . . . . . . . . . (+)$20.00</p>
+            <p><u>Monday, August 5th</u></p>
+            <p>Uber Eats . . . . . . . . . . . . . . $10.03</p>
+            <p>Uber Eats . . . . . . . . . . . . . . $24.28</p>
+            <p><u>Tuesday, August 6th</u></p>
+            <p>Uber Eats . . . . . . . . . . . . . . $36.97</p>
             <hr>
-            <p>Total: $0 / $100.00 (0%) Yₒ(u) = ∫e ˣ ʸ</p>
+            <p>Total: $71.28 / $120.00 (59%) 🫦</p>
         </div>
         
     <script>
         // JavaScript to add randomly generated emojis around the screen
         const emoji = "💋";  // Change this to the emoji you want
-        const fontSize = "2.2rem";  // Change font size here
+        const fontSize = "1.9rem";  // Change font size here
 
         const emojis = [
-            { emoji: "💋", interval: 2500 },
-            { emoji: "✨", interval: 1000 },
-            { emoji: "", interval: 5555 }
+            { emoji: "💋", interval: 4444 },
+            { emoji: "✨", interval: 1600 },
+            { emoji: "🌹", interval: 7777 }
         ];
     
         function createEmoji(emoji) {
