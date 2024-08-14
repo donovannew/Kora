@@ -12,7 +12,39 @@
     
     <!-- JavaScript in the header section-->
     <script>
+        // Function to calculate the time difference
+        function calculateTimeDifference(lastUpdateTime) {
+            const currentTime = new Date();
+            const timeDifference = currentTime - lastUpdateTime;
+
+            const minutes = Math.floor(timeDifference / 1000 / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+
+            let timeString;
+            
+            if (minutes == 0 ){
+                timeString = 'just now'
+            } else if (minutes < 60) {
+                timeString = minutes === 1 ? '1 minute ago' : `${minutes} minutes ago`;
+            } else if (hours < 24) {
+                timeString = hours === 1 ? '1 hour ago' : `${hours} hours ago`;
+            } else {
+                timeString = days === 1 ? '1 day ago' : `${days} days ago`;
+            }
+
+            return `Last updated ${timeString}`;
+        }
+
+        // Encapsulating the code inside window.onload
         window.onload = function() {
+            // Assuming the last update time is provided here
+            const lastUpdateTime = new Date('2024-08-14T18:32:00Z'); // Example: August 14, 2024, 8:00 AM UTC
+            
+            // Call the function to display the last updated time
+            const updateTimeElement = document.getElementById('lastupdated');
+            updateTimeElement.textContent = calculateTimeDifference(lastUpdateTime);
+        
             // Add browser alert message here
             // window.alert("[TBD]");
 
@@ -60,6 +92,7 @@
             document.getElementById("greeting").innerHTML = greeting;
             document.getElementById("date").innerHTML = monthheader;
         };
+        
     </script>
     
     <style>
@@ -134,7 +167,7 @@
                 transform: scaleX(42%);
             }
             to {
-                opacity: 0.3;
+                opacity: 0.5;
                 transform: scaleX(104%);
             }
         }
@@ -168,6 +201,17 @@
             }
             to {
                 opacity: 1;
+            }
+        }
+
+        @keyframes fadeInLastUpdated {
+            from {
+                opacity: 0;
+                transform: translateX(-7px);
+            }
+            to {
+                opacity: 0.32;
+                transform: translateX(0px);
             }
         }
 
@@ -215,7 +259,8 @@
         /*I had problems with the text alignment & this container did not help but it's there now so I will use it to learn how to use a container.*/
         .container {
             width: 100%;
-            text-align: center;
+            text-align: left;
+            margin-left: 77px;
             margin-top: 96px;
             position: relative;
             z-index: 2;
@@ -239,7 +284,7 @@
             border-top: 0.1px solid white;
             width: 212px; /* Adjust the width as needed */
             margin-top: -11.11px;
-            margin-left: 80px;
+            margin-left: 2px;
             z-index: 2;
             
             opacity: 0;
@@ -853,6 +898,30 @@
             line-height: 18px;
         }
 
+        #textcontainer {
+            font-size: 11px;
+            padding: 3px;
+            text-align: left;
+            margin-top: 1.5px;
+            margin-left: 3px;
+            line-height: 1px;
+            z-index: 2;
+
+            /*1 second FadeIn animation for the text "Last Updated"*/
+            opacity: 0;
+
+            /*animation: fadeInTransactions 3s ease-out forwards 9s;*/
+            animation: fadeInLastUpdated 3s ease-out forwards 9s;
+        }
+
+        #lastupdated {
+            font-family: 'Open Sans', sans-serif;
+            font-style: italic;
+            font-weight: 100; /* Thin */
+            color: white; /* Sets the text color to white */
+            font-size: 11px; /* You can adjust the size as needed */
+        }
+
         /*KORA APP COMING SOON!!*/
         #coming-soon {
             font-size: 20px;
@@ -1164,9 +1233,9 @@
         const fontSize = "1.9rem";  // Change font size here
 
         const emojis = [
-            { emoji: "💋", interval: 8888 },
+            { emoji: "💋", interval: 5555 },
             { emoji: "✨", interval: 7777 },
-            { emoji: "💸", interval: 5555 }
+            { emoji: "🥳", interval: 8888 }
         ];
     
         function createEmoji(emoji) {
@@ -1235,8 +1304,12 @@
             var dropdownContent = document.getElementById("dropdown-content8");
             dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
         }
+
     </script>
 
+    <div id="textcontainer">
+        <p id="lastupdated"></p>
+    </div>
 
     <div id="coming-soon">Coming Soon...</div>
 
