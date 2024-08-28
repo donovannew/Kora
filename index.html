@@ -78,8 +78,9 @@
             // Defines a greeting message that changes based on the time of day
             var greeting;
 
-            if (hour >= 3 && hour < 12) {
-                greeting = `Good Morning, ${user}`;
+            // Switch back after today (Good Morning : 3am - 12pm)
+            if (hour >= 0 && hour < 22) {
+                greeting = `Happy Birthday, ${user} 🌹`;
             } else if (hour >= 12 && hour < 17) {
                 greeting = `Good Afternoon, ${user}`;
             } else if (hour >= 17 && hour < 22) {
