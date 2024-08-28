@@ -39,14 +39,14 @@
         // Encapsulating the code inside window.onload
         window.onload = function() {
             // Assuming the last update time is provided here
-            const lastUpdateTime = new Date('2024-08-27T18:54:00Z'); // Example: August 14, 2024, 8:00 AM UTC
+            const lastUpdateTime = new Date('2024-08-14T18:32:00Z'); // Example: August 14, 2024, 8:00 AM UTC
             
             // Call the function to display the last updated time
             const updateTimeElement = document.getElementById('lastupdated');
             updateTimeElement.textContent = calculateTimeDifference(lastUpdateTime);
         
             // Add browser alert message here
-            window.alert("Hi, princess. 👑 Your balance has been SO LOW! My earnest apologies... Please, check back at midnight for more updates! 😍🎂 -Don, the Foot Long");
+            // window.alert("text goes here");
 
             // Set user number to the corresponding number in the following array named "Names". The 1st user is #0.
             const usernumber = 0;
@@ -320,7 +320,7 @@
             /*27-47px for $100*/
             /*64px for 2 digits*/
             /*96-101px for 1 digit*/
-            margin-left: 98px;
+            margin-left: 26px;
             line-height: 1;
             z-index: 2;
 
@@ -362,7 +362,7 @@
             /*282px for $100.00*/
              /*-193px for $91*/
             /*100-200px for .00 cents*/
-            margin-left: 155px;
+            margin-left: 282px;
             opacity: 0;
             animation: fadeIn 7s ease-out forwards 0.77s;
 
@@ -374,7 +374,7 @@
             width: 222px; /* Adjust the width as needed. 222 for 2-3 digits. */
             position: absolute;
             margin: -11px auto;
-            margin-top: 92px;
+            margin-top: 96px;
             /* previously 69px*/
             margin-left: 69px;
             opacity: 0;
@@ -1026,7 +1026,7 @@
 
     <div class="balance">
         <p id="dollar-sign">$</p>
-        <p id="dollars">6</p>
+        <p id="dollars">156</p>
         <p id="cents">.54</p>
     </div>
     
@@ -1223,8 +1223,10 @@
             <p>Uber Eats . . . . . . . . . . . . . . $36.97</p>
             <p><u>Saturday, August 10th</u></p>
             <p>Uber Eats . . . . . . . . . . . . . . $50.38</p>
+            <p><u>Wednesday, August 28th</u></p>
+            <p>Happy Birthday 🥂 . . . . . . . . . . (+)$150.00</p>
             <hr>
-            <p>Total: $121.66 / $128.20 (95%) 🎂</p>
+            <p>Total: $121.66 / $278.20 (44%) 🎂</p>
         </div>
         
     <script>
@@ -1233,9 +1235,9 @@
         const fontSize = "1.9rem";  // Change font size here
 
         const emojis = [
-            { emoji: "💋", interval: 5555 },
-            { emoji: "✨", interval: 7777 },
-            { emoji: "🥳", interval: 8888 }
+            { emoji: "💋", interval: 8888 },
+            { emoji: "✨", interval: 5555 },
+            { emoji: "🥳", interval: 7777 }
         ];
     
         function createEmoji(emoji) {
