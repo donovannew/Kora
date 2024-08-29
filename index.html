@@ -39,7 +39,7 @@
         // Encapsulating the code inside window.onload
         window.onload = function() {
             // Assuming the last update time is provided here
-            const lastUpdateTime = new Date('2024-08-28T06:59:59Z'); // Example: August 14, 2024, 8:00 AM UTC
+            const lastUpdateTime = new Date('2024-08-29T13:51:00Z'); // Example: August 14, 2024, 8:00 AM UTC
             
             // Call the function to display the last updated time
             const updateTimeElement = document.getElementById('lastupdated');
@@ -79,8 +79,8 @@
             var greeting;
 
             // Switch back after today (Good Morning : 3am - 12pm)
-            if (hour >= 0 && hour < 22) {
-                greeting = `Happy Birthday, ${user} 🌹`;
+            if (hour >= 3 && hour < 12) {
+                greeting = `Good Morning, ${user} 🌞`;
             } else if (hour >= 12 && hour < 17) {
                 greeting = `Good Afternoon, ${user}`;
             } else if (hour >= 17 && hour < 22) {
@@ -270,7 +270,7 @@
 
         /*"Welcome, [User's name]" appearing header & many other greetings*/
         #greeting {
-            margin-left: -8px;
+            margin-left: -4px;
             font-size: 14px;
             z-index: 2;
 
