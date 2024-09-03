@@ -39,7 +39,7 @@
         // Encapsulating the code inside window.onload
         window.onload = function() {
             // Assuming the last update time is provided here
-            const lastUpdateTime = new Date('2024-09-03T11:17:00Z'); // Example: August 14, 2024, 8:00 AM UTC
+            const lastUpdateTime = new Date('2024-09-03T11:32:00Z'); // Example: August 14, 2024, 8:00 AM UTC
             
             // Call the function to display the last updated time
             const updateTimeElement = document.getElementById('lastupdated');
@@ -157,7 +157,7 @@
             }
             to {
                 opacity: 0.5;
-                transform: scaleX(97%);
+                transform: scaleX(100%);
             }
         }
 
@@ -169,7 +169,7 @@
             }
             to {
                 opacity: 0.5;
-                transform: scaleX(108%);
+                transform: scaleX(111%);
             }
         }
 
@@ -280,12 +280,12 @@
 
         }
 
-        /* Custom line styling (FadeIn) */
+        /* Greeting line styling (FadeIn) */
         .custom-line {
             border-top: 0.1px solid white;
             width: 212px; /* Adjust the width as needed */
             margin-top: -11.11px;
-            margin-left: 11px;
+            margin-left: 13px;
             z-index: 2;
             
             opacity: 0;
@@ -361,9 +361,9 @@
             margin-top: -116px;
             /*Adjusts distance from left margin to cents amount*/
             /*282px for $100.00*/
-             /*-193px for $91*/
-            /*218-292px for .00 cents*/
-            margin-left: 297px;
+            /*-193px for $91*/
+            /*218-300px*/
+            margin-left: 300px;
             opacity: 0;
             animation: fadeIn 7s ease-out forwards 0.77s;
 
@@ -376,7 +376,7 @@
             margin: -11px auto;
             margin-top: -12px;
             /* previously 69px*/
-            margin-left: 321px;
+            margin-left: 324px;
             opacity: 0;
             z-index: 2;
             animation: fadeInLine2 6.5s ease-out forwards 3s;
@@ -390,7 +390,7 @@
             margin: -11px auto;
             margin-top: 86px;
             /* previously 69px*/
-            margin-left: 72px;
+            margin-left: 74px;
             opacity: 0;
             z-index: 2;
             animation: fadeInLine2 6.5s ease-out forwards 3s;
@@ -875,7 +875,7 @@
 
             /*1 second FadeIn animation for the button labeled "August" which appears 0.2 sec previous button (5.6 second delay)*/
             opacity: 0;
-            animation: fadeInTransactions 3s ease-out forwards 0s;
+            animation: fadeInTransactions 3s ease-out forwards 8.75s;
         
         }
         
@@ -931,7 +931,7 @@
 
             /*1 second FadeIn animation for the button labeled "August" which appears 0.2 sec previous button (5.6 second delay)*/
             opacity: 0;
-            animation: fadeInTransactions 3s ease-out forwards 0s;
+            animation: fadeInTransactions 3s ease-out forwards 9s;
         
         }
         
