@@ -39,7 +39,7 @@
         // Encapsulating the code inside window.onload
         window.onload = function() {
             // Assuming the last update time is provided here
-            const lastUpdateTime = new Date('2024-09-03T11:47:00Z'); // Example: August 14, 2024, 8:00 AM UTC
+            const lastUpdateTime = new Date('2024-09-04T21:08:00Z'); // Example: August 14, 2024, 8:00 AM UTC
             
             // Call the function to display the last updated time
             const updateTimeElement = document.getElementById('lastupdated');
@@ -119,9 +119,11 @@
         @keyframes fadeIn {
             from {
                 opacity: 0;
+                transform: translateX(-4px);
             }
             to {
                 opacity: 1;
+                transform: translateX(2px);
             }
         }
 
@@ -129,11 +131,11 @@
         @keyframes fadeInDate {
             from {
                 opacity: 0;
-                transform: translateX(-8px);
+                transform: translateX(-10px);
             }
             to {
                 opacity: 1;
-                transform: translateX(-2px);
+                transform: translateX(0px);
             }
         }
 
@@ -169,7 +171,7 @@
             }
             to {
                 opacity: 0.5;
-                transform: scaleX(118%);
+                transform: scaleX(120%);
             }
         }
 
@@ -269,7 +271,7 @@
 
         /*"Welcome, [User's name]" appearing header & many other greetings*/
         #greeting {
-            margin-left: 7px;
+            margin-left: 5px;
             font-size: 14px;
 
             /* Applies animation to "Welcome [User's name]" text when page loads. Starts @ 4 seconds, ends @ 7 seconds */
