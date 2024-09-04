@@ -36,6 +36,18 @@
             return `Last updated ${timeString}`;
         }
 
+        function getOrdinalSuffix(day) {
+            if (day >= 11 && day <=13) {
+                return 'th';
+            }
+            switch (day % 10) {
+                case 1: return 'st';
+                case 2: return 'nd';
+                case 3: return 'rd';
+                default: return 'th';
+            }
+        }
+
         // Encapsulating the code inside window.onload
         window.onload = function() {
             // Assuming the last update time is provided here
@@ -62,6 +74,8 @@
             var minute = date.getMinutes();
             var hour = date.getHours();
             var day = date.getDate();
+            var suffix = getOrdinalSuffix(day);
+            var formattedDay = day + '<sup>' + suffix + '</sup>';
             var month = date.getMonth();
             var year = date.getFullYear();
 
@@ -73,7 +87,7 @@
                 "October", "November", "December"];
 
             // Defines the date format for the webpage's header
-            const monthheader = `${AllMonths[month]} ${day}, ${year}`;
+            const monthheader = `${AllMonths[month]} ${formattedDay}, ${year}`;
 
             // Defines a greeting message that changes based on the time of day
             var greeting;
@@ -112,6 +126,11 @@
             0% { opacity: 0; }
             50% { opacity: 0.77; }
             100% { opacity: 0; }
+        }
+
+        sup {
+            vertical-align: super;
+            font-size: smaller;
         }
 
         /* Applies keyframes to elements*/
@@ -171,7 +190,7 @@
             }
             to {
                 opacity: 0.5;
-                transform: scaleX(120%);
+                transform: scaleX(124%);
             }
         }
 
@@ -362,7 +381,7 @@
             /*282px for $100.00*/
             /*-193px for $91*/
             /*218-300px*/
-            margin-left: 303px;
+            margin-left: 305px;
             opacity: 0;
             animation: fadeIn 7s ease-out forwards 0.77s;
 
