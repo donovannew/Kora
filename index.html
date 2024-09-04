@@ -180,7 +180,7 @@
                 transform: scaleX(50%);
             }
             to {
-                opacity: 0.8;
+                opacity: 0.7;
                 transform: scaleX(111%);
             }
         }
@@ -264,15 +264,13 @@
             margin-left: 77px;
             margin-top: 96px;
             position: relative;
-            z-index: 2;
             
         }
 
         /*"Welcome, [User's name]" appearing header & many other greetings*/
         #greeting {
-            margin-left: 3px;
+            margin-left: 7px;
             font-size: 14px;
-            z-index: 2;
 
             /* Applies animation to "Welcome [User's name]" text when page loads. Starts @ 4 seconds, ends @ 7 seconds */
             opacity: 0;
@@ -282,13 +280,13 @@
 
         /* Greeting line styling (FadeIn) */
         .custom-line {
-            border-top: 0.1px solid white;
+            border-top: 0.2px solid white;
             width: 220px; /* Adjust the width as needed */
             margin-top: -11.11px;
             margin-left: 8px;
             
             opacity: 0;
-            animation: LineExpansion 6.5s ease-out forwards 3.5s; /* Keyframe animation */
+            animation: LineExpansion 7s ease-out forwards 3s; /* Keyframe animation */
 
         }
 
