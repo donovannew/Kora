@@ -51,7 +51,7 @@
         // Encapsulating the code inside window.onload
         window.onload = function() {
             // Assuming the last update time is provided here
-            const lastUpdateTime = new Date('2024-10-04T17:15:00Z'); // Example: August 14, 2024, 8:00 AM UTC
+            const lastUpdateTime = new Date('2024-10-04T18:30:00Z'); // Example: August 14, 2024, 8:00 AM UTC
             
             // Call the function to display the last updated time
             const updateTimeElement = document.getElementById('lastupdated');
@@ -96,21 +96,45 @@
             // Switch back after today (Good Morning : 3am - 12pm)
             if (hour >= 3 && hour < 12) {
                 greeting = `Good Morning, ${user} 🌞`;
-                TOD = morning;
+                TOD = 'morning';
             } else if (hour >= 12 && hour < 17) {
                 greeting = `Good Afternoon, ${user}`;
-                TOD = afternoon;
+                TOD = 'afternoon';
             } else if (hour >= 17 && hour < 20) {
                 greeting = `Good Evening, ${user}`; 
-                TOD = evening;
+                TOD = 'evening';
             } else {
                 greeting = `Good Night, ${user} 💤`;
-                TOD = bedtime;
+                TOD = 'bedtime';
             }
 
             // Redirects the div ID contained in getElementById to another ID defined in the javascript
             document.getElementById("greeting").innerHTML = greeting;
             document.getElementById("date").innerHTML = monthheader;
+
+            function setLineMargin() {
+                let marginLeft;
+                switch(TOD) {
+                    case 'morning':
+                        marginLeft = '10px'; // Example value, adjust as needed
+                        break;
+                    case 'afternoon':
+                        marginLeft = '6px'; // Example value
+                        break;
+                    case 'evening':
+                        marginLeft = '-4px'; // Example value
+                        break;
+                    case 'bedtime':
+                        marginLeft = '-3px'; // Example value
+                        break;
+                    default:
+                        marginLeft = '-2px'; // Default margin if something goes wrong
+                }
+                document.querySelector('.custom-line').style.marginLeft = marginLeft;
+            }
+
+                // Call the function to set the margin
+                setLineMargin();
         };
         
     </script>
@@ -195,7 +219,7 @@
             }
             to {
                 opacity: 0.5;
-                transform: scaleX(88%);
+                transform: scaleX(100%);
             }
         }
 
@@ -295,12 +319,12 @@
 
         /*"Welcome, [User's name]" appearing header & many other greetings*/
         #greeting {
-            margin-left: -2px;
+            margin-left: 0px;
             font-size: 13.9px;
 
             /* Applies animation to "Welcome [User's name]" text when page loads. Starts @ 4 seconds, ends @ 7 seconds */
             opacity: 0;
-            animation: fadeIn 8s ease-out forwards 3.5s;
+            animation: fadeIn 12s ease-out forwards 3s;
 
         }
 
@@ -309,10 +333,10 @@
             border-top: 0.2px solid white;
             width: 212px; /* Adjust the width as needed */
             margin-top: -10px;
-            margin-left: 2px;
             
             opacity: 0;
-            animation: LineExpansion 6s ease-out forwards 1.5s; /* Keyframe animation */
+            animation: LineExpansion 7s ease-out forwards 3s; /* Keyframe animation */
+            transition: margin-left 0.3 ease;
 
         }
 
@@ -361,10 +385,10 @@
          /*Dollar amount of remaining balance, just for fun*/
          #dollars {
             font-size: 89px;
-            margin-top: -34px;
+            margin-top: -33px;
             /*Adjusts distance of dollar amount*/
             /*27-33px*/
-            margin-left: 26px;
+            margin-left: 27px;
             z-index: 2;
 
             opacity: 0;
@@ -415,7 +439,7 @@
             margin-left: 69px;
             opacity: 0;
             z-index: 2;
-            animation: fadeInLine2 8s ease-out forwards 3s;
+            animation: fadeInLine2 6.5s ease-out forwards 3s;
         }
 
 
