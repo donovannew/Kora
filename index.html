@@ -91,16 +91,21 @@
 
             // Defines a greeting message that changes based on the time of day
             var greeting;
+            var TOD;
 
             // Switch back after today (Good Morning : 3am - 12pm)
             if (hour >= 3 && hour < 12) {
                 greeting = `Good Morning, ${user} 🌞`;
+                TOD = morning;
             } else if (hour >= 12 && hour < 17) {
                 greeting = `Good Afternoon, ${user}`;
+                TOD = afternoon;
             } else if (hour >= 17 && hour < 20) {
                 greeting = `Good Evening, ${user}`; 
+                TOD = evening;
             } else {
                 greeting = `Good Night, ${user} 💤`;
+                TOD = bedtime;
             }
 
             // Redirects the div ID contained in getElementById to another ID defined in the javascript
@@ -190,7 +195,7 @@
             }
             to {
                 opacity: 0.5;
-                transform: scaleX(100%);
+                transform: scaleX(88%);
             }
         }
 
@@ -202,7 +207,7 @@
             }
             to {
                 opacity: 0.7;
-                transform: scaleX(107%);
+                transform: scaleX(111%);
             }
         }
 
@@ -295,7 +300,7 @@
 
             /* Applies animation to "Welcome [User's name]" text when page loads. Starts @ 4 seconds, ends @ 7 seconds */
             opacity: 0;
-            animation: fadeIn 12s ease-out forwards 3s;
+            animation: fadeIn 8s ease-out forwards 3.5s;
 
         }
 
@@ -307,7 +312,7 @@
             margin-left: 2px;
             
             opacity: 0;
-            animation: LineExpansion 7s ease-out forwards 3s; /* Keyframe animation */
+            animation: LineExpansion 6s ease-out forwards 1.5s; /* Keyframe animation */
 
         }
 
@@ -356,10 +361,10 @@
          /*Dollar amount of remaining balance, just for fun*/
          #dollars {
             font-size: 89px;
-            margin-top: -33px;
+            margin-top: -34px;
             /*Adjusts distance of dollar amount*/
             /*27-33px*/
-            margin-left: 27px;
+            margin-left: 26px;
             z-index: 2;
 
             opacity: 0;
@@ -410,7 +415,7 @@
             margin-left: 69px;
             opacity: 0;
             z-index: 2;
-            animation: fadeInLine2 6.5s ease-out forwards 3s;
+            animation: fadeInLine2 8s ease-out forwards 3s;
         }
 
 
