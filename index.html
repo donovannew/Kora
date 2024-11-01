@@ -50,15 +50,15 @@
 
         // Encapsulating the code inside window.onload
         window.onload = function() {
-            // Assuming the last update time is provided here
-            const lastUpdateTime = new Date('2024-10-17T07:42:00Z'); // Example: August 14, 2024, 8:00 AM UTC
+            // Assuming the last update time is provided here (UTC)
+            const lastUpdateTime = new Date('2024-11-01T20:36:00Z'); // Example: August 14, 2024, 8:00 AM UTC
             
             // Call the function to display the last updated time
             const updateTimeElement = document.getElementById('lastupdated');
             updateTimeElement.textContent = calculateTimeDifference(lastUpdateTime);
         
             // Add browser alert message here
-            // window.alert("Happy 1st of the Month! Enjoy your $100 credit allowance -D 💰");
+            window.alert("Hi, Sugar! 🍬 Your monthly $100 credit has been added! Keep an eye out for more updates coming soon! –Love, Big Daddy  ♥️");
 
             // Set user number to the corresponding number in the following array named "Names". The 1st user is #0.
             const usernumber = 0;
@@ -219,7 +219,7 @@
             }
             to {
                 opacity: 0.5;
-                transform: scaleX(88%);
+                transform: scaleX(108%);
             }
         }
 
@@ -346,7 +346,7 @@
             text-align: left;
             /*Adjusts distance from left margin to remaining balance*/
             /*47px - 62px*/
-            margin-left: 62px;
+            margin-left: 47px;
             /*88-96px*/
             margin-top: 96px;
             line-height: 1;
@@ -366,7 +366,7 @@
             margin-top: 169px;
             /*Adjusts distance from left margin to container*/
             /*24-96px*/
-            margin-left: 59px;
+            margin-left: 23px;
             line-height: 1;
             z-index: 2;
 
@@ -403,12 +403,12 @@
             z-index: 2;
             /*-114px for $100.00*/
             /*-118px for $91.XX*/
-            margin-top: -122px;
+            margin-top: -124px;
             /*Adjusts distance from left margin to cents amount*/
             /*282px for $100.00*/
             /*-193px for $91*/
             /*169-300px*/
-            margin-left: 199px;
+            margin-left: 316px;
             opacity: 0;
             animation: fadeIn 7s ease-out forwards 0.77s;
 
@@ -416,12 +416,12 @@
 
         #cents-line {
             border-top: 0.3px solid white;
-            width: 22px; /* Adjust the width as needed. 222 for 2-3 digits. */
+            width: 20px; /* Adjust the width as needed. 222 for 2-3 digits. */
             position: absolute;
             margin: -11px auto;
-            margin-top: -11px;
+            margin-top: -13px;
             /* previously 69-323px*/
-            margin-left: 257px;
+            margin-left: 340px;
             opacity: 0;
             z-index: 2;
             animation: fadeInLine2 6.5s ease-out forwards 3s;
@@ -434,9 +434,9 @@
             position: absolute;
             margin: -11px auto;
             /*84-101px*/
-            margin-top: 94px;
+            margin-top: 92px;
             /* previously 69-88px*/
-            margin-left: 62px;
+            margin-left: 67px;
             opacity: 0;
             z-index: 2;
             animation: fadeInLine2 6.5s ease-out forwards 3s;
@@ -1198,8 +1198,8 @@
 
     <div class="balance">
         <p id="dollar-sign">$</p>
-        <p id="dollars">15</p>
-        <p id="cents">.11</p>
+        <p id="dollars">106</p>
+        <p id="cents">.27</p>
     </div>
     
     <div id="cents-line"></div>
@@ -1444,8 +1444,10 @@
                 <p>BCD Tofu House . . . . . . . . . . $42.53</p>
                 <p><u>Monday, October 14th</u></p>
                 <p>BBQ Chicken (Uber Eats). . . . $24.28</p>
+                <p><u>Monday, October 28th</u></p>
+                <p>In-N-Out . . . . . . . . . . . . . . . . $8.84</p>
                 <hr>
-                <p>Total: $90.33 / $105.44 (86%) 🎃😻🫶🏽</p>
+                <p>Total: $99.17 / $105.44 (94%) 🎃😻🫶🏽</p>
             </div>
         
     <script>
