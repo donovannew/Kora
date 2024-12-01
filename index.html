@@ -51,7 +51,7 @@
         // Encapsulating the code inside window.onload
         window.onload = function() {
             // Assuming the last update time is provided here (UTC)
-            const lastUpdateTime = new Date('2024-11-16T21:18:00Z'); // Example: August 14, 2024, 8:00 AM UTC
+            const lastUpdateTime = new Date('2024-12-01T16:45:00Z'); // Example: August 14, 2024, 8:00 AM UTC
             
             // Call the function to display the last updated time
             const updateTimeElement = document.getElementById('lastupdated');
@@ -116,7 +116,7 @@
                 let marginLeft;
                 switch(TOD) {
                     case 'morning':
-                        marginLeft = '16px'; // Example value, adjust as needed
+                        marginLeft = '10px'; // Example value, adjust as needed
                         break;
                     case 'afternoon':
                         marginLeft = '10px'; // Example value
@@ -219,7 +219,7 @@
             }
             to {
                 opacity: 0.5;
-                transform: scaleX(80%);
+                transform: scaleX(108%);
             }
         }
 
@@ -346,7 +346,7 @@
             text-align: left;
             /*Adjusts distance from left margin to remaining balance*/
             /*47px - 80px*/
-            margin-left: 80px;
+            margin-left: 47px;
             /*88-96px*/
             margin-top: 96px;
             line-height: 1;
@@ -366,7 +366,7 @@
             margin-top: 169px;
             /*Adjusts distance from left margin to container*/
             /*24-96px*/
-            margin-left: 99px;
+            margin-left: 27px;
             line-height: 1;
             z-index: 2;
 
@@ -408,7 +408,7 @@
             /*282px for $100.00*/
             /*-193px for $91*/
             /*169-300px*/
-            margin-left: 141px;
+            margin-left: 296.9px;
             opacity: 0;
             animation: fadeIn 7s ease-out forwards 0.77s;
 
@@ -416,12 +416,12 @@
 
         #cents-line {
             border-top: 0.3px solid white;
-            width: 22px; /* Adjust the width as needed. 222 for 2-3 digits. */
+            width: 21px; /* Adjust the width as needed. 222 for 2-3 digits. */
             position: absolute;
             margin: -11px auto;
-            margin-top: -12.5px;
+            margin-top: -12px;
             /* previously 69-323px*/
-            margin-left: 239px;
+            margin-left: 324px;
             opacity: 0;
             z-index: 2;
             animation: fadeInLine2 6.5s ease-out forwards 3s;
@@ -430,7 +430,7 @@
         /* Custom line styling (FadeIn) */
         #balance-line {
             border-top: 0.3px solid white;
-            width: 222px; /* Adjust the width as needed. 222 for 2-3 digits. */
+            width: 234px; /* Adjust the width as needed. 222 for 2-3 digits. */
             position: absolute;
             margin: -11px auto;
             /*84-101px*/
@@ -439,7 +439,7 @@
             margin-left: 67px;
             opacity: 0;
             z-index: 2;
-            animation: fadeInLine2 6.5s ease-out forwards 3s;
+            animation: fadeInLine2 7s ease-out forwards 3s;
         }
 
 
@@ -1100,7 +1100,7 @@
             top: 48%;
             transform: translateY(-50%);
 
-            /*1 second FadeIn animation for the button labeled "October" which appears 0.2 sec previous button (5.6 second delay)*/
+            /*1 second FadeIn animation for the button labeled "November" which appears 0.2 sec previous button (5.6 second delay)*/
             opacity: 0;
             animation: fadeInTransactions 3s ease-out forwards 9.5s;
             
@@ -1115,6 +1115,62 @@
         }
 
         .dropdown-content11 p {
+            color: white;
+            padding: 12px;
+            position: relative;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+            margin: 0;
+            text-underline-offset: 5px;
+            line-height: 18px;
+        }
+
+        /* BUTTON #12 */
+        .dropdown12 button {
+            background-color: transparent;
+            color: white;
+            padding:4px 140.5px;
+            scale: 100% 75%;
+            font-size: 16px;
+            font-family: "Zapfino", cursive, sans-serif;
+            border: 1px solid white;
+            border-radius: 20px;
+            margin-top: -16px;
+            padding-top: 10px;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
+            left: 0px;
+
+            /*1 second FadeIn animation for the button labeled "December" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 9.75s;
+        
+        }
+        
+        .dropdown12 button::after {
+            content: "⌄"; /* Unicode for downward arrow */
+            position: absolute;
+            right: 10px;
+            top: 48%;
+            transform: translateY(-50%);
+
+            /*1 second FadeIn animation for the button labeled "December" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 9.75s;
+            
+        }
+
+        .dropdown-content12 {
+            display: none;
+            position: relative;
+            background-color: black;
+            font-size: 12px;
+            margin-top: 1px;
+        }
+
+        .dropdown-content12 p {
             color: white;
             padding: 12px;
             position: relative;
@@ -1254,7 +1310,7 @@
 
     <div class="balance">
         <p id="dollar-sign">$</p>
-        <p id="dollars">2</p>
+        <p id="dollars">102</p>
         <p id="cents">.10</p>
     </div>
     
@@ -1515,17 +1571,30 @@
                 <p><u>Friday, November 1st</u></p>
                 <p>Unused Credits [Transfer] . . . . (+)$6.27</p>
                 <p>Monthly Allowance . . . . . . (+)$100.00</p>
-                <p><u>Wednesday, November 13th (Pending)</u></p>
+                <p><u>Wednesday, November 13th</u></p>
                 <p>In-N-Out . . . . . . . . . . . . . . . . $8.84</p>
                 <p>Uber Eats . . . . . . . . . . . . . . . $29.38</p>
                 <p>In-N-Out . . . . . . . . . . . . . . . . $8.84</p>
                 <p>Uber Eats . . . . . . . . . . . . . . . $32.68</p>
-                <p><u>Thursday, November 14th (Pending)</u></p>
+                <p><u>Thursday, November 14th</u></p>
                 <p>Uber Eats . . . . . . . . . . . . . . . $24.43</p>
                 <hr>
-                <p>Total: $104.17 / $106.27 (98%) 🍂🦃🧡</p>
+                <p>Total: $104.17 / $106.27 (98%) 🤑</p>
             </div>    
         
+        <!--DROPDOWN MENU #12 -->
+        <div class="dropdown12">
+    
+            <button onclick="toggleDropdown12()">December</button>
+    
+            <div class="dropdown-content12" id="dropdown-content12">
+                <p><u>Sundau, December 1st</u></p>
+                <p>Unused Credits [Transfer] . . . . (+)$2.10</p>
+                <p>Monthly Allowance . . . . . . (+)$100.00</p>
+                <hr>
+                <p>Total: $0.00 / $102.10 (0%) ☃️</p>
+            </div>
+
     <script>
         // JavaScript to add randomly generated emojis around the screen
         // const emoji = "💋";  // Change this to the emoji you want
@@ -1613,6 +1682,10 @@
         }
         function toggleDropdown11() {
             var dropdownContent = document.getElementById("dropdown-content11");
+            dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
+        }
+        function toggleDropdown12() {
+            var dropdownContent = document.getElementById("dropdown-content12");
             dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
         }
 
