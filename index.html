@@ -219,7 +219,7 @@
             }
             to {
                 opacity: 0.5;
-                transform: scaleX(108%);
+                transform: scaleX(100%);
             }
         }
 
@@ -346,7 +346,7 @@
             text-align: left;
             /*Adjusts distance from left margin to remaining balance*/
             /*47px - 80px*/
-            margin-left: 47px;
+            margin-left: 69px;
             /*88-96px*/
             margin-top: 96px;
             line-height: 1;
@@ -364,9 +364,10 @@
         .balance {
             font-size: 69px;
             margin-top: 169px;
-            /*Adjusts distance from left margin to container*/
-            /*24-96px*/
-            margin-left: 27px;
+            /* Adjusts distance from left margin to container */
+            /* 27-96px */
+            /* 27px for $100-$999, 74px for $10-$99, & 96px for $0-$9 */
+            margin-left: 74px;
             line-height: 1;
             z-index: 2;
 
@@ -403,12 +404,12 @@
             z-index: 2;
             /*-114px for $100.00*/
             /*-118px for $91.XX*/
-            margin-top: -122px;
+            margin-top: -118px;
             /*Adjusts distance from left margin to cents amount*/
             /*282px for $100.00*/
             /*-193px for $91*/
             /*169-300px*/
-            margin-left: 296.9px;
+            margin-left: 205px;
             opacity: 0;
             animation: fadeIn 7s ease-out forwards 0.77s;
 
@@ -419,9 +420,9 @@
             width: 21px; /* Adjust the width as needed. 222 for 2-3 digits. */
             position: absolute;
             margin: -11px auto;
-            margin-top: -12px;
+            margin-top: -10px;
             /* previously 69-323px*/
-            margin-left: 324px;
+            margin-left: 279px;
             opacity: 0;
             z-index: 2;
             animation: fadeInLine2 6.5s ease-out forwards 3s;
@@ -430,13 +431,14 @@
         /* Custom line styling (FadeIn) */
         #balance-line {
             border-top: 0.3px solid white;
-            width: 234px; /* Adjust the width as needed. 222 for 2-3 digits. */
+            /* Adjust the width as needed. 222px for 2 digits, 234px for 3 digits, cuts off right end */
+            width: 200px;
             position: absolute;
             margin: -11px auto;
             /*84-101px*/
             margin-top: 92px;
-            /* previously 69-88px*/
-            margin-left: 67px;
+            /* previously 69-88px, adjust after changing width*/
+            margin-left: 77px;
             opacity: 0;
             z-index: 2;
             animation: fadeInLine2 7s ease-out forwards 3s;
@@ -448,7 +450,7 @@
             font-size: 12.1px;
             margin-top: 310px;
             text-align: left;
-            margin-left: 104px;
+            margin-left: 108px;
             padding: 6px;
             z-index: 2;
 
@@ -462,7 +464,7 @@
             width: 74px; /* Adjust the width as needed */
             margin: -11px auto;
             text-align: left;
-            margin-left: -109px;
+            margin-left: -111px;
             margin-top: -24px;
             position: absolute;
             z-index: 2;
@@ -476,7 +478,7 @@
             width: 74px; /* Adjust the width as needed */
             margin: -11px auto;
             text-align: left;
-            margin-left: 181px;
+            margin-left: 183px;
             margin-top: -22px;
             position: absolute;
             z-index: 2;
@@ -1310,8 +1312,8 @@
 
     <div class="balance">
         <p id="dollar-sign">$</p>
-        <p id="dollars">102</p>
-        <p id="cents">.10</p>
+        <p id="dollars">93</p>
+        <p id="cents">.26</p>
     </div>
     
     <div id="cents-line"></div>
@@ -1588,11 +1590,13 @@
             <button onclick="toggleDropdown12()">December</button>
     
             <div class="dropdown-content12" id="dropdown-content12">
-                <p><u>Sundau, December 1st</u></p>
+                <p><u>Sunday, December 1st</u></p>
                 <p>Unused Credits [Transfer] . . . . (+)$2.10</p>
                 <p>Monthly Allowance . . . . . . (+)$100.00</p>
+                <p><u>Monday, December 2nd</u></p>
+                <p>In-N-Out . . . . . . . . . . . . . . . . $8.84</p>
                 <hr>
-                <p>Total: $0.00 / $102.10 (0%) ☃️</p>
+                <p>Total: $8.84 / $102.10 (8.66%) ☃️</p>
             </div>
 
     <script>
