@@ -51,7 +51,7 @@
         // Encapsulating the code inside window.onload
         window.onload = function() {
             // Assuming the last update time is provided here (UTC)
-            const lastUpdateTime = new Date('2024-12-08T23:45:00Z'); // Example: August 14, 2024, 8:00 AM UTC
+            const lastUpdateTime = new Date('2024-12-10T01:00:00Z'); // Example: August 14, 2024, 8:00 AM UTC
             
             // Call the function to display the last updated time
             const updateTimeElement = document.getElementById('lastupdated');
@@ -367,7 +367,7 @@
             /* Adjusts distance from left margin to container */
             /* 27-96px */
             /* 27px for $100-$999, 74px for $10-$99, & 96px for $0-$9 */
-            margin-left: 58px;
+            margin-left: 64px;
             line-height: 1;
             z-index: 2;
 
@@ -389,7 +389,7 @@
             margin-top: -32px;
             /*Adjusts distance of dollar amount*/
             /*27-33px*/
-            margin-left: 29px;
+            margin-left: 27px;
             z-index: 2;
 
             opacity: 0;
@@ -404,12 +404,12 @@
             z-index: 2;
             /*-114px for $100.00*/
             /*-118px for $91.XX*/
-            margin-top: -116px;
+            margin-top: -124px;
             /*Adjusts distance from left margin to cents amount*/
             /*282px for $100.00*/
             /*-193px for $91*/
             /*169-300px*/
-            margin-left: 236px;
+            margin-left: 246.2px;
             opacity: 0;
             animation: fadeIn 7s ease-out forwards 0.77s;
 
@@ -420,9 +420,9 @@
             width: 21px; /* Adjust the width as needed. 222 for 2-3 digits. */
             position: absolute;
             margin: -11px auto;
-            margin-top: -3px;
+            margin-top: -11px;
             /* previously 69-323px*/
-            margin-left: 294px;
+            margin-left: 311px;
             opacity: 0;
             z-index: 2;
             animation: fadeInLine2 6.5s ease-out forwards 3s;
@@ -1312,8 +1312,8 @@
 
     <div class="balance">
         <p id="dollar-sign">$</p>
-        <p id="dollars">44</p>
-        <p id="cents">.90</p>
+        <p id="dollars">26</p>
+        <p id="cents">.23</p>
     </div>
     
     <div id="cents-line"></div>
@@ -1598,8 +1598,10 @@
                 <p><u>Saturday, December 7th</u></p>
                 <p>Uber Eats . . . . . . . . . . . . . . . $26.83</p>
                 <p>Uber Eats . . . . . . . . . . . . . . . $21.53</p>
+                <p><u>Monday, December 9th</u></p>
+                <p>Uber Eats . . . . . . . . . . . . . . . $18.67</p>
                 <hr>
-                <p>Total: $57.20 / $102.10 (56%) ☃️</p>
+                <p>Total: $75.87 / $102.10 (74%) ☃️</p>
             </div>
 
     <script>
