@@ -51,7 +51,7 @@
         // Encapsulating the code inside window.onload
         window.onload = function() {
             // Assuming the last update time is provided here (UTC)
-            const lastUpdateTime = new Date('2024-12-10T01:00:00Z'); // Example: August 14, 2024, 8:00 AM UTC
+            const lastUpdateTime = new Date('2024-12-10T01:05:00Z'); // Example: August 14, 2024, 8:00 AM UTC
             
             // Call the function to display the last updated time
             const updateTimeElement = document.getElementById('lastupdated');
@@ -319,7 +319,8 @@
 
         /*"Welcome, [User's name]" appearing header & many other greetings*/
         #greeting {
-            margin-left: 2px;
+            /* keep at 2 unless it's short like "good evening" then move over 3.5 to the right */
+            margin-left: 5.5px;
             font-size: 13.9px;
 
             /* Applies animation to "Welcome [User's name]" text when page loads. Starts @ 4 seconds, ends @ 7 seconds */
