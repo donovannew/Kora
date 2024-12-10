@@ -51,7 +51,7 @@
         // Encapsulating the code inside window.onload
         window.onload = function() {
             // Assuming the last update time is provided here (UTC)
-            const lastUpdateTime = new Date('2024-12-10T01:05:00Z'); // Example: August 14, 2024, 8:00 AM UTC
+            const lastUpdateTime = new Date('2024-12-10T01:10:00Z'); // Example: August 14, 2024, 8:00 AM UTC
             
             // Call the function to display the last updated time
             const updateTimeElement = document.getElementById('lastupdated');
@@ -122,7 +122,7 @@
                         marginLeft = '10px'; // Example value
                         break;
                     case 'evening':
-                        marginLeft = '2px'; // Example value
+                        marginLeft = '0px'; // Example value
                         break;
                     case 'bedtime':
                         marginLeft = '2px'; // Example value
@@ -231,7 +231,7 @@
             }
             to {
                 opacity: 0.7;
-                transform: scaleX(108%);
+                transform: scaleX(100%);
             }
         }
 
@@ -319,8 +319,8 @@
 
         /*"Welcome, [User's name]" appearing header & many other greetings*/
         #greeting {
-            /* keep at 2 unless it's short like "good evening" then move over 3.5 to the right */
-            margin-left: 5.5px;
+            /* keep at 2 unless it's short like "good evening" then move over 2 to the right */
+            margin-left: 4px;
             font-size: 13.9px;
 
             /* Applies animation to "Welcome [User's name]" text when page loads. Starts @ 4 seconds, ends @ 7 seconds */
@@ -367,8 +367,8 @@
             margin-top: 169px;
             /* Adjusts distance from left margin to container */
             /* 27-96px */
-            /* 27px for $100-$999, 74px for $10-$99, & 96px for $0-$9 */
-            margin-left: 64px;
+            /* 27px for $100-$999, 58px for $10-$99, & 96px for $0-$9 */
+            margin-left: 58px;
             line-height: 1;
             z-index: 2;
 
@@ -390,7 +390,7 @@
             margin-top: -32px;
             /*Adjusts distance of dollar amount*/
             /*27-33px*/
-            margin-left: 27px;
+            margin-left: 29px;
             z-index: 2;
 
             opacity: 0;
@@ -423,7 +423,7 @@
             margin: -11px auto;
             margin-top: -11px;
             /* previously 69-323px*/
-            margin-left: 311px;
+            margin-left: 305px;
             opacity: 0;
             z-index: 2;
             animation: fadeInLine2 6.5s ease-out forwards 3s;
