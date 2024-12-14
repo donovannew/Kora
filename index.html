@@ -51,7 +51,7 @@
         // Encapsulating the code inside window.onload
         window.onload = function() {
             // Assuming the last update time is provided here (UTC)
-            const lastUpdateTime = new Date('2024-12-14T11:52:00Z'); // Example: August 14, 2024, 8:00 AM UTC
+            const lastUpdateTime = new Date('2024-12-14T12:00:00Z'); // Example: August 14, 2024, 8:00 AM UTC
             
             // Call the function to display the last updated time
             const updateTimeElement = document.getElementById('lastupdated');
@@ -116,7 +116,7 @@
                 let marginLeft;
                 switch(TOD) {
                     case 'morning':
-                        marginLeft = '10px'; // Example value, adjust as needed
+                        marginLeft = '6px'; // Example value, adjust as needed
                         break;
                     case 'afternoon':
                         marginLeft = '10px'; // Example value
@@ -231,7 +231,7 @@
             }
             to {
                 opacity: 0.7;
-                transform: scaleX(100%);
+                transform: scaleX(97%);
             }
         }
 
@@ -320,7 +320,7 @@
         /*"Welcome, [User's name]" appearing header & many other greetings*/
         #greeting {
             /* keep at 2 unless it's short like "good evening" then move over 2 to the right */
-            margin-left: 4px;
+            margin-left: 0px;
             font-size: 13.9px;
 
             /* Applies animation to "Welcome [User's name]" text when page loads. Starts @ 4 seconds, ends @ 7 seconds */
@@ -347,7 +347,7 @@
             text-align: left;
             /*Adjusts distance from left margin to remaining balance*/
             /*47px - 80px*/
-            margin-left: 63px;
+            margin-left: 64px;
             /*88-96px*/
             margin-top: 95px;
             line-height: 1;
@@ -368,7 +368,7 @@
             /* Adjusts distance from left margin to container */
             /* 27-96px */
             /* 27px for $100-$999, 58px for $10-$99, & 96px for $0-$9 */
-            margin-left: 69px;
+            margin-left: 64px;
             line-height: 1;
             z-index: 2;
 
@@ -423,7 +423,7 @@
             margin: -11px auto;
             margin-top: -11px;
             /* previously 69-323px*/
-            margin-left: 289.6px;
+            margin-left: 285px;
             opacity: 0;
             z-index: 2;
             animation: fadeInLine2 6.5s ease-out forwards 3s;
