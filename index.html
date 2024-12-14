@@ -51,7 +51,7 @@
         // Encapsulating the code inside window.onload
         window.onload = function() {
             // Assuming the last update time is provided here (UTC)
-            const lastUpdateTime = new Date('2024-12-10T01:10:00Z'); // Example: August 14, 2024, 8:00 AM UTC
+            const lastUpdateTime = new Date('2024-12-14T11:52:00Z'); // Example: August 14, 2024, 8:00 AM UTC
             
             // Call the function to display the last updated time
             const updateTimeElement = document.getElementById('lastupdated');
@@ -368,7 +368,7 @@
             /* Adjusts distance from left margin to container */
             /* 27-96px */
             /* 27px for $100-$999, 58px for $10-$99, & 96px for $0-$9 */
-            margin-left: 58px;
+            margin-left: 69px;
             line-height: 1;
             z-index: 2;
 
@@ -390,7 +390,7 @@
             margin-top: -32px;
             /*Adjusts distance of dollar amount*/
             /*27-33px*/
-            margin-left: 29px;
+            margin-left: 35px;
             z-index: 2;
 
             opacity: 0;
@@ -405,12 +405,12 @@
             z-index: 2;
             /*-114px for $100.00*/
             /*-118px for $91.XX*/
-            margin-top: -124px;
+            margin-top: -125px;
             /*Adjusts distance from left margin to cents amount*/
             /*282px for $100.00*/
             /*-193px for $91*/
             /*169-300px*/
-            margin-left: 246.2px;
+            margin-left: 220px;
             opacity: 0;
             animation: fadeIn 7s ease-out forwards 0.77s;
 
@@ -423,7 +423,7 @@
             margin: -11px auto;
             margin-top: -11px;
             /* previously 69-323px*/
-            margin-left: 305px;
+            margin-left: 289.6px;
             opacity: 0;
             z-index: 2;
             animation: fadeInLine2 6.5s ease-out forwards 3s;
@@ -432,8 +432,8 @@
         /* Custom line styling (FadeIn) */
         #balance-line {
             border-top: 0.3px solid white;
-            /* Adjust the width as needed. 222px for 2 digits, 234px for 3 digits, cuts off right end */
-            width: 212px;
+            /* Adjust the width as needed. 212-222px for 2 digits, 234px for 3 digits, cuts off right end */
+            width: 208px;
             position: absolute;
             margin: -11px auto;
             /*84-101px*/
