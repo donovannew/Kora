@@ -51,7 +51,7 @@
         // Encapsulating the code inside window.onload
         window.onload = function() {
             // Assuming the last update time is provided here (UTC)
-            const lastUpdateTime = new Date('2025-01-07T06:00:00Z'); // Example: August 14, 2024, 8:00 AM UTC
+            const lastUpdateTime = new Date('2024-12-14T12:00:00Z'); // Example: August 14, 2024, 8:00 AM UTC
             
             // Call the function to display the last updated time
             const updateTimeElement = document.getElementById('lastupdated');
@@ -144,7 +144,6 @@
         
         .emoji {
             position: absolute;
-            background: transparent;
             z-index: 0;
             /*Maximum 3rem, minimum 1rem*/
             font-size: 1.8rem;
@@ -266,7 +265,7 @@
                 transform: translateX(0px);
             }
         }
-        
+
         /*Header element "Kora" */
         #header {
             font-size: 23px;
@@ -276,7 +275,7 @@
             /* Applies animation to "Kora" header when page loads */
             opacity: 0;
             animation: fadeIn 9s ease-out forwards 2s;
-            z-index: 6;
+            z-index: 2;
 
         }
 
@@ -289,7 +288,7 @@
             margin-top: 24.7px;
             padding: 1px;
             position: fixed;
-            z-index: 6;
+            z-index: 2;
 
             /* Applies animation to the Month Year on the right side of the top header when the page loads */
             opacity: 0;
@@ -299,49 +298,22 @@
 
         /*Body styling*/
         body {
-            background: black;
+            background-color: black;
             color: white;
             font-family: "Zapfino", cursive, sans-serif;
             padding: 10px;
             padding-top: 4px;
-           
-            /*
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; Make sure body takes up at least full viewport height */
             
-        }
-
-        #banner {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 47px; /* Adjust the height of the banner as needed */
-            background: black;
-            z-index: 5; /* Ensure it's behind the header text but above other content */
-        }
-
-        #banner-fade {
-            position: fixed;
-            top: 47px; /* Adjust to match where the fade should start */
-            left: 0;
-            right: 0;
-            height: 100px; /* Match your fade height */
-            background: linear-gradient(to bottom, black 0%, transparent 100%);
-            z-index: 5; /* Ensure it's below fixed headers but above body content */
         }
 
         /*Container for the "Welcome [User's name]" text that appears on page reload. */
         /*I had problems with the text alignment & this container did not help but it's there now so I will use it to learn how to use a container.*/
         .container {
-            background: transparent;
             width: 100%;
             text-align: left;
             margin-left: 77px;
-            top: 80px;
+            margin-top: 94px;
             position: relative;
-            z-index: 1;
             
         }
 
@@ -350,30 +322,11 @@
             /* keep at 2 unless it's short like "good evening" then move over 2 to the right */
             margin-left: 0px;
             font-size: 13.9px;
-            z-index: 1;
+
             /* Applies animation to "Welcome [User's name]" text when page loads. Starts @ 4 seconds, ends @ 7 seconds */
             opacity: 0;
             animation: fadeIn 12s ease-out forwards 3s;
 
-        }
-
-        #greeting::before {
-            content: ''; /* Required for pseudo-elements */
-            position: absolute;
-            z-index: -1; /* Place the glow behind the text */
-            top: 50%; /* Center vertically */
-            left: 50%;
-            transform: translate(-70%, -50%); /* Adjust to center the glow precisely */
-            width: calc(100% + 47px); /* Width slightly larger than text */
-            height: calc(100% + 35px); /* Height slightly larger than text */
-            background: 
-                radial-gradient(
-                    ellipse at center, 
-                    rgba(255, 215, 0, 0.25) 0%, /* Gold color with transparency */
-                    rgba(255, 215, 0, 0) 70% /* Fade to transparent */
-                );
-            opacity: 0.5; /* Adjust the overall opacity of the glow */
-            border-radius: 50%; /* Makes the glow more elliptical */
         }
 
         /* Greeting line styling (FadeIn) */
@@ -381,10 +334,10 @@
             border-top: 0.2px solid white;
             width: 212px; /* Adjust the width as needed */
             margin-top: -10px;
-            z-index: 1;
+            
             opacity: 0;
             animation: LineExpansion 7s ease-out forwards 3s; /* Keyframe animation */
-            transition: margin-left 0.3s ease;
+            transition: margin-left 0.3 ease;
 
         }
 
@@ -411,20 +364,20 @@
         /*BEGIN STYLING ADJUSTMENTS HERE FOR NEW BALANCES (margin-left)*/
         .balance {
             font-size: 69px;
-            margin-top: 269px;
+            margin-top: 169px;
             /* Adjusts distance from left margin to container */
             /* 27-96px */
             /* 27px for $100-$999, 58px for $10-$99, & 96px for $0-$9 */
             margin-left: 64px;
             line-height: 1;
-            z-index: 1;
+            z-index: 2;
 
         }
 
         /*Dollar sign of remaining balance*/
         #dollar-sign {
             font-size: 47px;
-            z-index: 1;
+            z-index: 2;
 
             opacity: 0;
             animation: fadeIn 7s ease-out forwards 0.6s;
@@ -438,7 +391,7 @@
             /*Adjusts distance of dollar amount*/
             /*27-33px*/
             margin-left: 35px;
-            z-index: 1;
+            z-index: 2;
 
             opacity: 0;
             animation: fadeIn 6s ease-out forwards 0.64s;
@@ -449,7 +402,7 @@
         /*2nd ADJUSTMENT FOR NEW BALANCES*/
         #cents {
             font-size: 8.6px;
-            z-index: 1;
+            z-index: 2;
             /*-114px for $100.00*/
             /*-118px for $91.XX*/
             margin-top: -125px;
@@ -535,130 +488,17 @@
 
         }
 
-        #toggle-area-2024 {
-            position: relative;
-            margin-top: 8px;
-            width: 90%; /* Match the width of your buttons */
-            height: 38px; /* Adjust height to cover the area of text, line, and arrow */
-            box-sizing: border-box;
-            cursor: pointer; /* Show it's clickable */
-            z-index: 2; /* Ensure it's above other elements */
-        }
-
-        #year-2024 {
-            font-size: 12px;
-            position: absolute;
-            padding: 12px;
+        #year {
+            font-size: 13px;
+            padding: 10px;
             text-align: left;
-            margin-top: 8px;
+            margin-top: 13px;
             line-height: 2px;
-            z-index: 1; 
+            z-index: 2;
 
             /*Animation for the current year label "2024" which appears 1 sec after "Welcome" (5 second delay)*/
             opacity: 0;
-            animation: fadeInTransactions 4s ease-out forwards 1s;
-
-        }
-
-        /* YEAR 2024 */
-        .year-line-2024 {
-            border-top: .5px solid white;
-            width: 365px;
-            position: absolute;
-            margin-top: 35px;
-            margin-left: 4px;
-            transform: translateY(-50%);
-            z-index: 1;
-
-            opacity: 0;
-            animation: fadeInTransactions 4s ease-out forwards 1s;
-        }
-
-        .year-arrow-2024 {
-            position: absolute;
-            margin-top: -5px;
-            margin-left: 353px;
-            font-size: 13px;
-            z-index: 1;
-            color: white;
-
-            opacity: 0;
-            animation: fadeInTransactions 4s ease-out forwards 1s;
-        }
-
-        #toggle-area-2024 {
-            position: relative;
-            margin-top: 8px;
-            width: 90%; /* Match the width of your buttons */
-            height: 38px; /* Adjust height to cover the area of text, line, and arrow */
-            box-sizing: border-box;
-            cursor: pointer; /* Show it's clickable */
-            z-index: 2; /* Ensure it's above other elements */
-        }
-
-        #year-2024 {
-            font-size: 12px;
-            position: absolute;
-            padding: 12px;
-            text-align: left;
-            margin-top: 8px;
-            line-height: 2px;
-            z-index: 1; 
-
-            /*Animation for the current year label "2024" which appears 1 sec after "Welcome" (5 second delay)*/
-            opacity: 0;
-            animation: fadeInTransactions 4s ease-out forwards 1s;
-
-        }
-
-        /* YEAR 2025 */
-        .year-line-2025 {
-            border-top: .5px solid white;
-            width: 365px;
-            position: absolute;
-            margin-top: 35px;
-            margin-left: 4px;
-            transform: translateY(-50%);
-            z-index: 1;
-
-            opacity: 0;
-            animation: fadeInTransactions 4s ease-out forwards 2s;
-        }
-
-        .year-arrow-2025 {
-            position: absolute;
-            margin-top: -5px;
-            margin-left: 353px;
-            font-size: 13px;
-            z-index: 1;
-            color: white;
-
-            opacity: 0;
-            animation: fadeInTransactions 4s ease-out forwards 2s;
-        }
-
-        #toggle-area-2025 {
-            position: relative;
-            margin-top: 8px;
-            width: 90%; /* Match the width of your buttons */
-            height: 38px; /* Adjust height to cover the area of text, line, and arrow */
-            box-sizing: border-box;
-            cursor: pointer; /* Show it's clickable */
-            z-index: 2; /* Ensure it's above other elements */
-        }
-
-        #year-2025 {
-            font-size: 12px;
-            position: absolute;
-            padding: 12px;
-            text-align: left;
-            margin-top: 8px;
-            line-height: 2px;
-            z-index: 1; 
-
-            /*Animation for the current year label "2025" which appears 1 sec after "Welcome" (5 second delay)*/
-            opacity: 0;
-            animation: fadeInTransactions 4s ease-out forwards 2s;
+            animation: fadeInTransactions 4s ease-out forwards 6s;
 
         }
 
@@ -668,108 +508,57 @@
             box-sizing: border-box;
         }
 
-
         /* BUTTONS */
-
-        /* 2024 */
-        /* GROUPING BUTTON STYLING */
-        .dropdown1 button, .dropdown2 button, .dropdown3 button, .dropdown4 button, .dropdown5 button, 
-        .dropdown6 button, .dropdown7 button, .dropdown8 button, .dropdown9 button, .dropdown10 button, 
-        .dropdown11 button, .dropdown12 button {
-            display: none; /* Instead of visibility: hidden; */
-            position: relative;
-            z-index: 1;
-            background-color: transparent;
-            color: white;
-            padding: 0px 149px; /* Note: you might need to adjust padding for each button */
-            scale: 100% 88%; /* Ensure this is consistent across all buttons */
-            font-size: 16px;
-            font-family: "Zapfino", cursive, sans-serif;
-            border: 1px solid white;
-            border-radius: 20px;
-            cursor: pointer;
-            margin-top: -8px;
-            text-align: left;
-            left: 0px;
-            opacity: 1;
-            /* animation: fadeInTransactions 3s ease-out forwards 7s;  Adjust delay for each if needed */
-        }
-
-        .dropdown1 button::after, .dropdown2 button::after, .dropdown3 button::after, .dropdown4 button::after, 
-        .dropdown5 button::after, .dropdown6 button::after, .dropdown7 button::after, .dropdown8 button::after, 
-        .dropdown9 button::after, .dropdown10 button::after, .dropdown11 button::after, .dropdown12 button::after {
-            content: "⌄"; /* Unicode for downward arrow */
-            position: absolute; /* Ensure it's positioned absolutely within the button */
-            right: 10px;
-            top: 48%;
-            transform: translateY(-50%);
-            opacity: 1;
-            /* animation: fadeInTransactions 3s ease-out forwards 7s; Adjust delay for each if needed */
-        }
-
-        /* Style the dropdown content (hidden by default) */
-        .dropdown-content1, .dropdown-content2, .dropdown-content3, .dropdown-content4, .dropdown-content5, 
-        .dropdown-content6, .dropdown-content7, .dropdown-content8, .dropdown-content9, .dropdown-content10, 
-        .dropdown-content11, .dropdown-content12 {
-            display: none;
-            position: relative; /* This will position them relative to their normal position */
-            background-color: black;
-            font-size: 12px;
-        }
-
-        /* Style the dropdown links (transactions) */
-        .dropdown-content1 p, .dropdown-content2 p, .dropdown-content3 p, .dropdown-content4 p, .dropdown-content5 p, 
-        .dropdown-content6 p, .dropdown-content7 p, .dropdown-content8 p, .dropdown-content9 p, .dropdown-content10 p, 
-        .dropdown-content11 p, .dropdown-content12 p {
-            color: white;
-            padding: 12px;
-            position: relative; /* This will position each paragraph relative to its container */
-            text-decoration: none;
-            display: block;
-            text-align: left;
-            margin: 0;
-            text-underline-offset: 5px;
-            line-height: 18px;
-        }
-
-        
         /* BUTTON #1 */
-
         /* Style the button that triggers the dropdown */
         .dropdown1 button {
+            background-color: transparent;
+            color: white;
             padding:0px 149px;
             scale: 100% 88%;
             font-size: 16px;
             font-family: "Zapfino", cursive, sans-serif;
             border: 1px solid white;
             border-radius: 20px;
-            margin-top: 4px;
+            cursor: pointer;
+            position: relative;
+            margin-top: -8px;
+            text-align: left;
             left: 0px;
 
-            /*1 second FadeIn animation for the button labeled "January" which appears 0.2 sec after the column title "2024" (5.2 second delay) */
-            /* opacity: 0;
-            /* animation: fadeInTransactions 3s ease-out forwards 7s; */
+            /*1 second FadeIn animation for the button labeled "January" which appears 0.2 sec after the column title "2024" (5.2 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 7s;
+        
         }
 
         /* Style the right-arrow icon */
         .dropdown1 button::after {
+            content: "⌄"; /* Unicode for downward arrow */
+            position: absolute;
             right: 10px;
             top: 48%;
             transform: translateY(-50%);
 
-            /*1 second FadeIn animation for the button labeled "January" which appears 0.2 sec after the column title "2024" (5.2 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 7s; */
+            /*1 second FadeIn animation for the button labeled "January" which appears 0.2 sec after the column title "2024" (5.2 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 7s;
             
         }
 
         /* Style the dropdown content (hidden by default) */
         .dropdown-content1 {
-            /* Insert extra styling here */
+            display: none;
+            position: relative;
+            background-color: black;
+            font-size: 12px;
         }
 
         /* Style the dropdown links (transactions) */
         .dropdown-content1 p {
+            color: white;
+            padding: 12px;
+            position: relative;
             text-decoration: none;
             display: block;
             text-align: left;
@@ -780,6 +569,8 @@
 
         /* BUTTON #2 */
         .dropdown2 button {
+            background-color: transparent;
+            color: white;
             padding:0px 146.2px;
             scale: 100% 82%;
             font-size: 16px;
@@ -789,31 +580,43 @@
             margin-top: -3px;
             /*Use this to center text vertically*/
             padding-top: 5px;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
             left: 0px;
 
-            /*1 second FadeIn animation for the button labeled "February" which appears 0.2 sec previous button (5.4 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 7.25s; */
+            /*1 second FadeIn animation for the button labeled "February" which appears 0.2 sec previous button (5.4 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 7.25s;
         
         }
         
         .dropdown2 button::after {
+            content: "⌄"; /* Unicode for downward arrow */
+            position: absolute;
             right: 10px;
             top: 48%;
             transform: translateY(-50%);
 
-            /*1 second FadeIn animation for the button labeled "February" which appears 0.2 sec previous button (5.4 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 7.25s; */
+            /*1 second FadeIn animation for the button labeled "February" which appears 0.2 sec previous button (5.4 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 7.25s;
         
         }
 
         .dropdown-content2 {
+            display: none;
+            position: relative;
+            background-color: black;
+            font-size: 12px;
             margin-top: 0px;
             z-index: 1000;
         }
 
         .dropdown-content2 p {
+            color: white;
+            padding: 12px;
+            position: relative;
             text-decoration: none;
             display: block;
             text-align: left;
@@ -824,6 +627,8 @@
 
         /* BUTTON #3 */
         .dropdown3 button {
+            background-color: transparent;
+            color: white;
             padding:0px 151.5px;
             scale: 100% 75%;
             font-size: 16px;
@@ -832,30 +637,42 @@
             border-radius: 20px;
             margin-top: -8px;
             padding-top: 10px;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
             left: 0px;
 
-            /*1 second FadeIn animation for the button labeled "March" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 7.5s; */
+            /*1 second FadeIn animation for the button labeled "March" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 7.5s;
         
         }
         
         .dropdown3 button::after {
+            content: "⌄"; /* Unicode for downward arrow */
+            position: absolute;
             right: 10px;
             top: 48%;
             transform: translateY(-50%);
 
             /*1 second FadeIn animation for the button labeled "March" which appears 0.2 sec previous button (5.6 second delay)*/
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 7.5s; */
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 7.5s;
             
         }
 
         .dropdown-content3 {
+            display: none;
+            position: relative;
+            background-color: black;
+            font-size: 12px;
             margin-top: 1px;
         }
 
         .dropdown-content3 p {
+            color: white;
+            padding: 12px;
+            position: relative;
             text-decoration: none;
             display: block;
             text-align: left;
@@ -866,6 +683,8 @@
 
          /* BUTTON #4 */
         .dropdown4 button {
+            background-color: transparent;
+            color: white;
             padding:0px 158px;
             scale: 100% 75%;
             font-size: 16px;
@@ -874,30 +693,42 @@
             border-radius: 20px;
             margin-top: -16px;
             padding-top: 10px;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
             left: 0px;
 
-            /*1 second FadeIn animation for the button labeled "April" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0;*/
-            /* animation: fadeInTransactions 3s ease-out forwards 7.75s; */
+            /*1 second FadeIn animation for the button labeled "April" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 7.75s;
         
         }
         
         .dropdown4 button::after {
+            content: "⌄"; /* Unicode for downward arrow */
+            position: absolute;
             right: 10px;
             top: 48%;
             transform: translateY(-50%);
 
-            /*1 second FadeIn animation for the button labeled "April" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 7.75s; */
+            /*1 second FadeIn animation for the button labeled "April" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 7.75s;
             
         }
 
         .dropdown-content4 {
+            display: none;
+            position: relative;
+            background-color: black;
+            font-size: 12px;
             margin-top: 1px;
         }
 
         .dropdown-content4 p {
+            color: white;
+            padding: 12px;
+            position: relative;
             text-decoration: none;
             display: block;
             text-align: left;
@@ -908,6 +739,8 @@
 
         /* BUTTON #5 */
         .dropdown5 button {
+            background-color: transparent;
+            color: white;
             padding:5px 160px;
             scale: 100% 75%;
             font-size: 16px;
@@ -916,30 +749,42 @@
             border-radius: 20px;
             margin-top: -16px;
             padding-top: 10px;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
             left: 0px;
 
-            /*1 second FadeIn animation for the button labeled "May" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 8s; */
+            /*1 second FadeIn animation for the button labeled "May" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 8s;
         
         }
         
         .dropdown5 button::after {
+            content: "⌄"; /* Unicode for downward arrow */
+            position: absolute;
             right: 10px;
             top: 48%;
             transform: translateY(-50%);
 
-            /*1 second FadeIn animation for the button labeled "May" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 8s; */
+            /*1 second FadeIn animation for the button labeled "May" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 8s;
             
         }
 
         .dropdown-content5 {
+            display: none;
+            position: relative;
+            background-color: black;
+            font-size: 12px;
             margin-top: 1px;
         }
 
         .dropdown-content5 p {
+            color: white;
+            padding: 12px;
+            position: relative;
             text-decoration: none;
             display: block;
             text-align: left;
@@ -950,6 +795,8 @@
 
           /* BUTTON #6 */
         .dropdown6 button {
+            background-color: transparent;
+            color: white;
             padding:5px 164px;
             scale: 100% 75%;
             font-size: 16px;
@@ -958,30 +805,42 @@
             border-radius: 20px;
             margin-top: -16px;
             padding-top: 10px;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
             left: 0px;
 
-            /*1 second FadeIn animation for the button labeled "June" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 8.25s; */
+            /*1 second FadeIn animation for the button labeled "June" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 8.25s;
         
         }
         
         .dropdown6 button::after {
+            content: "⌄"; /* Unicode for downward arrow */
+            position: absolute;
             right: 10px;
             top: 48%;
             transform: translateY(-50%);
 
-            /*1 second FadeIn animation for the button labeled "June" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 8.25s; */
+            /*1 second FadeIn animation for the button labeled "June" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 8.25s;
             
         }
 
         .dropdown-content6 {
+            display: none;
+            position: relative;
+            background-color: black;
+            font-size: 12px;
             margin-top: 1px;
         }
 
         .dropdown-content6 p {
+            color: white;
+            padding: 12px;
+            position: relative;
             text-decoration: none;
             display: block;
             text-align: left;
@@ -992,6 +851,8 @@
 
           /* BUTTON #7 */
           .dropdown7 button {
+            background-color: transparent;
+            color: white;
             padding:5px 164.5px;
             scale: 100% 75%;
             font-size: 16px;
@@ -1000,30 +861,42 @@
             border-radius: 20px;
             margin-top: -16px;
             padding-top: 10px;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
             left: 0px;
 
-            /*1 second FadeIn animation for the button labeled "July" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 8.5s; */
+            /*1 second FadeIn animation for the button labeled "July" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 8.5s;
         
         }
         
         .dropdown7 button::after {
+            content: "⌄"; /* Unicode for downward arrow */
+            position: absolute;
             right: 10px;
             top: 48%;
             transform: translateY(-50%);
 
-            /*1 second FadeIn animation for the button labeled "July" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 8.5s; */
+            /*1 second FadeIn animation for the button labeled "July" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 8.5s;
             
         }
 
         .dropdown-content7 {
+            display: none;
+            position: relative;
+            background-color: black;
+            font-size: 12px;
             margin-top: 1px;
         }
 
         .dropdown-content7 p {
+            color: white;
+            padding: 12px;
+            position: relative;
             text-decoration: none;
             display: block;
             text-align: left;
@@ -1034,6 +907,8 @@
 
         /* BUTTON #8 */
           .dropdown8 button {
+            background-color: transparent;
+            color: white;
             padding:5px 151px;
             scale: 100% 75%;
             font-size: 16px;
@@ -1042,30 +917,42 @@
             border-radius: 20px;
             margin-top: -16px;
             padding-top: 10px;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
             left: 0px;
 
-            /*1 second FadeIn animation for the button labeled "August" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 8.75s; */
+            /*1 second FadeIn animation for the button labeled "August" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 8.75s;
         
         }
         
         .dropdown8 button::after {
+            content: "⌄"; /* Unicode for downward arrow */
+            position: absolute;
             right: 10px;
             top: 48%;
             transform: translateY(-50%);
 
-            /*1 second FadeIn animation for the button labeled "August" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 8.75s; */
+            /*1 second FadeIn animation for the button labeled "August" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 8.75s;
             
         }
 
         .dropdown-content8 {
+            display: none;
+            position: relative;
+            background-color: black;
+            font-size: 12px;
             margin-top: 1px;
         }
 
         .dropdown-content8 p {
+            color: white;
+            padding: 12px;
+            position: relative;
             text-decoration: none;
             display: block;
             text-align: left;
@@ -1076,6 +963,8 @@
 
         /* BUTTON #9 */
         .dropdown9 button {
+            background-color: transparent;
+            color: white;
             padding:5px 141px;
             scale: 100% 75%;
             font-size: 16px;
@@ -1084,29 +973,42 @@
             border-radius: 20px;
             margin-top: -16px;
             padding-top: 10px;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
             left: 0px;
 
-            /*1 second FadeIn animation for the button labeled "September" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 9s; */
+            /*1 second FadeIn animation for the button labeled "September" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 9s;
         
         }
         
         .dropdown9 button::after {
+            content: "⌄"; /* Unicode for downward arrow */
+            position: absolute;
             right: 10px;
             top: 48%;
             transform: translateY(-50%);
 
-            /*1 second FadeIn animation for the button labeled "September" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 9s; */
+            /*1 second FadeIn animation for the button labeled "September" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 9s;
+            
         }
 
         .dropdown-content9 {
+            display: none;
+            position: relative;
+            background-color: black;
+            font-size: 12px;
             margin-top: 1px;
         }
 
         .dropdown-content9 p {
+            color: white;
+            padding: 12px;
+            position: relative;
             text-decoration: none;
             display: block;
             text-align: left;
@@ -1117,6 +1019,8 @@
 
         /* BUTTON #10 */
         .dropdown10 button {
+            background-color: transparent;
+            color: white;
             padding:4px 146.5px;
             scale: 100% 75%;
             font-size: 16px;
@@ -1125,30 +1029,42 @@
             border-radius: 20px;
             margin-top: -16px;
             padding-top: 10px;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
             left: 0px;
 
-            /*1 second FadeIn animation for the button labeled "October" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 9.25s; */
+            /*1 second FadeIn animation for the button labeled "October" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 9.25s;
         
         }
         
         .dropdown10 button::after {
+            content: "⌄"; /* Unicode for downward arrow */
+            position: absolute;
             right: 10px;
             top: 48%;
             transform: translateY(-50%);
 
-            /*1 second FadeIn animation for the button labeled "October" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 9.25s; */
+            /*1 second FadeIn animation for the button labeled "October" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 9.25s;
             
         }
 
         .dropdown-content10 {
+            display: none;
+            position: relative;
+            background-color: black;
+            font-size: 12px;
             margin-top: 1px;
         }
 
         .dropdown-content10 p {
+            color: white;
+            padding: 12px;
+            position: relative;
             text-decoration: none;
             display: block;
             text-align: left;
@@ -1159,6 +1075,8 @@
 
         /* BUTTON #11 */
         .dropdown11 button {
+            background-color: transparent;
+            color: white;
             padding:4px 140.5px;
             scale: 100% 75%;
             font-size: 16px;
@@ -1167,30 +1085,42 @@
             border-radius: 20px;
             margin-top: -16px;
             padding-top: 10px;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
             left: 0px;
 
-            /*1 second FadeIn animation for the button labeled "November" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 9.5s; */
+            /*1 second FadeIn animation for the button labeled "November" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 9.5s;
         
         }
         
         .dropdown11 button::after {
+            content: "⌄"; /* Unicode for downward arrow */
+            position: absolute;
             right: 10px;
             top: 48%;
             transform: translateY(-50%);
 
-            /*1 second FadeIn animation for the button labeled "November" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 9.5s; */
+            /*1 second FadeIn animation for the button labeled "November" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 9.5s;
             
         }
 
         .dropdown-content11 {
+            display: none;
+            position: relative;
+            background-color: black;
+            font-size: 12px;
             margin-top: 1px;
         }
 
         .dropdown-content11 p {
+            color: white;
+            padding: 12px;
+            position: relative;
             text-decoration: none;
             display: block;
             text-align: left;
@@ -1201,6 +1131,8 @@
 
         /* BUTTON #12 */
         .dropdown12 button {
+            background-color: transparent;
+            color: white;
             padding:4px 140.5px;
             scale: 100% 75%;
             font-size: 16px;
@@ -1209,94 +1141,42 @@
             border-radius: 20px;
             margin-top: -16px;
             padding-top: 10px;
+            cursor: pointer;
+            position: relative;
+            text-align: left;
             left: 0px;
 
-            /*1 second FadeIn animation for the button labeled "December" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 9.75s; */
+            /*1 second FadeIn animation for the button labeled "December" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 9.75s;
         
         }
         
         .dropdown12 button::after {
+            content: "⌄"; /* Unicode for downward arrow */
+            position: absolute;
             right: 10px;
             top: 48%;
             transform: translateY(-50%);
 
-            /*1 second FadeIn animation for the button labeled "December" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 9.75s; */
+            /*1 second FadeIn animation for the button labeled "December" which appears 0.2 sec previous button (5.6 second delay)*/
+            opacity: 0;
+            animation: fadeInTransactions 3s ease-out forwards 9.75s;
             
         }
 
         .dropdown-content12 {
+            display: none;
+            position: relative;
+            background-color: black;
+            font-size: 12px;
             margin-top: 1px;
         }
 
         .dropdown-content12 p {
-            text-decoration: none;
-            display: block;
-            text-align: left;
-            margin: 0;
-            text-underline-offset: 5px;
-            line-height: 18px;
-        }
-
-        /* 2025 */
-        .Jan2025 button
-        /* .dropdown2 button, .dropdown3 button, .dropdown4 button, .dropdown5 button, 
-        .dropdown6 button, .dropdown7 button, .dropdown8 button, .dropdown9 button, .dropdown10 button, 
-        .dropdown11 button, .dropdown12 button */ {
-            display: none; /* Instead of visibility: hidden; */
-            position: relative;
-            z-index: 1;
-            background-color: transparent;
-            color: white;
-            padding: 0px 149px; /* Note: you might need to adjust padding for each button */
-            scale: 100% 88%; /* Ensure this is consistent across all buttons */
-            font-size: 16px;
-            font-family: "Zapfino", cursive, sans-serif;
-            border: 1px solid white;
-            border-radius: 20px;
-            cursor: pointer;
-            margin-top: -8px;
-            text-align: left;
-            left: 0px;
-            opacity: 1;
-            /* animation: fadeInTransactions 3s ease-out forwards 7s;  Adjust delay for each if needed */
-        }
-
-        .Jan2025 button::after
-        /* .dropdown2 button::after, .dropdown3 button::after, .dropdown4 button::after, 
-        .dropdown5 button::after, .dropdown6 button::after, .dropdown7 button::after, .dropdown8 button::after, 
-        .dropdown9 button::after, .dropdown10 button::after, .dropdown11 button::after, .dropdown12 button::after */ {
-            content: "⌄"; /* Unicode for downward arrow */
-            position: absolute; /* Ensure it's positioned absolutely within the button */
-            right: 10px;
-            top: 48%;
-            transform: translateY(-50%);
-            opacity: 1;
-            /* animation: fadeInTransactions 3s ease-out forwards 7s; Adjust delay for each if needed */
-        }
-
-        /* Style the dropdown content (hidden by default) */
-        .Jan2025-content
-        /* .dropdown-content2, .dropdown-content3, .dropdown-content4, .dropdown-content5, 
-        .dropdown-content6, .dropdown-content7, .dropdown-content8, .dropdown-content9, .dropdown-content10, 
-        .dropdown-content11, .dropdown-content12 */ {
-            display: none;
-            position: relative; /* This will position them relative to their normal position */
-            background-color: black;
-            font-size: 12px;
-        }
-
-        /* Style the dropdown links (transactions) */
-        .Jan2025-content p
-        /* .dropdown-content2 p, .dropdown-content3 p, .dropdown-content4 p, .dropdown-content5 p, 
-        .dropdown-content6 p, .dropdown-content7 p, .dropdown-content8 p, .dropdown-content9 p, .dropdown-content10 p, 
-        .dropdown-content11 p, .dropdown-content12 p */ {
             color: white;
             padding: 12px;
-            position: relative; /* This will position each paragraph relative to its container */
+            position: relative;
             text-decoration: none;
             display: block;
             text-align: left;
@@ -1304,49 +1184,6 @@
             text-underline-offset: 5px;
             line-height: 18px;
         }
-
-        /* JANUARY 2025 */
-        .Jan2025 button {
-            padding:4px 147px;
-            scale: 100% 75%;
-            font-size: 16px;
-            font-family: "Zapfino", cursive, sans-serif;
-            border: 1px solid white;
-            border-radius: 20px;
-            margin-top: -2px;
-            padding-top: 10px;
-            left: 2px;
-
-            /*1 second FadeIn animation for the button labeled "December" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 9.75s; */
-        
-        }
-        
-        .Jan2025 button::after {
-            right: 10px;
-            top: 48%;
-            transform: translateY(-50%);
-
-            /*1 second FadeIn animation for the button labeled "December" which appears 0.2 sec previous button (5.6 second delay) */
-            /* opacity: 0; */
-            /* animation: fadeInTransactions 3s ease-out forwards 9.75s; */
-            
-        }
-
-        .Jan2025-content {
-            margin-top: 1px;
-        }
-
-        .Jan2025-content p {
-            text-decoration: none;
-            display: block;
-            text-align: left;
-            margin: 0;
-            text-underline-offset: 5px;
-            line-height: 18px;
-        }
-
 
         #textcontainer {
             font-size: 11px;
@@ -1357,11 +1194,11 @@
             line-height: 2px;
             z-index: 2;
 
-            /*1 second FadeIn animation for the text "Last Updated" */
+            /*1 second FadeIn animation for the text "Last Updated"*/
             opacity: 0;
 
-            /* animation: fadeInTransactions 3s ease-out forwards 9s; */
-            animation: fadeInLastUpdated 3s ease-out forwards 9s; */
+            /*animation: fadeInTransactions 3s ease-out forwards 9s;*/
+            animation: fadeInLastUpdated 3s ease-out forwards 9s;
         }
 
         #lastupdated {
@@ -1370,227 +1207,6 @@
             font-weight: 100; /* Thin */
             color: white; /* Sets the text color to white */
             font-size: 11px; /* You can adjust the size as needed */
-        }
-
-        #white-background-fade {
-            position: relative;
-            top: 0px; /* Adjust this to start below "Last Updated" */
-            left: -10px;
-            right: -10px;
-            height: 500px; /* The length of the fade */
-            background: linear-gradient(to bottom, black 0%, white 100%);
-            z-index: -1; /* Place behind content */
-            pointer-events: none; /* So it doesn't interfere with clicks */
-        }
-
-        #white-background-fade2 {
-            position: absolute;
-            top: 2750px; /* Adjust this to start below "Last Updated" */
-            left: -10px;
-            right: -10px;
-            height: 200px; /* The length of the fade */
-            background: linear-gradient(to bottom,white 0%, black 100%);
-            z-index: -1; /* Place behind content */
-            pointer-events: none; /* So it doesn't interfere with clicks */
-        }
-
-        #white-background {
-            position: absolute;
-            top: 1277px; /* Adjust this to start below "Last Updated" */
-            left: 0px;
-            right: 0px;
-            height: 1500px; /* The length of the fade */
-            background: white;
-            z-index: -1; /* Place behind content */
-            pointer-events: none; /* So it doesn't interfere with clicks */
-        }
-
-        /* NEW CONTENT STYLING */
-        #new-content {
-            position: relative;
-            z-index: 2;
-            margin-top: -150px; /* Space from the last updated text */
-            text-align: left;
-            margin-left: 10px;
-            padding: 5px 5px;
-            opacity: 0;
-            animation: fadeIn 4s ease-out forwards 1s; /* Example timing, adjust as needed */
-        }
-
-        #new-content h1 {
-            font-size: 14px; /* Adjust as needed */
-            color: white; /* Since your main text is white */
-            margin-left: 123px;
-            margin-top: 0px;
-        }
-
-        #new-content h2 { /* Settings for the text "Aura Meters"  */
-            font-size: 21px; /* Adjust as needed */
-            color: white; /* Since your main text is white */
-            margin-left: 88px;
-            margin-top: 200px; 
-        }
-
-        #new-content .p1 { /* Settings for the text "Monitor how..."  */
-            font-size: 12px; /* Adjust as needed */
-            color: white;
-            margin-left: 30px;
-            margin-top: 20px;
-        }
-
-        .b1, .b2, .b3, .b4 {
-            font-size: 10px;
-        }
-
-        /* If you want to style the grid items' paragraphs differently */
-        .grid-container p {
-            /* Any specific styles for paragraphs in the grid */
-            font-size: 10px;
-            
-        }
-        .grid-container {
-            margin-top: 100px;
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Creates 2 columns */
-            grid-template-rows: 1fr 1fr;    /* Creates 2 rows */
-            gap: 47px;                       /* Space between grid items */
-            padding: 5px;
-            margin-left: -25px;
-            max-width: 400px;
-        }    
-
-        .money-aura, .baby-aura, .papa-aura, .love-aura {
-            text-align: center;
-            margin-top: 0px; /* Remove default margin */
-        }
-
-        .underline {
-            background-color: black;
-            width: 50%; /* Adjust as needed for the underline length */
-            margin: -12.5px auto; /* Center the line and add some space */
-            border: none; /* Remove default border */
-            height: 1px; /* Line thickness */
-        }
-
-        .underline_aura_meters {
-            background-color: black;
-            width: 108px; /* Adjust as needed for the underline length */
-            margin-top: 4px;
-            margin-left: 116px; /* Center the line and add some space */
-            border: none; /* Remove default border */
-            height: 1px; /* Line thickness */
-        }
-
-        .underline_introducing {
-            background-color: black;
-            width: 69px; /* Adjust as needed for the underline length */
-            margin-top: 7px;
-            margin-left: 138px; /* Center the line and add some space */
-            border: none; /* Remove default border */
-            height: 1px; /* Line thickness */
-        }
-
-        .underline-summary {
-            background-color: black;
-            width: 100px; /* Adjust as needed for the underline length */
-            margin-top: 24px;
-            margin-left: 125px; /* Center the line and add some space */
-            border: none; /* Remove default border */
-            height: 1px; /* Line thickness */
-        }
-
-        .money-aura p, .baby-aura p, .papa-aura p, .love-aura p { /* Settings for the Aura Meter descriptions */
-            margin-top: 180px; 
-        }
-
-        #new-content h3 {
-            font-size: 14px; /* Adjust as needed */
-            color: white; /* Since your main text is white */
-            margin-left: 0px;
-            margin-top: 100px;
-        }
-
-        .top-left {
-            margin: 1px 0; /* Space around images */
-            width: 200px;
-            position: absolute;
-            margin-top: 128px;
-            margin-left: -102px;
-            padding: 5px 5px;
-            scale: .94;
-        }
-
-        .top-right {
-            margin: 1px 0; /* Space around images */
-            width: 200px;
-            position: absolute;
-            margin-top: 140px;
-            margin-left: -96px;
-            padding: 5px 5px;
-            scale: 0.99;
-        }
-
-        .bottom-right {
-            margin: 1px 0; /* Space around images */
-            width: 200px;
-            position: absolute;
-            margin-top: 128px;
-            margin-left: -96px;
-            padding: 5px 5px;
-            scale: 0.99;
-        }
-
-        .bottom-left {
-            margin: 1px 0; /* Space around images */
-            width: 200px;
-            position: absolute;
-            margin-top: 124px;
-            margin-left: -103px;
-            padding: 5px 5px;
-            scale: 0.925;
-        }
-
-        #new-content .rating-good {
-            font-size: 15px;
-            color: rgb(17, 181, 23);
-            position: absolute;
-            margin-top: 124px;
-            margin-left: 47px;
-            padding: 5px 5px;
-        }
-
-        #new-content .rating-fair {
-            font-size: 15px;
-            color: rgb(208, 201, 6);
-            position: absolute;
-            margin-top: 124px;
-            margin-left: 56px;
-            padding: 5px 5px;
-        }
-
-        #new-content .rating-poor {
-            font-size: 15px;
-            color: rgb(217, 73, 6);
-            position: absolute;
-            margin-top: 124px;
-            margin-left: 38px;
-            padding: 5px 5px;
-        }
-
-        #new-content .p2 {
-            /* Positioning and other specific styling for p2 */
-            font-size: 12px;
-            position: relative;
-            top: 36px; /* Example: move down by 10px relative to its normal position */
-            left: 143px;  /* Example: move right by 5px */
-        }
-
-        #new-content .p3 {
-            /* Positioning and other specific styling for p3 */
-            font-size: 10px;
-            position: relative;
-            top: 9px; /* Example: move up by 5px relative to its normal position */
-            left: 12px;  /* Example: move right by 10px */
         }
 
         /*KORA APP COMING SOON!!*/
@@ -1615,7 +1231,7 @@
             font-size: 22.5px;
             margin-top: 150px;
             text-align: left;
-            margin-left: 55px;
+            margin-left: 58px;
 
             /*FadeIn animation for the text "The 'Kora' App"*/
             opacity: 0;
@@ -1625,17 +1241,18 @@
 
         #photo {
             text-align: center;
-            width: 100px;
+            max-width: 100%;
+            height: 100%;
             position: absolute;
-            scale: 5%;
-            margin-top: -300px;
-            margin-left: 104px;
+            scale: 19.5%;
+            margin-top: -25px;
+            margin-left: 10px;
             border-radius: 5px;
             box-shadow: 0 0 10 rgba(0,0,0,0.1);
 
             /*FadeIn animation for the Kora app photo*/
             opacity: 0;
-            animation: fadeIn 4s ease-out forwards 2s;
+            animation: fadeIn 4s ease-out forwards 12.25s;
 
         }
 
@@ -1643,18 +1260,18 @@
             font-size: 12px;
             margin-top: 110px;
             text-align: left;
-            margin-left: 24px;
+            margin-left: 6.3%;
             padding: 4px; 
 
             /* FadeIn animation for the app description text */
             opacity: 0;
-            animation: fadeIn 4s ease-out forwards 5.5s;
+            animation: fadeIn 4s ease-out forwards 12.5s;
             
         }
 
         #bottom-emoji {
             font-size: 20px;
-            margin-top: 80px;
+            margin-top: 5px;
             margin-bottom: 80px;
             text-align: left;
             margin-left: 174.5px;
@@ -1662,7 +1279,7 @@
 
             /* FadeIn animation for emoji */
             opacity: 0;
-            animation: fadeIn 4s ease-out forwards 1s;
+            animation: fadeIn 4s ease-out forwards 12.75s;
             
         }
 
@@ -1684,9 +1301,6 @@
 </head>
 <body>
     <div id="emoji-container"></div>
-
-    <div id="banner"></div>
-    <div id="banner-fade"></div>
     
     <div id="header">Kora</div>
 
@@ -1714,17 +1328,13 @@
         <div id="two-lines-right"></div>
     </div>
     
-    <div id="toggle-area-2024" onclick="toggleAllButtons2024(event)">
-        <div id="year-2024">2024</div>
-        <div class="year-line-2024"></div>
-        <div class="year-arrow-2024">⌄</div>
-    </div>
-        
-    <!--DROPDOWN MENU #1 -->
+    <div id="year">2024</div>
+
+     <!--DROPDOWN MENU #1 -->
     <div class="dropdown1">
 
         <!-- Button that triggers the dropdown -->
-        <button onclick="toggleDropdown1(event)">January</button>
+        <button onclick="toggleDropdown1()">January</button>
 
         <!-- Dropdown content -->
         <div class="dropdown-content1" id="dropdown-content1">
@@ -1742,13 +1352,12 @@
             <hr>
             <p>Total: $105.02 / $100.00 (100%) 🤑</p>
         </div>
-    </div>
 
 
     <!--DROPDOWN MENU #2 -->
     <div class="dropdown2">
     
-        <button onclick="toggleDropdown2(event)">February</button>
+        <button onclick="toggleDropdown2()">February</button>
 
         <div class="dropdown-content2" id="dropdown-content2">
             <p><u>Thursday, Feb. 1st</u></p>
@@ -1762,12 +1371,11 @@
             <hr>
             <p>Total: $104.90 / $100.00 (100%) 🤑</p>
         </div>
-    </div>    
 
     <!--DROPDOWN MENU #3 -->
     <div class="dropdown3">
         
-        <button onclick="toggleDropdown3(event)">March</button>
+        <button onclick="toggleDropdown3()">March</button>
 
         <div class="dropdown-content3" id="dropdown-content3">
             <p><u>Friday, Mar. 1st</u></p>
@@ -1792,12 +1400,11 @@
             <hr>
             <p>Total: $138.98 / $150.00 (92%) 🤑</p>
         </div>
-    </div>
 
     <!--DROPDOWN MENU #4 -->
     <div class="dropdown4">
     
-        <button onclick="toggleDropdown4(event)">April</button>
+        <button onclick="toggleDropdown4()">April</button>
 
         <div class="dropdown-content4" id="dropdown-content4">
             <p><u>Monday, Apr. 1st</u></p>
@@ -1822,12 +1429,11 @@
             <hr>
             <p>Total: $189.53 / $196.23 (97%) 🤑</p>
         </div>
-    </div>
 
     <!--DROPDOWN MENU #5 -->
     <div class="dropdown5">
     
-        <button onclick="toggleDropdown5(event)">May</button>
+        <button onclick="toggleDropdown5()">May</button>
 
         <div class="dropdown-content5" id="dropdown-content5">
             <p><u>Wednesday, May 1st</u></p>
@@ -1847,12 +1453,11 @@
             <hr>
             <p>Total: $131.62 / $126.70 (100%) 🤑</p>
         </div>
-    </div>
 
           <!--DROPDOWN MENU #6 -->
     <div class="dropdown6">
     
-        <button onclick="toggleDropdown6(event)">June</button>
+        <button onclick="toggleDropdown6()">June</button>
 
         <div class="dropdown-content6" id="dropdown-content6">
             <p><u>Saturday, June 1st</u></p>
@@ -1869,12 +1474,11 @@
             <hr>
             <p>Total: $234.39 / $200.00 (100%) 🤑</p>
         </div>
-    </div>
 
         <!--DROPDOWN MENU #7 -->
     <div class="dropdown7">
     
-        <button onclick="toggleDropdown7(event)">July</button>
+        <button onclick="toggleDropdown7()">July</button>
 
         <div class="dropdown-content7" id="dropdown-content7">
             <p><u>Sunday, July 7th</u></p>
@@ -1890,12 +1494,11 @@
             <hr>
             <p>Total: $91.80 / $100.00 (92%) 🤑</p>
         </div>
-    </div>
 
         <!--DROPDOWN MENU #8 -->
     <div class="dropdown8">
     
-        <button onclick="toggleDropdown8(event)">August</button>
+        <button onclick="toggleDropdown8()">August</button>
 
         <div class="dropdown-content8" id="dropdown-content8">
             <p><u>Thursday, August 1st</u></p>
@@ -1917,12 +1520,11 @@
             <hr>
             <p>Total: $234.27 / $278.20 (84%) 🎂</p>
         </div>
-    </div>
 
-    <!--DROPDOWN MENU #9 -->
-    <div class="dropdown9">
+        <!--DROPDOWN MENU #9 -->
+        <div class="dropdown9">
     
-        <button onclick="toggleDropdown9(event)">September</button>
+        <button onclick="toggleDropdown9()">September</button>
 
         <div class="dropdown-content9" id="dropdown-content9">
             <p><u>Sunday, September 1st</u></p>
@@ -1941,95 +1543,69 @@
             <hr>
             <p>Total: $138.49 / $143.93 (96%) 🤑</p>
         </div>
-    </div>
 
-    <!--DROPDOWN MENU #10 -->
-    <div class="dropdown10">
-
-        <button onclick="toggleDropdown10(event)">October</button>
-
-        <div class="dropdown-content10" id="dropdown-content10">
-            <p><u>Tuesday, October 1st</u></p>
-            <p>Unused Credits [Transfer] . . . . (+)$5.44</p>
-            <p>Monthly Allowance . . . . . . (+)$100.00</p>
-            <p><u>Thursday, October 3rd</u></p>
-            <p>In-N-Out . . . . . . . . . . . . . . . . $8.84</p>
-            <p>Uber Eats . . . . . . . . . . . . . . . $14.68</p>
-            <p>BCD Tofu House . . . . . . . . . . $42.53</p>
-            <p><u>Monday, October 14th</u></p>
-            <p>BBQ Chicken (Uber Eats). . . . $24.28</p>
-            <p><u>Monday, October 28th</u></p>
-            <p>In-N-Out . . . . . . . . . . . . . . . . $8.84</p>
-            <hr>
-            <p>Total: $99.17 / $105.44 (94%) 🤑</p>
-        </div>
-    </div>
-
-    <!--DROPDOWN MENU #11 -->
-    <div class="dropdown11">
-
-        <button onclick="toggleDropdown11(event)">November</button>
-
-        <div class="dropdown-content11" id="dropdown-content11">
-            <p><u>Friday, November 1st</u></p>
-            <p>Unused Credits [Transfer] . . . . (+)$6.27</p>
-            <p>Monthly Allowance . . . . . . (+)$100.00</p>
-            <p><u>Wednesday, November 13th</u></p>
-            <p>In-N-Out . . . . . . . . . . . . . . . . $8.84</p>
-            <p>Uber Eats . . . . . . . . . . . . . . . $29.38</p>
-            <p>In-N-Out . . . . . . . . . . . . . . . . $8.84</p>
-            <p>Uber Eats . . . . . . . . . . . . . . . $32.68</p>
-            <p><u>Thursday, November 14th</u></p>
-            <p>Uber Eats . . . . . . . . . . . . . . . $24.43</p>
-            <hr>
-            <p>Total: $104.17 / $106.27 (98%) 🤑</p>
-        </div>
-    </div> 
+        <!--DROPDOWN MENU #10 -->
+        <div class="dropdown10">
     
-    <!--DROPDOWN MENU #12 -->
-    <div class="dropdown12">
-
-        <button onclick="toggleDropdown12(event)">December</button>
-
-        <div class="dropdown-content12" id="dropdown-content12">
-            <p><u>Sunday, December 1st</u></p>
-            <p>Unused Credits [Transfer] . . . . (+)$2.10</p>
-            <p>Monthly Allowance . . . . . . (+)$100.00</p>
-            <p><u>Monday, December 2nd</u></p>
-            <p>In-N-Out . . . . . . . . . . . . . . . . $8.84</p>
-            <p><u>Saturday, December 7th</u></p>
-            <p>Uber Eats . . . . . . . . . . . . . . . $26.83</p>
-            <p>Uber Eats . . . . . . . . . . . . . . . $21.53</p>
-            <p><u>Monday, December 9th</u></p>
-            <p>Uber Eats . . . . . . . . . . . . . . . $18.67</p>
-            <p><u>Wednesday, December 11th</u></p>
-            <p>Uber One . . . . . . . . . . . . . . . $9.99</p>
-            <hr>
-            <p>Total: $85.86 / $102.10 (84%) 🤑</p>
-        </div>
-    </div>
+            <button onclick="toggleDropdown10()">October</button>
     
-    <div id="toggle-area-2025" onclick="toggleAllButtons2025(event)">
-        <div id="year-2025">2025</div>
-        <div class="year-line-2025"></div>
-        <div class="year-arrow-2025">⌄</div>
-    </div>
+            <div class="dropdown-content10" id="dropdown-content10">
+                <p><u>Tuesday, October 1st</u></p>
+                <p>Unused Credits [Transfer] . . . . (+)$5.44</p>
+                <p>Monthly Allowance . . . . . . (+)$100.00</p>
+                <p><u>Thursday, October 3rd</u></p>
+                <p>In-N-Out . . . . . . . . . . . . . . . . $8.84</p>
+                <p>Uber Eats . . . . . . . . . . . . . . . $14.68</p>
+                <p>BCD Tofu House . . . . . . . . . . $42.53</p>
+                <p><u>Monday, October 14th</u></p>
+                <p>BBQ Chicken (Uber Eats). . . . $24.28</p>
+                <p><u>Monday, October 28th</u></p>
+                <p>In-N-Out . . . . . . . . . . . . . . . . $8.84</p>
+                <hr>
+                <p>Total: $99.17 / $105.44 (94%) 🤑</p>
+            </div>
 
-    <!-- JANUARY 2025-->
-    <div class="Jan2025">
-
-        <button onclick="toggleJan2025(event)">January</button>
-
-        <div class="Jan2025-content" id="Jan2025-content">
-            <p><u>Wednesday, January 1st</u></p>
-            <p>Unused Credits [Transfer] . . . . (+)$16.24</p>
-            <p>Monthly Allowance . . . . . . (+)$100.00</p>
-            <p><u>Sunday, January 5th</u></p>
-            <p>In-N-Out . . . . . . . . . . . . . . . . $–.––</p>
-            <hr>
-            <p>Total: $0.00 / $116.24 (0%)</p>
-        </div>
-    </div>
+        <!--DROPDOWN MENU #11 -->
+        <div class="dropdown11">
+    
+            <button onclick="toggleDropdown11()">November</button>
+    
+            <div class="dropdown-content11" id="dropdown-content11">
+                <p><u>Friday, November 1st</u></p>
+                <p>Unused Credits [Transfer] . . . . (+)$6.27</p>
+                <p>Monthly Allowance . . . . . . (+)$100.00</p>
+                <p><u>Wednesday, November 13th</u></p>
+                <p>In-N-Out . . . . . . . . . . . . . . . . $8.84</p>
+                <p>Uber Eats . . . . . . . . . . . . . . . $29.38</p>
+                <p>In-N-Out . . . . . . . . . . . . . . . . $8.84</p>
+                <p>Uber Eats . . . . . . . . . . . . . . . $32.68</p>
+                <p><u>Thursday, November 14th</u></p>
+                <p>Uber Eats . . . . . . . . . . . . . . . $24.43</p>
+                <hr>
+                <p>Total: $104.17 / $106.27 (98%) 🤑</p>
+            </div>    
+        
+        <!--DROPDOWN MENU #12 -->
+        <div class="dropdown12">
+    
+            <button onclick="toggleDropdown12()">December</button>
+    
+            <div class="dropdown-content12" id="dropdown-content12">
+                <p><u>Sunday, December 1st</u></p>
+                <p>Unused Credits [Transfer] . . . . (+)$2.10</p>
+                <p>Monthly Allowance . . . . . . (+)$100.00</p>
+                <p><u>Monday, December 2nd</u></p>
+                <p>In-N-Out . . . . . . . . . . . . . . . . $8.84</p>
+                <p><u>Saturday, December 7th</u></p>
+                <p>Uber Eats . . . . . . . . . . . . . . . $26.83</p>
+                <p>Uber Eats . . . . . . . . . . . . . . . $21.53</p>
+                <p><u>Monday, December 9th</u></p>
+                <p>Uber Eats . . . . . . . . . . . . . . . $18.67</p>
+                <p><u>Wednesday, December 11th</u></p>
+                <p>Uber One . . . . . . . . . . . . . . . $9.99</p>
+                <hr>
+                <p>Total: $85.86 / $102.10 (84%) ☃️</p>
+            </div>
 
     <script>
         // JavaScript to add randomly generated emojis around the screen
@@ -2075,89 +1651,53 @@
             }, emoji.interval);
         });
         
-        // JavaScript to toggle all months' dropdown visibility (2024)
-        function toggleAllButtons2024(e) {
-            e.stopPropagation();
-            const buttons = document.querySelectorAll('.dropdown1 button, .dropdown2 button, .dropdown3 button, .dropdown4 button, .dropdown5 button, .dropdown6 button, .dropdown7 button, .dropdown8 button, .dropdown9 button, .dropdown10 button, .dropdown11 button, .dropdown12 button');
-            
-            buttons.forEach(button => {
-                // Toggle display for moving elements up when hidden
-                if (button.style.display === "none" || button.style.display === "") {
-                    button.style.display = "block";
-                } else {
-                    button.style.display = "none";
-                }
-            });
-        }
-
-        // JavaScript for each month's details (2024)
-        function toggleDropdown1(e) {
+        // JavaScript to toggle dropdown visibility
+        function toggleDropdown1() {
             var dropdownContent = document.getElementById("dropdown-content1");
             dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
         }
-        function toggleDropdown2(e) {
+        function toggleDropdown2() {
             var dropdownContent = document.getElementById("dropdown-content2");
             dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
         }
-        function toggleDropdown3(e) {
+        function toggleDropdown3() {
             var dropdownContent = document.getElementById("dropdown-content3");
             dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
         }
-        function toggleDropdown4(e) {
+        function toggleDropdown4() {
             var dropdownContent = document.getElementById("dropdown-content4");
             dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
         }
-        function toggleDropdown5(e) {
+        function toggleDropdown5() {
             var dropdownContent = document.getElementById("dropdown-content5");
             dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
         }
-        function toggleDropdown6(e) {
+        function toggleDropdown6() {
             var dropdownContent = document.getElementById("dropdown-content6");
             dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
         }
-        function toggleDropdown7(e) {
+        function toggleDropdown7() {
             var dropdownContent = document.getElementById("dropdown-content7");
             dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
         }
-        function toggleDropdown8(e) {
+        function toggleDropdown8() {
             var dropdownContent = document.getElementById("dropdown-content8");
             dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
         }
-        function toggleDropdown9(e) {
+        function toggleDropdown9() {
             var dropdownContent = document.getElementById("dropdown-content9");
             dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
         }
-        function toggleDropdown10(e) {
+        function toggleDropdown10() {
             var dropdownContent = document.getElementById("dropdown-content10");
             dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
         }
-        function toggleDropdown11(e) {
+        function toggleDropdown11() {
             var dropdownContent = document.getElementById("dropdown-content11");
             dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
         }
-        function toggleDropdown12(e) {
+        function toggleDropdown12() {
             var dropdownContent = document.getElementById("dropdown-content12");
-            dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
-        }
-
-        // JavaScript to toggle all months' dropdown visibility (2025)
-        function toggleAllButtons2025(e) {
-            e.stopPropagation();
-            const buttons = document.querySelectorAll('.Jan2025 button');
-            
-            buttons.forEach(button => {
-                // Toggle display for moving elements up when hidden
-                if (button.style.display === "none" || button.style.display === "") {
-                    button.style.display = "block";
-                } else {
-                    button.style.display = "none";
-                }
-            });
-        }
-
-        // JavaScript for each month's details (2025)
-        function toggleJan2025(e) {
-            var dropdownContent = document.getElementById("Jan2025-content");
             dropdownContent.style.display = (dropdownContent.style.display === "block") ? "none" : "block";
         }
 
@@ -2165,56 +1705,6 @@
 
     <div id="textcontainer">
         <p id="lastupdated"></p>
-    </div>
-
-    <div id="white-background-fade"></div>
-    <div id="white-background"></div>
-
-    <!-- New content section !! (#1) -->
-    <div id="new-content">
-        <h1>Introducing...</h1>
-        <hr class="underline_introducing">
-        <h2>Aura Meters</h2>
-        <hr class="underline_aura_meters">
-        <p class="p1">Monitor how the relationships is going... ⚖️</p>
-        <!-- <p class="b1">• Money Aura (how much cash you have)</p>
-            <p class="b2">• Baby Aura (Papi's goal is to keep this high)</p>
-            <p class="b3">•</p>
-            <p class="b4">•</p> -->
-        <div class="grid-container">
-            <div class="money-aura">
-                <img class="top-left" src="AuraMeter_Low-Medium_transparent.png" alt="Description of image 2" style="max-width: 25%; height: auto;">
-                <h3>Money Aura</h3>
-                <hr class="underline">
-                <p class="rating-fair">Fair</p>
-                <p>Your current balance 🏦 (increases Baby Aura)</p>
-            </div>
-            <div class="baby-aura">
-                <img class="top-right" src="AuraMeter_MediumHigh_transparent.png" alt="Description of image 1" style="max-width: 25%; height: auto;">
-                <h3>Baby Aura</h3>
-                <hr class="underline">
-                <p class="rating-good">Good</p>
-                <p>Your current mood ☯️ (estimate based on cash balance, quality of life, menstrual cycle, etc.)</p>
-            </div>
-            <div class="papa-aura">
-                <img class="bottom-left" src="AuraMeter_Low-Medium_transparent.png" alt="Description of image 1" style="max-width: 25%; height: auto;">
-                <h3>Pápi Aura</h3>
-                <hr class="underline">
-                <p class="rating-fair">Fair</p>
-                <p>My current mood (based on semen levels + quality of life</p>
-            </div>
-            <div class="love-aura">
-                <img class="bottom-right" src="AuraMeter_VeryLow_transparent.png" alt="Description of image 1" style="max-width: 25%; height: auto;">
-                <h3>Love Aura</h3>
-                <hr class="underline">
-                <p class="rating-poor">Very Poor</p>
-                <p>Amount of love exchanged (increases Papa Aura)</p>
-            </div>
-        </div>
-    
-        <p class="p2">Summary</p>
-        <hr class="underline-summary">
-        <p class="p3">Love Aura is very low. Consider opening up this month ❤︎</p>
     </div>
 
     <div id="coming-soon">Coming Soon...</div>
@@ -2238,8 +1728,6 @@
     <div id="bottom-text">
         <p> ~ Love, D <span> 🤍 </span> ~ </p>
     </div>
-
-    <div id="white-background-fade2"></div>
 
 </body>
 </html>
