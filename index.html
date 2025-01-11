@@ -299,7 +299,7 @@
 
         /*Body styling*/
         body {
-            background: linear-gradient(to right, black, white);
+            background: black;
             color: white;
             font-family: "Zapfino", cursive, sans-serif;
             padding: 0px;
@@ -1371,45 +1371,21 @@
             color: white; /* Sets the text color to white */
             font-size: 11px; /* You can adjust the size as needed */
         }
-
+        
+        /*
         #white-background-fade {
             position: relative;
             box-sizing: border-box; 
             width: 100%;
             top: 0px; /* Adjust this to start below "Last Updated" */
-            left: 0px;
+        /*    left: 0px;
             right: -10px;
             height: 500px; /* The length of the fade */
-            background: linear-gradient(to bottom, black 0%, white 100%);
+        /*    background: linear-gradient(to bottom, black 0%, white 100%);
             z-index: -1; /* Place behind content */
-            pointer-events: none; /* So it doesn't interfere with clicks */
-        }
-
-        #white-background-fade2 {
-            position: absolute;
-            box-sizing: border-box; 
-            width: 100vw;
-            top: 2750px; /* Adjust this to start below "Last Updated" */
-            left: 0px;
-            right: -10px;
-            height: 200px; /* The length of the fade */
-            background: linear-gradient(to bottom,white 0%, black 100%);
-            z-index: -1; /* Place behind content */
-            pointer-events: none; /* So it doesn't interfere with clicks */
-        }
-
-        #white-background {
-            position: absolute;
-            box-sizing: border-box; 
-            width: 100vw;
-            top: 1277px; /* Adjust this to start below "Last Updated" */
-            left: 0px;
-            right: 0px;
-            height: 1500px; /* The length of the fade */
-            background: white;
-            z-index: -1; /* Place behind content */
-            pointer-events: none; /* So it doesn't interfere with clicks */
-        }
+        /*    pointer-events: none; /* So it doesn't interfere with clicks */
+        /*
+        } */
 
         /* NEW CONTENT STYLING */
         #new-content {
@@ -1632,7 +1608,7 @@
         #photo {
             text-align: center;
             position: absolute;
-            width: 20%;
+            width: 100%;
             margin-top: -300px;
             margin-left: 104px;
             border-radius: 5px;
@@ -1704,8 +1680,8 @@
 
     <div class="balance">
         <p id="dollar-sign">$</p>
-        <p id="dollars">16</p>
-        <p id="cents">.24</p>
+        <p id="dollars">87</p>
+        <p id="cents">.93</p>
     </div>
     
     <div id="cents-line"></div>
@@ -2186,6 +2162,7 @@
         <h2>Aura Meters</h2>
         <hr class="underline_aura_meters">
         <p class="p1">Monitor how the relationships is going... ⚖️</p>
+        <img class="love-cycle">
         <!-- <p class="b1">• Money Aura (how much cash you have)</p>
             <p class="b2">• Baby Aura (Papi's goal is to keep this high)</p>
             <p class="b3">•</p>
@@ -2229,7 +2206,7 @@
     <div id="coming-soon">Coming Soon...</div>
 
     <div id="photo">
-        <img src="Kora_logo.JPG">
+        <img src="Kora_logo.JPG" alt="Kora logo" style="max-width: 25%; height: auto;">
     </div>
 
     <div id="app-name">
