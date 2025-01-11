@@ -167,16 +167,26 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            right: 0; /* Default position on the right */
+            right: -10; /* Default position on the right */
             width: 2px;
             background-color: blue;
         }
 
-        .middle-line {
+        .middle-line-perc {
             position: absolute;
             top: 0;
             bottom: 0;
-            left: 40%; /* Default center */
+            left: 50%; /* Default center */
+            transform: translateX(-50%);
+            width: 2px;
+            border-left: 2px dotted blue;
+        }
+
+        .middle-line-px {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 234px; /* Default center */
             transform: translateX(-50%);
             width: 2px;
             border-left: 2px dotted blue;
@@ -1692,7 +1702,8 @@
 <body>
     <div id="emoji-container"></div>
     <div class="right-line"></div>
-    <div class="middle-line"></div>
+    <div class="middle-line-perc"></div>
+    <div class="middle-line-px"></div>
     <div id="banner"></div>
     <div id="banner-fade"></div>
     
@@ -2186,7 +2197,7 @@
         <h2>Aura Meters</h2>
         <hr class="underline_aura_meters">
         <p class="p1">Monitor how the relationships is going... ⚖️</p>
-        <img class="love-cycle" src="cycle1.png" alt="Love & money cycle" style="max-width: 25%; height: auto;">
+        <img class="love-cycle" src="cycle1_transparent_alt.PNG" alt="Love & money cycle" style="max-width: 25%; height: auto;">
         <!-- <p class="b1">• Money Aura (how much cash you have)</p>
             <p class="b2">• Baby Aura (Papi's goal is to keep this high)</p>
             <p class="b3">•</p>
