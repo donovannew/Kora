@@ -163,6 +163,32 @@
             font-size: smaller;
         }
 
+        .right-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0; /* Default position on the right */
+            width: 2px;
+            background-color: blue;
+        }
+
+        .middle-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 40%; /* Default center */
+            transform: translateX(-50%);
+            width: 2px;
+            border-left: 2px dotted blue;
+        }
+
+        /* Adjust for smaller screens */
+        @media (max-width: 768px) {
+            .right-line {
+                right: 5%; /* Adjust to 5% from right on smaller screens */
+            }
+        }
+
         /* Applies keyframes to elements*/
         /*Simple fade in. Refer to this CSS element "fadeIn" when you want 0 to 80% opacity. No translation. */
         @keyframes fadeIn {
@@ -1385,13 +1411,13 @@
             z-index: -1; /* Place behind content */
         /*    pointer-events: none; /* So it doesn't interfere with clicks */
         /*
-        } */
+        }
 
         /* NEW CONTENT STYLING */
         #new-content {
             position: relative;
             z-index: 2;
-            margin-top: -150px; /* Space from the last updated text */
+            margin-top: 200px; /* Space from the last updated text */
             text-align: left;
             margin-left: 10px;
             padding: 5px 5px;
@@ -1665,7 +1691,8 @@
 </head>
 <body>
     <div id="emoji-container"></div>
-
+    <div class="right-line"></div>
+    <div class="middle-line"></div>
     <div id="banner"></div>
     <div id="banner-fade"></div>
     
@@ -2152,9 +2179,6 @@
         <p id="lastupdated"></p>
     </div>
 
-    <div id="white-background-fade"></div>
-    <div id="white-background"></div>
-
     <!-- New content section !! (#1) -->
     <div id="new-content">
         <h1>Introducing...</h1>
@@ -2162,7 +2186,7 @@
         <h2>Aura Meters</h2>
         <hr class="underline_aura_meters">
         <p class="p1">Monitor how the relationships is going... ⚖️</p>
-        <img class="love-cycle">
+        <img class="love-cycle" src="cycle1.png" alt="Love & money cycle" style="max-width: 25%; height: auto;">
         <!-- <p class="b1">• Money Aura (how much cash you have)</p>
             <p class="b2">• Baby Aura (Papi's goal is to keep this high)</p>
             <p class="b3">•</p>
