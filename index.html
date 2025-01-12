@@ -380,7 +380,7 @@
             /*47px - 80px*/
             margin-left: 64px;
             /*88-96px*/
-            margin-top: 95px;
+            margin-top: 0px;
             line-height: 1;
             position: relative;
             padding: 7px;
@@ -1324,6 +1324,16 @@
             font-size: 10px;
         }
 
+        #love-cycle {
+            margin: 1px 0; /* Space around images */
+            width: 200px;
+            position: absolute;
+            margin-top: 128px;
+            margin-left: -102px;
+            padding: 5px 5px;
+            scale: 1;
+        }
+
         /* If you want to style the grid items' paragraphs differently */
         .grid-container p {
             /* Any specific styles for paragraphs in the grid */
@@ -1583,13 +1593,10 @@
         <p id="dollar-sign">$</p>
         <p id="dollars">87</p>
         <p id="cents">.93</p>
+        <div id="cents-line"></div>
+        <div id="balance-line"></div>
+        <div id="remaining-allowance">Remaining Love Credits</div>
     </div>
-    
-    <div id="cents-line"></div>
-
-    <div id="balance-line"></div>
-    
-    <div id="remaining-allowance">Remaining Love Credits</div>
 
     <div id="recent-transactions">Transaction History
         <div id="two-lines-left"></div>
