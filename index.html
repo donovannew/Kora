@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kora</title>
     
     <!-- Favicon link (photo on the browser tab) -->
@@ -10,138 +10,22 @@
     <!-- Apple touch icon for iPhone home screen -->
     <link rel="apple-touch-icon" sizes="180x180" href="kora_logo.png">
     
-    <!-- JavaScript in the header section-->
-    <script>
-        // Function to calculate the time difference
-        function calculateTimeDifference(lastUpdateTime) {
-            const currentTime = new Date();
-            const timeDifference = currentTime - lastUpdateTime;
-
-            const minutes = Math.floor(timeDifference / 1000 / 60);
-            const hours = Math.floor(minutes / 60);
-            const days = Math.floor(hours / 24);
-
-            let timeString;
-            
-            if (minutes == 0 ){
-                timeString = 'just now'
-            } else if (minutes < 60) {
-                timeString = minutes === 1 ? '1 minute ago' : `${minutes} minutes ago`;
-            } else if (hours < 24) {
-                timeString = hours === 1 ? '1 hour ago' : `${hours} hours ago`;
-            } else {
-                timeString = days === 1 ? '1 day ago' : `${days} days ago`;
-            }
-
-            return `Last updated ${timeString}`;
-        }
-
-        function getOrdinalSuffix(day) {
-            if (day >= 11 && day <=13) {
-                return 'th';
-            }
-            switch (day % 10) {
-                case 1: return 'st';
-                case 2: return 'nd';
-                case 3: return 'rd';
-                default: return 'th';
-            }
-        }
-
-        // Encapsulating the code inside window.onload
-        window.onload = function() {
-            // Assuming the last update time is provided here (UTC)
-            const lastUpdateTime = new Date('2025-01-11T22:20:00Z'); // Example: August 14, 2024, 8:00 AM UTC
-            
-            // Call the function to display the last updated time
-            const updateTimeElement = document.getElementById('lastupdated');
-            updateTimeElement.textContent = calculateTimeDifference(lastUpdateTime);
-        
-            // Add browser alert message here
-            window.alert("Hi, Sugar! 🍬 Kora is currently under construction. Your monthly $100 credit for January has been successfully added! Hang tight ♥️");
-
-            // Set user number to the corresponding number in the following array named "Names". The 1st user is #0.
-            const usernumber = 0;
-
-            // Array containing all of the users' names.
-            const Names = ['Kathleen'];
-
-            // Variable set to define a string of text, that being the user's name contained in the array above.
-            var user = Names[usernumber];
-
-            // Variables set to define the user's current date/time upon loading the webpage
-            var date = new Date();
-            var minute = date.getMinutes();
-            var hour = date.getHours();
-            var day = date.getDate();
-            var suffix = getOrdinalSuffix(day);
-            var formattedDay = day + '<sup>' + suffix + '</sup>';
-            var month = date.getMonth();
-            var year = date.getFullYear();
-
-            // Array defining every month of the year. Used for the date in the header.
-            const AllMonths = [
-                "January", "February", "March",
-                "April", "May", "June",
-                "July", "August", "September",
-                "October", "November", "December"];
-
-            // Defines the date format for the webpage's header
-            const monthheader = `${AllMonths[month]} ${formattedDay}, ${year}`;
-
-            // Defines a greeting message that changes based on the time of day
-            var greeting;
-            var TOD;
-
-            // Switch back after today (Good Morning : 3am - 12pm)
-            if (hour >= 3 && hour < 12) {
-                greeting = `Good Morning, ${user} 🌞`;
-                TOD = 'morning';
-            } else if (hour >= 12 && hour < 17) {
-                greeting = `Good Afternoon, ${user}`;
-                TOD = 'afternoon';
-            } else if (hour >= 17 && hour < 20) {
-                greeting = `Good Evening, ${user}`; 
-                TOD = 'evening';
-            } else {
-                greeting = `Good Night, ${user} 💤`;
-                TOD = 'bedtime';
-            }
-
-            // Redirects the div ID contained in getElementById to another ID defined in the javascript
-            document.getElementById("greeting").innerHTML = greeting;
-            document.getElementById("date").innerHTML = monthheader;
-
-            function setLineMargin() {
-                let marginLeft;
-                switch(TOD) {
-                    case 'morning':
-                        marginLeft = '6px'; // Example value, adjust as needed
-                        break;
-                    case 'afternoon':
-                        marginLeft = '10px'; // Example value
-                        break;
-                    case 'evening':
-                        marginLeft = '0px'; // Example value
-                        break;
-                    case 'bedtime':
-                        marginLeft = '2px'; // Example value
-                        break;
-                    default:
-                        marginLeft = '2px'; // Default margin if something goes wrong
-                }
-                document.querySelector('.custom-line').style.marginLeft = marginLeft;
-            }
-
-                // Call the function to set the margin
-                setLineMargin();
-        };
-        
-    </script>
-    
     <style>
+        /*Body styling*/
+        body {
+            background: black;
+            color: white;
+            font-family: "Zapfino", cursive, sans-serif;
+            padding: 0px;
+            padding-top: 4px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            min-height: 100vh; Make sure body takes up at least full viewport height */
+            
+        }
+
         /* Applies emoji animations*/
-        
         .emoji {
             position: absolute;
             background: transparent;
@@ -164,23 +48,25 @@
         }
 
         .right-line {
-            position: absolute;
+            position: fixed;
             top: 0;
             bottom: 0;
             right: 0;
             margin-right: -20px;
             width: 2px;
             background-color: blue;
+            z-index: 7;
         }
 
         .middle-line {
-            position: absolute;
+            position: fixed;
             top: 0;
             bottom: 0;
             left: 50%; /* Default center */
             transform: translateX(-50%);
             width: 2px;
             border-left: 2px dotted blue;
+            z-index: 7;
         }
 
         /* Adjust for smaller screens */
@@ -324,21 +210,6 @@
             
         }
 
-        /*Body styling*/
-        body {
-            background: black;
-            color: white;
-            font-family: "Zapfino", cursive, sans-serif;
-            padding: 0px;
-            padding-top: 4px;
-           
-            /*
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; Make sure body takes up at least full viewport height */
-            
-        }
-
         #banner {
             position: fixed;
             top: 0;
@@ -406,31 +277,13 @@
         /* Greeting line styling (FadeIn) */
         .custom-line {
             border-top: 0.2px solid white;
+            position: relative;
             width: 212px; /* Adjust the width as needed */
             margin-top: -10px;
             z-index: 1;
             opacity: 0;
             animation: LineExpansion 7s ease-out forwards 3s; /* Keyframe animation */
             transition: margin-left 0.3s ease;
-
-        }
-
-        /*Styling for the subtitle for the remaining balance with text saying "Remaining Love Credits"*/
-        #remaining-allowance {
-            font-size: 8.2px;
-            text-align: left;
-            /*Adjusts distance from left margin to remaining balance*/
-            /*47px - 80px*/
-            margin-left: 64px;
-            /*88-96px*/
-            margin-top: 95px;
-            line-height: 1;
-            position: absolute;
-            padding: 7px;
-            z-index: 2;
-
-            opacity: 0;
-            animation: fadeInRemainingBalanceSubheader 7s ease-out forwards 4s;
 
         }
 
@@ -508,7 +361,7 @@
             border-top: 0.3px solid white;
             /* Adjust the width as needed. 212-222px for 2 digits, 234px for 3 digits, cuts off right end */
             width: 208px;
-            position: absolute;
+            position: relative;
             margin: -11px auto;
             /*84-101px*/
             margin-top: 92px;
@@ -519,6 +372,24 @@
             animation: fadeInLine2 7s ease-out forwards 3s;
         }
 
+        /*Styling for the subtitle for the remaining balance with text saying "Remaining Love Credits"*/
+        #remaining-allowance {
+            font-size: 8.2px;
+            text-align: left;
+            /*Adjusts distance from left margin to remaining balance*/
+            /*47px - 80px*/
+            margin-left: 64px;
+            /*88-96px*/
+            margin-top: 95px;
+            line-height: 1;
+            position: relative;
+            padding: 7px;
+            z-index: 2;
+
+            opacity: 0;
+            animation: fadeInRemainingBalanceSubheader 7s ease-out forwards 4s;
+
+        }
 
          /*Syling for the text "Transaction History" located at the bottom-center of the home screen*/
         #recent-transactions {
@@ -688,13 +559,6 @@
             animation: fadeInTransactions 4s ease-out forwards 2s;
 
         }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
 
         /* BUTTONS */
 
@@ -1398,20 +1262,29 @@
             color: white; /* Sets the text color to white */
             font-size: 11px; /* You can adjust the size as needed */
         }
-        
-        /*
+
         #white-background-fade {
-            position: relative;
-            box-sizing: border-box; 
-            width: 100%;
-            top: 0px; /* Adjust this to start below "Last Updated" */
-        /*    left: 0px;
-            right: -10px;
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            margin-right: -300px; /* Note: Removing "width: 100vw" & adding this line fixes the gap. */
+            margin-top: 1000px;
             height: 500px; /* The length of the fade */
-        /*    background: linear-gradient(to bottom, black 0%, white 100%);
+            background: linear-gradient(to bottom, black 0%, white 100%);
             z-index: -1; /* Place behind content */
-        /*    pointer-events: none; /* So it doesn't interfere with clicks */
-        /*
+            pointer-events: none; /* So it doesn't interfere with clicks */
+        }
+
+        #white-background {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            margin-right: -300px;
+            margin-top: 1500px;
+            height: 1000px; /* The length of the fade */
+            background: white;
+            z-index: -1; /* Place behind content */
+            pointer-events: none; /* So it doesn't interfere with clicks */
         }
 
         /* NEW CONTENT STYLING */
@@ -1634,9 +1507,9 @@
 
         #photo {
             text-align: center;
-            position: absolute;
+            position: relative;
             width: 100%;
-            margin-top: -300px;
+            margin-top: 0px;
             margin-left: 104px;
             border-radius: 5px;
             box-shadow: 0 0 10 rgba(0,0,0,0.1);
@@ -1858,7 +1731,7 @@
         </div>
     </div>
 
-          <!--DROPDOWN MENU #6 -->
+        <!--DROPDOWN MENU #6 -->
     <div class="dropdown6">
     
         <button onclick="toggleDropdown6(event)">June</button>
@@ -2044,7 +1917,211 @@
         </div>
     </div>
 
+    <div id="textcontainer">
+        <p id="lastupdated"></p>
+    </div>
+
+    <div id="white-background-fade"></div>
+    <div id="white-background"></div>
+
+    <!-- New content section !! (#1) -->
+    <div id="new-content">
+        <h1>Introducing...</h1>
+        <hr class="underline_introducing">
+        <h2>Aura Meters</h2>
+        <hr class="underline_aura_meters">
+        <p class="p1">Monitor how the relationships is going... ⚖️</p>
+        <img class="love-cycle" src="cycle1_transparent_alt.jpg" alt="Love & money cycle" style="max-width: 25%; height: auto;">
+        <!-- <p class="b1">• Money Aura (how much cash you have)</p>
+            <p class="b2">• Baby Aura (Papi's goal is to keep this high)</p>
+            <p class="b3">•</p>
+            <p class="b4">•</p> -->
+        <div class="grid-container">
+            <div class="money-aura">
+                <img class="top-left" src="AuraMeter_Low-Medium_transparent.png" alt="Description of image 2" style="max-width: 25%; height: auto;">
+                <h3>Money Aura</h3>
+                <hr class="underline">
+                <p class="rating-fair">Fair</p>
+                <p>Your current balance 🏦 (increases Baby Aura)</p>
+            </div>
+            <div class="baby-aura">
+                <img class="top-right" src="AuraMeter_MediumHigh_transparent.png" alt="Description of image 1" style="max-width: 25%; height: auto;">
+                <h3>Baby Aura</h3>
+                <hr class="underline">
+                <p class="rating-good">Good</p>
+                <p>Your current mood ☯️ (estimate based on cash balance, quality of life, menstrual cycle, etc.)</p>
+            </div>
+            <div class="papa-aura">
+                <img class="bottom-left" src="AuraMeter_Low-Medium_transparent.png" alt="Description of image 1" style="max-width: 25%; height: auto;">
+                <h3>Pápi Aura</h3>
+                <hr class="underline">
+                <p class="rating-fair">Fair</p>
+                <p>My current mood (based on semen levels + quality of life</p>
+            </div>
+            <div class="love-aura">
+                <img class="bottom-right" src="AuraMeter_VeryLow_transparent.png" alt="Description of image 1" style="max-width: 25%; height: auto;">
+                <h3>Love Aura</h3>
+                <hr class="underline">
+                <p class="rating-poor">Very Poor</p>
+                <p>Amount of love exchanged (increases Papa Aura)</p>
+            </div>
+        </div>
+    
+        <p class="p2">Summary</p>
+        <hr class="underline-summary">
+        <p class="p3">Love Aura is very low. Consider opening up this month ❤︎</p>
+    </div>
+
+    <div id="coming-soon">Coming Soon...</div>
+
+    <div id="photo">
+        <img src="Kora_logo.JPG" alt="Kora logo" style="max-width: 25%; height: auto;">
+    </div>
+
+    <div id="app-name">
+        The "Kora" App
+    </div>
+
+    <div id="app-description">
+    Manage all of your "love funds" in one app!
+    </div>
+
+    <div id="bottom-emoji">
+        🤑
+    </div>
+
+    <div id="bottom-text">
+        <p> ~ Love, D <span> 🤍 </span> ~ </p>
+    </div>
+
+    <div id="white-background-fade2"></div>   
+
     <script>
+        // Function to calculate the time difference
+        function calculateTimeDifference(lastUpdateTime) {
+            const currentTime = new Date();
+            const timeDifference = currentTime - lastUpdateTime;
+
+            const minutes = Math.floor(timeDifference / 1000 / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+
+            let timeString;
+            
+            if (minutes == 0 ){
+                timeString = 'just now'
+            } else if (minutes < 60) {
+                timeString = minutes === 1 ? '1 minute ago' : `${minutes} minutes ago`;
+            } else if (hours < 24) {
+                timeString = hours === 1 ? '1 hour ago' : `${hours} hours ago`;
+            } else {
+                timeString = days === 1 ? '1 day ago' : `${days} days ago`;
+            }
+
+            return `Last updated ${timeString}`;
+        }
+
+        function getOrdinalSuffix(day) {
+            if (day >= 11 && day <=13) {
+                return 'th';
+            }
+            switch (day % 10) {
+                case 1: return 'st';
+                case 2: return 'nd';
+                case 3: return 'rd';
+                default: return 'th';
+            }
+        }
+
+        // Encapsulating the code inside window.onload
+        window.onload = function() {
+            // Assuming the last update time is provided here (UTC)
+            const lastUpdateTime = new Date('2025-01-11T22:20:00Z'); // Example: August 14, 2024, 8:00 AM UTC
+            
+            // Call the function to display the last updated time
+            const updateTimeElement = document.getElementById('lastupdated');
+            updateTimeElement.textContent = calculateTimeDifference(lastUpdateTime);
+        
+            // Add browser alert message here
+            window.alert("Hi, Sugar! 🍬 Kora is currently under construction. Your monthly $100 credit for January has been successfully added! Hang tight ♥️");
+
+            // Set user number to the corresponding number in the following array named "Names". The 1st user is #0.
+            const usernumber = 0;
+
+            // Array containing all of the users' names.
+            const Names = ['Kathleen'];
+
+            // Variable set to define a string of text, that being the user's name contained in the array above.
+            var user = Names[usernumber];
+
+            // Variables set to define the user's current date/time upon loading the webpage
+            var date = new Date();
+            var minute = date.getMinutes();
+            var hour = date.getHours();
+            var day = date.getDate();
+            var suffix = getOrdinalSuffix(day);
+            var formattedDay = day + '<sup>' + suffix + '</sup>';
+            var month = date.getMonth();
+            var year = date.getFullYear();
+
+            // Array defining every month of the year. Used for the date in the header.
+            const AllMonths = [
+                "January", "February", "March",
+                "April", "May", "June",
+                "July", "August", "September",
+                "October", "November", "December"];
+
+            // Defines the date format for the webpage's header
+            const monthheader = `${AllMonths[month]} ${formattedDay}, ${year}`;
+
+            // Defines a greeting message that changes based on the time of day
+            var greeting;
+            var TOD;
+
+            // Switch back after today (Good Morning : 3am - 12pm)
+            if (hour >= 3 && hour < 12) {
+                greeting = `Good Morning, ${user} 🌞`;
+                TOD = 'morning';
+            } else if (hour >= 12 && hour < 17) {
+                greeting = `Good Afternoon, ${user}`;
+                TOD = 'afternoon';
+            } else if (hour >= 17 && hour < 20) {
+                greeting = `Good Evening, ${user}`; 
+                TOD = 'evening';
+            } else {
+                greeting = `Good Night, ${user} 💤`;
+                TOD = 'bedtime';
+            }
+
+            // Redirects the div ID contained in getElementById to another ID defined in the javascript
+            document.getElementById("greeting").innerHTML = greeting;
+            document.getElementById("date").innerHTML = monthheader;
+
+            function setLineMargin() {
+                let marginLeft;
+                switch(TOD) {
+                    case 'morning':
+                        marginLeft = '6px'; // Example value, adjust as needed
+                        break;
+                    case 'afternoon':
+                        marginLeft = '10px'; // Example value
+                        break;
+                    case 'evening':
+                        marginLeft = '0px'; // Example value
+                        break;
+                    case 'bedtime':
+                        marginLeft = '2px'; // Example value
+                        break;
+                    default:
+                        marginLeft = '2px'; // Default margin if something goes wrong
+                }
+                document.querySelector('.custom-line').style.marginLeft = marginLeft;
+            }
+
+                // Call the function to set the margin
+                setLineMargin();
+        };
+        
         // JavaScript to add randomly generated emojis around the screen
         // const emoji = "💋";  // Change this to the emoji you want
         const fontSize = "1.8rem";  // Change font size here
@@ -2175,82 +2252,5 @@
         }
 
     </script>
-
-    <div id="textcontainer">
-        <p id="lastupdated"></p>
-    </div>
-
-    <!-- New content section !! (#1) -->
-    <div id="new-content">
-        <h1>Introducing...</h1>
-        <hr class="underline_introducing">
-        <h2>Aura Meters</h2>
-        <hr class="underline_aura_meters">
-        <p class="p1">Monitor how the relationships is going... ⚖️</p>
-        <img class="love-cycle" src="cycle1_transparent_alt.PNG" alt="Love & money cycle" style="max-width: 25%; height: auto;">
-        <!-- <p class="b1">• Money Aura (how much cash you have)</p>
-            <p class="b2">• Baby Aura (Papi's goal is to keep this high)</p>
-            <p class="b3">•</p>
-            <p class="b4">•</p> -->
-        <div class="grid-container">
-            <div class="money-aura">
-                <img class="top-left" src="AuraMeter_Low-Medium_transparent.png" alt="Description of image 2" style="max-width: 25%; height: auto;">
-                <h3>Money Aura</h3>
-                <hr class="underline">
-                <p class="rating-fair">Fair</p>
-                <p>Your current balance 🏦 (increases Baby Aura)</p>
-            </div>
-            <div class="baby-aura">
-                <img class="top-right" src="AuraMeter_MediumHigh_transparent.png" alt="Description of image 1" style="max-width: 25%; height: auto;">
-                <h3>Baby Aura</h3>
-                <hr class="underline">
-                <p class="rating-good">Good</p>
-                <p>Your current mood ☯️ (estimate based on cash balance, quality of life, menstrual cycle, etc.)</p>
-            </div>
-            <div class="papa-aura">
-                <img class="bottom-left" src="AuraMeter_Low-Medium_transparent.png" alt="Description of image 1" style="max-width: 25%; height: auto;">
-                <h3>Pápi Aura</h3>
-                <hr class="underline">
-                <p class="rating-fair">Fair</p>
-                <p>My current mood (based on semen levels + quality of life</p>
-            </div>
-            <div class="love-aura">
-                <img class="bottom-right" src="AuraMeter_VeryLow_transparent.png" alt="Description of image 1" style="max-width: 25%; height: auto;">
-                <h3>Love Aura</h3>
-                <hr class="underline">
-                <p class="rating-poor">Very Poor</p>
-                <p>Amount of love exchanged (increases Papa Aura)</p>
-            </div>
-        </div>
-    
-        <p class="p2">Summary</p>
-        <hr class="underline-summary">
-        <p class="p3">Love Aura is very low. Consider opening up this month ❤︎</p>
-    </div>
-
-    <div id="coming-soon">Coming Soon...</div>
-
-    <div id="photo">
-        <img src="Kora_logo.JPG" alt="Kora logo" style="max-width: 25%; height: auto;">
-    </div>
-
-    <div id="app-name">
-        The "Kora" App
-     </div>
-
-    <div id="app-description">
-       Manage all of your "love funds" in one app!
-    </div>
-
-    <div id="bottom-emoji">
-        🤑
-    </div>
-
-    <div id="bottom-text">
-        <p> ~ Love, D <span> 🤍 </span> ~ </p>
-    </div>
-
-    <div id="white-background-fade2"></div>
-
 </body>
 </html>
