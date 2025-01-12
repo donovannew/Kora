@@ -58,7 +58,7 @@
             updateTimeElement.textContent = calculateTimeDifference(lastUpdateTime);
         
             // Add browser alert message here
-            window.alert("Hi, Sugar! 🍬 Kora is currently under construction. Your monthly $100 credit for Janurary has been successfully added! Hang tight ♥️");
+            window.alert("Hi, Sugar! 🍬 Kora is currently under construction. Your monthly $100 credit for January has been successfully added! Hang tight ♥️");
 
             // Set user number to the corresponding number in the following array named "Names". The 1st user is #0.
             const usernumber = 0;
@@ -167,26 +167,17 @@
             position: absolute;
             top: 0;
             bottom: 0;
-            right: -10; /* Default position on the right */
+            right: 0;
+            margin-right: -20px;
             width: 2px;
             background-color: blue;
         }
 
-        .middle-line-perc {
+        .middle-line {
             position: absolute;
             top: 0;
             bottom: 0;
             left: 50%; /* Default center */
-            transform: translateX(-50%);
-            width: 2px;
-            border-left: 2px dotted blue;
-        }
-
-        .middle-line-px {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 234px; /* Default center */
             transform: translateX(-50%);
             width: 2px;
             border-left: 2px dotted blue;
@@ -1702,8 +1693,7 @@
 <body>
     <div id="emoji-container"></div>
     <div class="right-line"></div>
-    <div class="middle-line-perc"></div>
-    <div class="middle-line-px"></div>
+    <div class="middle-line"></div>
     <div id="banner"></div>
     <div id="banner-fade"></div>
     
