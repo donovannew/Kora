@@ -21,7 +21,7 @@
             display: flex;
             flex-direction: column;
             overflow-y: auto;
-            min-height: 100vh; Make sure body takes up at least full viewport height */
+            min-height: 100vh; /* Make sure body takes up at least full viewport height */
             
         }
 
@@ -36,6 +36,7 @@
             opacity: 0;
             animation: pop 3.6s forwards;
         }
+    
         @keyframes pop {
             0% { opacity: 0; }
             50% { opacity: 0.77; }
@@ -63,6 +64,18 @@
             top: 0;
             bottom: 0;
             left: 50%; /* Default center */
+            transform: translateX(-50%);
+            width: 2px;
+            border-left: 2px dotted blue;
+            z-index: 7;
+            opacity: 0;
+        }
+
+        .middle-line-desktop {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 42%; /* Default center */
             transform: translateX(-50%);
             width: 2px;
             border-left: 2px dotted blue;
@@ -133,7 +146,7 @@
             }
             to {
                 opacity: 0.5;
-                transform: scaleX(104%);
+                transform: scaleX(82%);
             }
         }
 
@@ -291,11 +304,12 @@
         /*BEGIN STYLING ADJUSTMENTS HERE FOR NEW BALANCES (margin-left)*/
         .balance {
             font-size: 69px;
-            margin-top: 269px;
+            text-align: center;
+            margin-top: 300px;
             /* Adjusts distance from left margin to container */
             /* 27-96px */
             /* 27px for $100-$999, 58px for $10-$99, & 96px for $0-$9 */
-            margin-left: 64px;
+            margin-left: 0px;
             line-height: 1;
             z-index: 1;
 
@@ -303,9 +317,10 @@
 
         /*Dollar sign of remaining balance*/
         #dollar-sign {
-            font-size: 47px;
+            font-size: 42px;
             z-index: 1;
-
+            margin-left: -220px;
+            margin-top: 0px; /* This should remain 0 as the eldest sibling object */
             opacity: 0;
             animation: fadeIn 7s ease-out forwards 0.6s;
 
@@ -314,10 +329,10 @@
          /*Dollar amount of remaining balance, just for fun*/
          #dollars {
             font-size: 89px;
-            margin-top: -32px;
+            margin-top: -69px;
             /*Adjusts distance of dollar amount*/
             /*27-33px*/
-            margin-left: 35px;
+            margin-left: -130px;
             z-index: 1;
 
             opacity: 0;
@@ -332,12 +347,12 @@
             z-index: 1;
             /*-114px for $100.00*/
             /*-118px for $91.XX*/
-            margin-top: -125px;
+            margin-top: -208px;
             /*Adjusts distance from left margin to cents amount*/
             /*282px for $100.00*/
             /*-193px for $91*/
             /*169-300px*/
-            margin-left: 220px;
+            margin-left: 20px;
             opacity: 0;
             animation: fadeIn 7s ease-out forwards 0.77s;
 
@@ -346,25 +361,23 @@
         #cents-line {
             border-top: 0.3px solid white;
             width: 21px; /* Adjust the width as needed. 222 for 2-3 digits. */
-            position: absolute;
             margin: -11px auto;
-            margin-top: -11px;
+            margin-top: -8px;
             /* previously 69-323px*/
-            margin-left: 285px;
+            margin-left: 228px;
             opacity: 0;
             z-index: 2;
-            animation: fadeInLine2 6.5s ease-out forwards 3s;
+            animation: fadeInLine2 6.5s ease-out forwards 0s;
         }
 
         /* Custom line styling (FadeIn) */
         #balance-line {
             border-top: 0.3px solid white;
             /* Adjust the width as needed. 212-222px for 2 digits, 234px for 3 digits, cuts off right end */
-            width: 208px;
-            position: relative;
+            width: 200px;
             margin: -11px auto;
             /*84-101px*/
-            margin-top: 92px;
+            margin-top: 103px;
             /* previously 69-88px, adjust after changing width*/
             margin-left: 77px;
             opacity: 0;
@@ -378,11 +391,10 @@
             text-align: left;
             /*Adjusts distance from left margin to remaining balance*/
             /*47px - 80px*/
-            margin-left: 64px;
+            margin-left: 84px;
             /*88-96px*/
-            margin-top: 0px;
+            margin-top: 12px;
             line-height: 1;
-            position: relative;
             padding: 7px;
             z-index: 2;
 
@@ -396,7 +408,7 @@
             font-size: 12.1px;
             margin-top: 310px;
             text-align: left;
-            margin-left: 108px;
+            margin-left: 107px;
             padding: 6px;
             z-index: 2;
 
@@ -424,7 +436,7 @@
             width: 74px; /* Adjust the width as needed */
             margin: -11px auto;
             text-align: left;
-            margin-left: 183px;
+            margin-left: 182px;
             margin-top: -22px;
             position: absolute;
             z-index: 2;
@@ -655,9 +667,9 @@
         }
 
         /* Style the dropdown content (hidden by default) */
-        .dropdown-content1 {
+        /* .dropdown-content1 {
             /* Insert extra styling here */
-        }
+        /* }
 
         /* Style the dropdown links (transactions) */
         .dropdown-content1 p {
@@ -1252,7 +1264,7 @@
             opacity: 0;
 
             /* animation: fadeInTransactions 3s ease-out forwards 9s; */
-            animation: fadeInLastUpdated 3s ease-out forwards 9s; */
+            animation: fadeInLastUpdated 3s ease-out forwards 9s;
         }
 
         #lastupdated {
@@ -1264,11 +1276,11 @@
         }
 
         #white-background-fade {
-            position: absolute;
+            position: relative;
             left: 0px;
             right: 0px;
             margin-right: -300px; /* Note: Removing "width: 100vw" & adding this line fixes the gap. */
-            margin-top: 1000px;
+            margin-top: 0px;
             height: 500px; /* The length of the fade */
             background: linear-gradient(to bottom, black 0%, white 100%);
             z-index: -1; /* Place behind content */
@@ -1276,11 +1288,11 @@
         }
 
         #white-background {
-            position: absolute;
+            position: relative;
             left: 0px;
             right: 0px;
             margin-right: -300px;
-            margin-top: 1500px;
+            margin-top: 0px;
             height: 1000px; /* The length of the fade */
             background: white;
             z-index: -1; /* Place behind content */
@@ -1291,7 +1303,7 @@
         #new-content {
             position: relative;
             z-index: 2;
-            margin-top: 200px; /* Space from the last updated text */
+            margin-top: -1100px; /* Space from the last updated text */
             text-align: left;
             margin-left: 10px;
             padding: 5px 5px;
@@ -1301,21 +1313,21 @@
 
         #new-content h1 {
             font-size: 14px; /* Adjust as needed */
-            color: white; /* Since your main text is white */
+            color: black; /* Since your main text is white */
             margin-left: 123px;
             margin-top: 0px;
         }
 
         #new-content h2 { /* Settings for the text "Aura Meters"  */
             font-size: 21px; /* Adjust as needed */
-            color: white; /* Since your main text is white */
+            color: black; /* Since your main text is white */
             margin-left: 88px;
-            margin-top: 200px; 
+            margin-top: 300px; 
         }
 
         #new-content .p1 { /* Settings for the text "Monitor how..."  */
             font-size: 12px; /* Adjust as needed */
-            color: white;
+            color: black;
             margin-left: 30px;
             margin-top: 20px;
         }
@@ -1367,7 +1379,7 @@
         .underline_aura_meters {
             background-color: black;
             width: 108px; /* Adjust as needed for the underline length */
-            margin-top: 4px;
+            margin-top: -16px;
             margin-left: 116px; /* Center the line and add some space */
             border: none; /* Remove default border */
             height: 1px; /* Line thickness */
@@ -1375,9 +1387,9 @@
 
         .underline_introducing {
             background-color: black;
-            width: 69px; /* Adjust as needed for the underline length */
-            margin-top: 7px;
-            margin-left: 138px; /* Center the line and add some space */
+            width: 72px; /* Adjust as needed for the underline length */
+            margin-top: -8px;
+            margin-left: 137px; /* Center the line and add some space */
             border: none; /* Remove default border */
             height: 1px; /* Line thickness */
         }
@@ -1577,6 +1589,7 @@
     <div id="emoji-container"></div>
     <div class="right-line"></div>
     <div class="middle-line"></div>
+    <div class="middle-line-desktop"></div>
     <div id="banner"></div>
     <div id="banner-fade"></div>
     
@@ -1919,8 +1932,16 @@
             <p>In-N-Out . . . . . . . . . . . . . . . . $9.16</p>
             <p><u>Saturday, January 11th</u></p>
             <p>Uber One . . . . . . . . . . . . . . . . $9.99</p>
+            <p><u>Tuesday, January 14th</u></p>
+            <p>Uber Eats . . . . . . . . . . . . . . . $22.00</p>
+            <p><u>Friday, January 17th</u></p>
+            <p>Uber Eats . . . . . . . . . . . . . . . $21.53</p>
+            <p><u>Wednesday, January 22nd (Pending)</u></p>
+            <p>Uber Eats . . . . . . . . . . . . . . . $28.49</p>
+            <p>Uber Eats . . . . . . . . . . . . . . . $29.38</p>
+            <p>In-N-Out . . . . . . . . . . . . . . . . $9.16</p>
             <hr>
-            <p>Total: $28.31 / $116.24 (24%)</p>
+            <p>Total: $167.36 / $116.24 (100%)</p>
         </div>
     </div>
 
@@ -1938,7 +1959,7 @@
         <h2>Aura Meters</h2>
         <hr class="underline_aura_meters">
         <p class="p1">Monitor how the relationships is going... ⚖️</p>
-        <img class="love-cycle" src="Kora_logo.JPG" alt="Love & money cycle" style="max-width: 25%; height: auto;">
+        <img class="love-cycle" src="Kora_logo.png" alt="Love & money cycle" style="max-width: 25%; height: auto;">
         <!-- <p class="b1">• Money Aura (how much cash you have)</p>
             <p class="b2">• Baby Aura (Papi's goal is to keep this high)</p>
             <p class="b3">•</p>
@@ -2043,14 +2064,14 @@
         // Encapsulating the code inside window.onload
         window.onload = function() {
             // Assuming the last update time is provided here (UTC)
-            const lastUpdateTime = new Date('2025-01-12T02:20:00Z'); // Example: August 14, 2024, 8:00 AM UTC
+            const lastUpdateTime = new Date('2025-01-24T04:20:00Z'); // Example: August 14, 2024, 8:00 AM UTC
             
             // Call the function to display the last updated time
             const updateTimeElement = document.getElementById('lastupdated');
             updateTimeElement.textContent = calculateTimeDifference(lastUpdateTime);
         
             // Add browser alert message here
-            window.alert("Hi, Sugar! 🍬 You've reached your spending limit for January. pls chill for a few days until Papi fixes your site. he hasnt been feeling well. thank you ❤️");
+            // window.alert("Hi, Sugar! 🍬 You've reached your spending limit for January. pls chill for a few days until Papi fixes your site. he hasnt been feeling well. thank you ❤️");
 
             // Set user number to the corresponding number in the following array named "Names". The 1st user is #0.
             const usernumber = 0;
