@@ -15,8 +15,8 @@
         }
 
         @font-face {
-            font-family: 'Pacifico';
-            src: url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+            font-family: 'Dancing Script';
+            src: url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400&display=swap');
         }
 
         #header {
@@ -84,18 +84,11 @@
             position: fixed;
             bottom: 0;
             width: 100%;
-            text-align: center;
-            margin-left: 0;
+            text-align: left;
+            margin-left: 134px;
             padding: 10px;
             opacity: 0;
-            animation: fadeIn 5s ease-out forwards 9s;
-        }
-
-        #bottom-text::before {
-            content: '🤍';
-            color: white;
-            font-size: 16px;
-            margin-right: 5px;
+            animation: fadeIn 5s ease-out forwards 7s;
         }
 
         .emoji {
@@ -143,7 +136,7 @@
     <div class="quote" id="quoteDisplay"></div>
 
     <div id="bottom-text">
-        <p> ~ Love, D ~ </p>
+        <p> ~ Love, D <span> 🤍 </span> ~ </p>
     </div>
 
     <script>
@@ -272,11 +265,17 @@
 
         // List of quotes and authors as distinct strings
         const quotesAndAuthors = [
-            ["Love seeketh not Itself to please, Nor for itself hath any care; But for another gives its ease, And builds a Heaven in Hells despair.", "William Blake"],
-            ["Love is not only something you feel, it is something you do.", "David Wilkerson"],
-            ["The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.", "Helen Keller"],
-            ["Love recognizes no barriers. It jumps hurdles, leaps fences, penetrates walls to arrive at its destination full of hope.", "Maya Angelou"],
-            ["To love and be loved is to feel the sun from both sides.", "David Viscott"]
+            ["“Love seeketh not Itself to please, Nor for itself hath any care; But for another gives its ease, And builds a Heaven in Hells despair.”", "William Blake"],
+            ["“Love is not only something you feel, it is something you do.”", "David Wilkerson"],
+            ["“Love is an irresistible desire to be irresistibly desired.”", "Robert Frost"],
+            ["“Her gesture, motion, and her smiles, Her wit, her voice my heart beguiles, Beguiles my heart, I know not why, And yet, I'll love her 'til I die.”", "Thomas Ford"],
+            ["“If you are the desert I'll be the sea. If you ever hunger, hunger for me. Whatever you ask for, that's what I'll be.”", "George Michael"],
+            ["“Tell me every terrible thing you ever did, and let me love you anyway.”", "Edgar Allen Poe"],
+            ["“Thou art to me a delicious torment.”", "Ralph Waldo Emerson"],
+            ["“Love, and you shall be loved.”", "Ralph Waldo Emerson"],
+            ["“All love that has not friendship for its base, is like a mansion built upon the sand.”", "Ella Wheeler Wilcox"],
+            ["“The best and most beautiful things in the world cannot be seen or even touched - they must be felt with the heart.”", "Helen Keller"],
+            ["“Love recognizes no barriers. It jumps hurdles, leaps fences, penetrates walls to arrive at its destination full of hope.”", "Maya Angelou"]
         ];
 
         // Array to keep track of displayed quotes to avoid repetition
